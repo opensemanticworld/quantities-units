@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "quantities-units"
+version = "0.0.1"
+description = "Project to fetch quantities and units from ontologies to provide a applied data source to OSW."
+authors = ["Andreas Raeder"]
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+panel = "^1.4.2"
+scipy = "^1.13.0"
+scikit-image = "^0.23.2"
+numpy = "^1.26.4"
+
+[tool.poetry.group.dev.dependencies]
+pdoc = "^14.4.0"
+pytest = "^8.2.0"
+pre-commit = "^3.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
