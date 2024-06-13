@@ -1,0 +1,17 @@
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sou: <http://qudt.org/vocab/sou/>
+
+SELECT 	?quantity
+    (GROUP_CONCAT(DISTINCT CONCAT(?qlabel, "@", LANG(?qlabel)); separator=", ") AS ?qlabels)
+    (GROUP_CONCAT(DISTINCT ?applicableUnit; separator=", ") AS ?applicableUnits)
+        (GROUP_CONCAT(DISTINCT ?ucumCode; separator=", ") AS ?ucumCodes)
+WHERE {
+    ?quantity rdf:type qudt:QuantityKind .
+    ?quantity rdfs:label ?qlabel .
+    ?quantity qudt:applicableUnit ?applicableUnit .
+    ?applicableUnit qudt:applicableSystem sou:SI .
+    ?applicableUnit qudt:ucumCode ?ucumCode .
+}
+GROUP BY ?quantity

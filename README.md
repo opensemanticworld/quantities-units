@@ -1,10 +1,10 @@
 # quantities-units
 
-Project to fetch quantities and units from ontologies to provide a applied data source to OSW.
+Project to fetch quantities and units from ontologies to provide an applied data source to OSW.
 
 Table of Contents
 
-- [quantities-units](#cookiecutterproject_name)
+- [quantities-units](#quantities-units)
   - [Prerequisites](#prerequisites)
   - [Usage](#usage)
     - [Windows](#windows)
