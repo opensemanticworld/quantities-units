@@ -1,0 +1,29 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sou: <http://qudt.org/vocab/sou/>
+PREFIX dimv: <http://qudt.org/vocab/dimensionvector/>
+
+SELECT 	?quantity
+		# ?broader
+		?dimensionVector
+		# (GROUP_CONCAT(DISTINCT CONCAT(?qlabel, "@", LANG(?qlabel)); separator=", ") AS ?qlabels)
+		# (GROUP_CONCAT(DISTINCT CONCAT("<", STR(?applicableUnit), ">"); separator=", ") AS ?applicableUnits)
+       	# (GROUP_CONCAT(DISTINCT ?ucumCode; separator=", ") AS ?ucumCodes)
+		# ?sou
+
+WHERE {
+  ?quantity rdf:type qudt:QuantityKind .
+  ?quantity rdfs:label ?qlabel .
+  ?quantity qudt:applicableUnit ?applicableUnit .
+  ?applicableUnit qudt:applicableSystem ?sou .
+  ?applicableUnit qudt:ucumCode ?ucumCode .
+  ?quantity qudt:hasDimensionVector ?dimensionVector .
+  FILTER NOT EXISTS {
+  	?quantity skos:broader ?broader .
+  }
+  FILTER(?sou = sou:SI && ?dimensionVector != dimv:NotApplicable )
+}
+
+GROUP BY ?quantity ?broader ?sou ?dimensionVector

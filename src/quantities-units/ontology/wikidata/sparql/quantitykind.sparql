@@ -1,0 +1,11 @@
+PREFIX wdpd: <http://www.wikidata.org/prop/direct/>
+
+SELECT  ?superquantity 
+        (GROUP_CONCAT(DISTINCT ?sqlabel; separator=", ") AS ?sqlabels)
+        (GROUP_CONCAT(DISTINCT ?quantity; separator=", ") AS ?quantities)
+WHERE {
+  ?superquantity wdpd:P8393 ?sqlabel .
+  ?quantity wdpd:P279 ?superquantity .
+}
+
+GROUP BY ?superquantity
