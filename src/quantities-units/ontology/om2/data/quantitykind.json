@@ -1,0 +1,1253 @@
+{
+    "head": {
+        "vars": [
+            "quantKind"
+        ]
+    },
+    "results": {
+        "bindings": [
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Length"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Area"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Volume"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Angle"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SolidAngle"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/LengthFraction"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Mass"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Time"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Frequency"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Force"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Energy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Pressure"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/DynamicViscosity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/KinematicViscosity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Acceleration"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Luminance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Illuminance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCharge"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Capacitance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Inductance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricalConductance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricalResistance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricPotential"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MagneticField"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MagneticFluxDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MagneticFlux"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MagnetomotiveForce"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousIntensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Speed"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Momentum"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Wavenumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AngularSpeed"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AngularAcceleration"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AngularMomentum"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Density"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpecificVolume"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Power"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Torque"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Action"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SurfaceTension"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/HeatCapacity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpecificHeatCapacity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CurrentDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricalConductivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricalResistivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/PermeabilityOfFreeSpace"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Permittivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousFlux"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousEnergy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Exposure"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/LuminousEfficacy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AbsorbedDose"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AbsorbedDoseRate"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/DoseEquivalent"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Activity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MolarMass"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MolarHeatCapacity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CatalyticActivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MomentOfInertia"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Impulse"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MassFraction"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/VolumeFraction"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/QuantityOfDimensionOne"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Number"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Ratio"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/NumberDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ColumnNumberDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MomentOfForce"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpecificEnergy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/PowerDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/EnergyDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Fluidity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/RelativeHumidity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/VolumetricFlowRate"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MassFlow"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MassPerEnergy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AreaDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AreaDensityRate"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Stress"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/DynamicModulus"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/RadiantIntensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Radiance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ShearRate"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Detectivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Temperature"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Entropy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpecificEntropy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ThermalConductivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ThermalResistance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/TemperatureRate"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/HeatTransferCoefficient"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ThermalDiffusivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ThermalInsulance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/VolumetricHeatCapacity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricField"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricChargeDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricFluxDensity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Permeance-Electromagnetic"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricDipoleMoment"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Reluctance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Admittance"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Strain"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AlfvenNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CowlingNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/EulerNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/FirstCowlingNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/FourierNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/FourierNumberForMassTransfer"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/FroudeNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/GrashofNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/GrashofNumberForMassTransfer"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/HartmannNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/KnudsenNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/LewisNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MachNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MagneticReynoldsNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/NusseltNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/NusseltNumberForMassTransfer"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/PecletNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/PecletNumberForMassTransfer"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/PrandtlNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/RayleighNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ReynoldsNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SchmidtNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/StantonNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/StantonNumberForMassTransfer"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/StrouhalNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/WeberNumber"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstanceConcentration"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstanceFraction"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MolarEnergy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MolarEntropy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstanceFlow"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Molality"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/MolarVolume"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfSubstanceFractionFlow"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/GasConstant"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CatalyticActivityConcentration"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpecificCatalyticActivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Acidity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Amphiphilicity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Hydrophilicity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Hydrophobicity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Lipophilicity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SaltStrength"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ExposureToXAndGammaRays"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Amplitude"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/BolometricCorrection"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ColourIndex"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/DarkNoise"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/DynamicRange"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Extinction"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Magnitude"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/NormalisedDetectivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/QuantumEfficiency"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Reddening"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Responsivity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpectralResponse"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CosmologicalConstant"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CurvatureConstant"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/DecelerationParameter"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/DensityParameter"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/HubbleConstant"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ScaleFactor"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Permeability-EarthScience"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Permeance-MaterialsScience"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ViableCount"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/VolumetricViableCount"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpecificViableCount"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CarbonDioxideEquivalentMass"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CarbonDioxideEquivalentMassPerEnergy"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AmountOfMoney"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SpecificAmountOfMoney"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/InformationCapacity"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/SymbolRate"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/PixelCount"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/BudStadium"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeBotrytis"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeBlueFlowers"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeAbscisedFlowers"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeWiltedFlowers"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeRottenFlowers"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeDryFlowers"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeMalformedFlowers"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeNonturgidFlowers"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeDryLeaves"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeYellowLeaves"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeAbscisedLeaves"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeWiltedLeaves"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeRottenLeaves"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeNonturgidLeaves"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeDryBuds"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeMalformedBuds"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/CauseEndOfVaseLifeAbscisedBuds"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/QualityMark"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ExternalBrowning"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/VascularBrowning"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/PulpBrowning"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/StemEndRot"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/StickStone"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/AcousticFirmness"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Firmness-Penetrometer-Method1"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/Firmness-Penetrometer-Method2"
+                }
+            },
+            {
+                "quantKind": {
+                    "type": "uri",
+                    "value": "http://www.ontology-of-units-of-measure.org/resource/om-2/ManualFirmness"
+                }
+            }
+        ]
+    }
+}

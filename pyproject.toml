@@ -8,6 +8,8 @@ authors = ["Andreas Raeder"]
 [tool.poetry.dependencies]
 python = "^3.12"
 sparqlwrapper = "^2.0.0"
+ipykernel = "^6.29.5"
+pandas = "^2.2.2"
 
 [tool.poetry.group.dev.dependencies]
 pdoc = "^14.4.0"
