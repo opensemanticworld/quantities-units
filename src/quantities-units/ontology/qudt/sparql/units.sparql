@@ -1,0 +1,29 @@
+PREFIX qudt: <http://qudt.org/schema/qudt/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sou: <http://qudt.org/vocab/sou/>
+
+SELECT DISTINCT ?applicableUnit ?dimensionVector ?symbol ?dbpediaMatch ?conversionMultiplierSN ?siExactMatch
+	(GROUP_CONCAT(DISTINCT ?ucumCode; separator=", ") AS ?ucumCodes)
+    (GROUP_CONCAT(DISTINCT ?applicableSystem; separator=", ") AS ?applicableSystems)
+	(GROUP_CONCAT(DISTINCT CONCAT(?qlabel, "@", LANG(?qlabel)); separator=", ") AS ?qlabels)
+	 
+WHERE {
+    ?quantity rdf:type qudt:QuantityKind .
+    ?quantity qudt:applicableUnit ?applicableUnit .
+    ?applicableUnit qudt:applicableSystem sou:SI .
+    ?applicableUnit qudt:ucumCode ?ucumCode .
+  	?applicableUnit qudt:hasDimensionVector ?dimensionVector .
+  	?applicableUnit qudt:symbol ?symbol .
+  	?applicableUnit qudt:ucumCode ?ucumCode .
+    ?applicableUnit rdfs:label ?qlabel .
+    ?applicableUnit qudt:applicableSystem ?applicableSystem .
+        	
+    OPTIONAL {
+    	?applicableUnit qudt:dbpediaMatch ?dbpediaMatch .
+		?applicableUnit qudt:conversionMultiplierSN ?conversionMultiplierSN .
+      	?applicableUnit qudt:siExactMatch ?siExactMatch .
+    }
+}
+
+GROUP BY ?applicableUnit ?dimensionVector ?symbol ?dbpediaMatch ?conversionMultiplierSN ?siExactMatch

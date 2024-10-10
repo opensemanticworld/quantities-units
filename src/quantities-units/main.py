@@ -1,7 +1,7 @@
 """Entrypoint for the quantities-units package app."""
 
-from utils.file_loader import readSparqlFile
-from utils.sparql_query import execQuery
+# from utils.file_loader import readSparqlFile
+# from utils.sparql_query import execQuery
 
 
 def main():
