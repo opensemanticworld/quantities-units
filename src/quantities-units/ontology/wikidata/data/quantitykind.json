@@ -1,0 +1,2407 @@
+{
+    "head": {
+        "vars": [
+            "superquantity",
+            "sqlabels",
+            "quantities"
+        ]
+    },
+    "results": {
+        "bindings": [
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11376"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Acceleration"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q30006, http://www.wikidata.org/entity/Q2071519, http://www.wikidata.org/entity/Q2248131, http://www.wikidata.org/entity/Q2477230, http://www.wikidata.org/entity/Q2673034, http://www.wikidata.org/entity/Q2822921, http://www.wikidata.org/entity/Q2822923, http://www.wikidata.org/entity/Q7140491, http://www.wikidata.org/entity/Q8187203, http://www.wikidata.org/entity/Q12307971, http://www.wikidata.org/entity/Q65244259, http://www.wikidata.org/entity/Q103982270, http://www.wikidata.org/entity/Q109238996, http://www.wikidata.org/entity/Q119487995"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11379"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Energy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q12725, http://www.wikidata.org/entity/Q42213, http://www.wikidata.org/entity/Q44432, http://www.wikidata.org/entity/Q161064, http://www.wikidata.org/entity/Q162794, http://www.wikidata.org/entity/Q180241, http://www.wikidata.org/entity/Q184550, http://www.wikidata.org/entity/Q191632, http://www.wikidata.org/entity/Q209233, http://www.wikidata.org/entity/Q271580, http://www.wikidata.org/entity/Q334631, http://www.wikidata.org/entity/Q339687, http://www.wikidata.org/entity/Q351281, http://www.wikidata.org/entity/Q360356, http://www.wikidata.org/entity/Q396045, http://www.wikidata.org/entity/Q431335, http://www.wikidata.org/entity/Q496309, http://www.wikidata.org/entity/Q568593, http://www.wikidata.org/entity/Q660488, http://www.wikidata.org/entity/Q685892, http://www.wikidata.org/entity/Q783800, http://www.wikidata.org/entity/Q786486, http://www.wikidata.org/entity/Q863696, http://www.wikidata.org/entity/Q901959, http://www.wikidata.org/entity/Q1097654, http://www.wikidata.org/entity/Q1146448, http://www.wikidata.org/entity/Q1248236, http://www.wikidata.org/entity/Q1259526, http://www.wikidata.org/entity/Q1775760, http://www.wikidata.org/entity/Q1924699, http://www.wikidata.org/entity/Q1962383, http://www.wikidata.org/entity/Q2253702, http://www.wikidata.org/entity/Q2264099, http://www.wikidata.org/entity/Q2632167, http://www.wikidata.org/entity/Q3062538, http://www.wikidata.org/entity/Q3588973, http://www.wikidata.org/entity/Q3725244, http://www.wikidata.org/entity/Q4327971, http://www.wikidata.org/entity/Q5832681, http://www.wikidata.org/entity/Q6750062, http://www.wikidata.org/entity/Q6810661, http://www.wikidata.org/entity/Q7227698, http://www.wikidata.org/entity/Q10503983, http://www.wikidata.org/entity/Q10882959, http://www.wikidata.org/entity/Q11663629, http://www.wikidata.org/entity/Q11919252, http://www.wikidata.org/entity/Q11919254, http://www.wikidata.org/entity/Q12373673, http://www.wikidata.org/entity/Q20984829, http://www.wikidata.org/entity/Q25303639, http://www.wikidata.org/entity/Q28735213, http://www.wikidata.org/entity/Q40189366, http://www.wikidata.org/entity/Q45404197, http://www.wikidata.org/entity/Q74318512, http://www.wikidata.org/entity/Q79813678, http://www.wikidata.org/entity/Q86424203, http://www.wikidata.org/entity/Q97143782, http://www.wikidata.org/entity/Q98082340, http://www.wikidata.org/entity/Q98148038, http://www.wikidata.org/entity/Q98164745, http://www.wikidata.org/entity/Q98165187, http://www.wikidata.org/entity/Q98793042, http://www.wikidata.org/entity/Q98930804, http://www.wikidata.org/entity/Q99526944, http://www.wikidata.org/entity/Q99526969, http://www.wikidata.org/entity/Q103982939, http://www.wikidata.org/entity/Q105292146, http://www.wikidata.org/entity/Q105846486, http://www.wikidata.org/entity/Q106344792, http://www.wikidata.org/entity/Q107059399, http://www.wikidata.org/entity/Q107299815, http://www.wikidata.org/entity/Q108255320, http://www.wikidata.org/entity/Q108281384, http://www.wikidata.org/entity/Q108327169, http://www.wikidata.org/entity/Q108327243, http://www.wikidata.org/entity/Q108327366, http://www.wikidata.org/entity/Q108441234, http://www.wikidata.org/entity/Q110139358, http://www.wikidata.org/entity/Q111745439, http://www.wikidata.org/entity/Q111745443, http://www.wikidata.org/entity/Q112690560, http://www.wikidata.org/entity/Q112958103, http://www.wikidata.org/entity/Q112958122, http://www.wikidata.org/entity/Q115139482"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11423"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Mass"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q182854, http://www.wikidata.org/entity/Q182937, http://www.wikidata.org/entity/Q228751, http://www.wikidata.org/entity/Q334552, http://www.wikidata.org/entity/Q340755, http://www.wikidata.org/entity/Q393855, http://www.wikidata.org/entity/Q550046, http://www.wikidata.org/entity/Q620876, http://www.wikidata.org/entity/Q719048, http://www.wikidata.org/entity/Q843816, http://www.wikidata.org/entity/Q968594, http://www.wikidata.org/entity/Q1064434, http://www.wikidata.org/entity/Q1076402, http://www.wikidata.org/entity/Q1097654, http://www.wikidata.org/entity/Q1140878, http://www.wikidata.org/entity/Q1332978, http://www.wikidata.org/entity/Q1571163, http://www.wikidata.org/entity/Q1638155, http://www.wikidata.org/entity/Q1739507, http://www.wikidata.org/entity/Q1757056, http://www.wikidata.org/entity/Q1933140, http://www.wikidata.org/entity/Q1940759, http://www.wikidata.org/entity/Q1965381, http://www.wikidata.org/entity/Q2204048, http://www.wikidata.org/entity/Q2306635, http://www.wikidata.org/entity/Q2333272, http://www.wikidata.org/entity/Q2361204, http://www.wikidata.org/entity/Q2945560, http://www.wikidata.org/entity/Q3079618, http://www.wikidata.org/entity/Q3509437, http://www.wikidata.org/entity/Q3840065, http://www.wikidata.org/entity/Q3900736, http://www.wikidata.org/entity/Q4128476, http://www.wikidata.org/entity/Q5003679, http://www.wikidata.org/entity/Q5636358, http://www.wikidata.org/entity/Q6784057, http://www.wikidata.org/entity/Q6987233, http://www.wikidata.org/entity/Q7828123, http://www.wikidata.org/entity/Q7934789, http://www.wikidata.org/entity/Q11857574, http://www.wikidata.org/entity/Q11866286, http://www.wikidata.org/entity/Q12989628, http://www.wikidata.org/entity/Q16815754, http://www.wikidata.org/entity/Q26897126, http://www.wikidata.org/entity/Q28796263, http://www.wikidata.org/entity/Q28801326, http://www.wikidata.org/entity/Q28801327, http://www.wikidata.org/entity/Q42880299, http://www.wikidata.org/entity/Q44437955, http://www.wikidata.org/entity/Q61940056, http://www.wikidata.org/entity/Q65088056, http://www.wikidata.org/entity/Q65088069, http://www.wikidata.org/entity/Q78101716, http://www.wikidata.org/entity/Q94373734, http://www.wikidata.org/entity/Q94633157, http://www.wikidata.org/entity/Q94633305, http://www.wikidata.org/entity/Q94633320, http://www.wikidata.org/entity/Q94692957, http://www.wikidata.org/entity/Q96941619, http://www.wikidata.org/entity/Q97010809, http://www.wikidata.org/entity/Q97313682, http://www.wikidata.org/entity/Q106535803, http://www.wikidata.org/entity/Q108132729, http://www.wikidata.org/entity/Q110401816, http://www.wikidata.org/entity/Q110591969, http://www.wikidata.org/entity/Q113042281, http://www.wikidata.org/entity/Q113925828, http://www.wikidata.org/entity/Q115566573"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11465"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Velocity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q13824, http://www.wikidata.org/entity/Q44207, http://www.wikidata.org/entity/Q189214, http://www.wikidata.org/entity/Q200924, http://www.wikidata.org/entity/Q217361, http://www.wikidata.org/entity/Q240105, http://www.wikidata.org/entity/Q313958, http://www.wikidata.org/entity/Q336894, http://www.wikidata.org/entity/Q614981, http://www.wikidata.org/entity/Q667379, http://www.wikidata.org/entity/Q908624, http://www.wikidata.org/entity/Q909891, http://www.wikidata.org/entity/Q920165, http://www.wikidata.org/entity/Q1253791, http://www.wikidata.org/entity/Q1322540, http://www.wikidata.org/entity/Q1365721, http://www.wikidata.org/entity/Q1376323, http://www.wikidata.org/entity/Q1559410, http://www.wikidata.org/entity/Q1579556, http://www.wikidata.org/entity/Q2014128, http://www.wikidata.org/entity/Q2250038, http://www.wikidata.org/entity/Q2338822, http://www.wikidata.org/entity/Q2613682, http://www.wikidata.org/entity/Q3492162, http://www.wikidata.org/entity/Q3564029, http://www.wikidata.org/entity/Q4234997, http://www.wikidata.org/entity/Q5462119, http://www.wikidata.org/entity/Q6160117, http://www.wikidata.org/entity/Q11626437, http://www.wikidata.org/entity/Q12050461, http://www.wikidata.org/entity/Q13574163, http://www.wikidata.org/entity/Q106577624, http://www.wikidata.org/entity/Q108147401, http://www.wikidata.org/entity/Q109520099, http://www.wikidata.org/entity/Q112749566, http://www.wikidata.org/entity/Q116486096, http://www.wikidata.org/entity/Q116916313, http://www.wikidata.org/entity/Q122722706"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11466"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Temperature"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q15318, http://www.wikidata.org/entity/Q111092, http://www.wikidata.org/entity/Q194376, http://www.wikidata.org/entity/Q264647, http://www.wikidata.org/entity/Q558378, http://www.wikidata.org/entity/Q647502, http://www.wikidata.org/entity/Q751803, http://www.wikidata.org/entity/Q760765, http://www.wikidata.org/entity/Q761179, http://www.wikidata.org/entity/Q845339, http://www.wikidata.org/entity/Q854050, http://www.wikidata.org/entity/Q889769, http://www.wikidata.org/entity/Q898874, http://www.wikidata.org/entity/Q899386, http://www.wikidata.org/entity/Q909060, http://www.wikidata.org/entity/Q912202, http://www.wikidata.org/entity/Q941667, http://www.wikidata.org/entity/Q1003183, http://www.wikidata.org/entity/Q1160424, http://www.wikidata.org/entity/Q1236730, http://www.wikidata.org/entity/Q1293777, http://www.wikidata.org/entity/Q1444828, http://www.wikidata.org/entity/Q1507383, http://www.wikidata.org/entity/Q1645085, http://www.wikidata.org/entity/Q1925952, http://www.wikidata.org/entity/Q1935028, http://www.wikidata.org/entity/Q1969703, http://www.wikidata.org/entity/Q2381834, http://www.wikidata.org/entity/Q2404917, http://www.wikidata.org/entity/Q2479678, http://www.wikidata.org/entity/Q3276699, http://www.wikidata.org/entity/Q3517823, http://www.wikidata.org/entity/Q3517825, http://www.wikidata.org/entity/Q3517826, http://www.wikidata.org/entity/Q3517831, http://www.wikidata.org/entity/Q3517834, http://www.wikidata.org/entity/Q3820092, http://www.wikidata.org/entity/Q4698975, http://www.wikidata.org/entity/Q6311800, http://www.wikidata.org/entity/Q7113337, http://www.wikidata.org/entity/Q7370327, http://www.wikidata.org/entity/Q7540845, http://www.wikidata.org/entity/Q7899036, http://www.wikidata.org/entity/Q9356632, http://www.wikidata.org/entity/Q9356633, http://www.wikidata.org/entity/Q9356634, http://www.wikidata.org/entity/Q10384164, http://www.wikidata.org/entity/Q12716876, http://www.wikidata.org/entity/Q15849861, http://www.wikidata.org/entity/Q16876528, http://www.wikidata.org/entity/Q18400094, http://www.wikidata.org/entity/Q19759742, http://www.wikidata.org/entity/Q27098516, http://www.wikidata.org/entity/Q51921674, http://www.wikidata.org/entity/Q52019992, http://www.wikidata.org/entity/Q63958763, http://www.wikidata.org/entity/Q74758530, http://www.wikidata.org/entity/Q106432709, http://www.wikidata.org/entity/Q106914452, http://www.wikidata.org/entity/Q112187369, http://www.wikidata.org/entity/Q112187411, http://www.wikidata.org/entity/Q114797648, http://www.wikidata.org/entity/Q120270125, http://www.wikidata.org/entity/Q120974000, http://www.wikidata.org/entity/Q120974109"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11500"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Area"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1434854, http://www.wikidata.org/entity/Q1461562, http://www.wikidata.org/entity/Q2256854, http://www.wikidata.org/entity/Q3399828, http://www.wikidata.org/entity/Q3505243, http://www.wikidata.org/entity/Q3505294, http://www.wikidata.org/entity/Q4288463, http://www.wikidata.org/entity/Q5164821, http://www.wikidata.org/entity/Q5460163, http://www.wikidata.org/entity/Q6495712, http://www.wikidata.org/entity/Q11825862, http://www.wikidata.org/entity/Q13046057, http://www.wikidata.org/entity/Q15921574, http://www.wikidata.org/entity/Q17128025, http://www.wikidata.org/entity/Q17332320, http://www.wikidata.org/entity/Q29325024, http://www.wikidata.org/entity/Q56297848, http://www.wikidata.org/entity/Q71747528, http://www.wikidata.org/entity/Q87745170, http://www.wikidata.org/entity/Q94489757, http://www.wikidata.org/entity/Q98950918, http://www.wikidata.org/entity/Q98966292, http://www.wikidata.org/entity/Q98966325, http://www.wikidata.org/entity/Q107164877, http://www.wikidata.org/entity/Q107645914, http://www.wikidata.org/entity/Q112627894, http://www.wikidata.org/entity/Q113635528"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11652"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Frequency"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q249998, http://www.wikidata.org/entity/Q254758, http://www.wikidata.org/entity/Q333746, http://www.wikidata.org/entity/Q575887, http://www.wikidata.org/entity/Q754250, http://www.wikidata.org/entity/Q762856, http://www.wikidata.org/entity/Q810451, http://www.wikidata.org/entity/Q911691, http://www.wikidata.org/entity/Q946764, http://www.wikidata.org/entity/Q949326, http://www.wikidata.org/entity/Q1073121, http://www.wikidata.org/entity/Q1148098, http://www.wikidata.org/entity/Q1256787, http://www.wikidata.org/entity/Q1361387, http://www.wikidata.org/entity/Q1369335, http://www.wikidata.org/entity/Q1413664, http://www.wikidata.org/entity/Q1455881, http://www.wikidata.org/entity/Q1501757, http://www.wikidata.org/entity/Q1930371, http://www.wikidata.org/entity/Q1971063, http://www.wikidata.org/entity/Q1980046, http://www.wikidata.org/entity/Q2120632, http://www.wikidata.org/entity/Q2256871, http://www.wikidata.org/entity/Q2344692, http://www.wikidata.org/entity/Q2568075, http://www.wikidata.org/entity/Q2594137, http://www.wikidata.org/entity/Q3090440, http://www.wikidata.org/entity/Q3237776, http://www.wikidata.org/entity/Q3396184, http://www.wikidata.org/entity/Q5147502, http://www.wikidata.org/entity/Q5186717, http://www.wikidata.org/entity/Q6788014, http://www.wikidata.org/entity/Q10470221, http://www.wikidata.org/entity/Q21011986, http://www.wikidata.org/entity/Q23611439, http://www.wikidata.org/entity/Q30338278, http://www.wikidata.org/entity/Q39371046, http://www.wikidata.org/entity/Q41307322, http://www.wikidata.org/entity/Q56220712, http://www.wikidata.org/entity/Q60820681, http://www.wikidata.org/entity/Q97617324, http://www.wikidata.org/entity/Q104524228, http://www.wikidata.org/entity/Q105495868, http://www.wikidata.org/entity/Q106008771, http://www.wikidata.org/entity/Q106371934, http://www.wikidata.org/entity/Q106372205, http://www.wikidata.org/entity/Q108338454, http://www.wikidata.org/entity/Q114616621, http://www.wikidata.org/entity/Q115184691, http://www.wikidata.org/entity/Q123121454, http://www.wikidata.org/entity/Q123669327"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q20989"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricFieldStrength"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q5447130"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q27137"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricPower"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q617965, http://www.wikidata.org/entity/Q1727319, http://www.wikidata.org/entity/Q1790754, http://www.wikidata.org/entity/Q1930258, http://www.wikidata.org/entity/Q2144613, http://www.wikidata.org/entity/Q11425915, http://www.wikidata.org/entity/Q11784325, http://www.wikidata.org/entity/Q20820042, http://www.wikidata.org/entity/Q65239736, http://www.wikidata.org/entity/Q79813060, http://www.wikidata.org/entity/Q111954952"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q27165"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "PartialPressure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q898412, http://www.wikidata.org/entity/Q4927803, http://www.wikidata.org/entity/Q10343041, http://www.wikidata.org/entity/Q12371749, http://www.wikidata.org/entity/Q94730295, http://www.wikidata.org/entity/Q106635619"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q28352"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectromagneticPermeability"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1515261, http://www.wikidata.org/entity/Q7169314, http://www.wikidata.org/entity/Q118895841"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q39552"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Pressure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q27165, http://www.wikidata.org/entity/Q82642, http://www.wikidata.org/entity/Q193135, http://www.wikidata.org/entity/Q331466, http://www.wikidata.org/entity/Q352381, http://www.wikidata.org/entity/Q383041, http://www.wikidata.org/entity/Q649036, http://www.wikidata.org/entity/Q650050, http://www.wikidata.org/entity/Q789775, http://www.wikidata.org/entity/Q844863, http://www.wikidata.org/entity/Q949674, http://www.wikidata.org/entity/Q956248, http://www.wikidata.org/entity/Q1043944, http://www.wikidata.org/entity/Q1068172, http://www.wikidata.org/entity/Q1149672, http://www.wikidata.org/entity/Q1261069, http://www.wikidata.org/entity/Q1283196, http://www.wikidata.org/entity/Q1416096, http://www.wikidata.org/entity/Q1468336, http://www.wikidata.org/entity/Q1759415, http://www.wikidata.org/entity/Q1789953, http://www.wikidata.org/entity/Q1894142, http://www.wikidata.org/entity/Q2116522, http://www.wikidata.org/entity/Q2387102, http://www.wikidata.org/entity/Q2406217, http://www.wikidata.org/entity/Q2497391, http://www.wikidata.org/entity/Q2550925, http://www.wikidata.org/entity/Q2652667, http://www.wikidata.org/entity/Q2661322, http://www.wikidata.org/entity/Q2914346, http://www.wikidata.org/entity/Q3402613, http://www.wikidata.org/entity/Q4115097, http://www.wikidata.org/entity/Q5048815, http://www.wikidata.org/entity/Q5282315, http://www.wikidata.org/entity/Q5610964, http://www.wikidata.org/entity/Q6803612, http://www.wikidata.org/entity/Q7157859, http://www.wikidata.org/entity/Q7202231, http://www.wikidata.org/entity/Q7310003, http://www.wikidata.org/entity/Q7847592, http://www.wikidata.org/entity/Q9193044, http://www.wikidata.org/entity/Q10398134, http://www.wikidata.org/entity/Q14646021, http://www.wikidata.org/entity/Q19710049, http://www.wikidata.org/entity/Q21618809, http://www.wikidata.org/entity/Q25098777, http://www.wikidata.org/entity/Q55619950, http://www.wikidata.org/entity/Q55670129, http://www.wikidata.org/entity/Q112265407, http://www.wikidata.org/entity/Q114353274"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q48103"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Torque"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q253897, http://www.wikidata.org/entity/Q2390014, http://www.wikidata.org/entity/Q3773538, http://www.wikidata.org/entity/Q5347284, http://www.wikidata.org/entity/Q18500531"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q145623"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MolarMass"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q909693, http://www.wikidata.org/entity/Q3900742, http://www.wikidata.org/entity/Q108156632"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q176449"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "NumberDensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q905186, http://www.wikidata.org/entity/Q2189341, http://www.wikidata.org/entity/Q55433425, http://www.wikidata.org/entity/Q98601569, http://www.wikidata.org/entity/Q105637568, http://www.wikidata.org/entity/Q105687208, http://www.wikidata.org/entity/Q105971077, http://www.wikidata.org/entity/Q105971101, http://www.wikidata.org/entity/Q108266525"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q179043"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Impedance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q631203, http://www.wikidata.org/entity/Q1164612, http://www.wikidata.org/entity/Q1307489, http://www.wikidata.org/entity/Q18450593, http://www.wikidata.org/entity/Q56296560"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q204570"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "InformationEntropy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q122192, http://www.wikidata.org/entity/Q1364826, http://www.wikidata.org/entity/Q1433083, http://www.wikidata.org/entity/Q106416338, http://www.wikidata.org/entity/Q106460846, http://www.wikidata.org/entity/Q106460889"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q208476"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SolidAngle"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q911907, http://www.wikidata.org/entity/Q1076893, http://www.wikidata.org/entity/Q2734473, http://www.wikidata.org/entity/Q56312725"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q25288"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Weight"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q953254, http://www.wikidata.org/entity/Q1399742, http://www.wikidata.org/entity/Q1434070, http://www.wikidata.org/entity/Q2128324, http://www.wikidata.org/entity/Q2289703, http://www.wikidata.org/entity/Q2591447, http://www.wikidata.org/entity/Q6795900, http://www.wikidata.org/entity/Q6795910, http://www.wikidata.org/entity/Q12271011, http://www.wikidata.org/entity/Q18029527, http://www.wikidata.org/entity/Q18089136, http://www.wikidata.org/entity/Q21023768, http://www.wikidata.org/entity/Q55229595, http://www.wikidata.org/entity/Q102199944, http://www.wikidata.org/entity/Q105349645"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q25342"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Power"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q27137, http://www.wikidata.org/entity/Q200974, http://www.wikidata.org/entity/Q358527, http://www.wikidata.org/entity/Q1053879, http://www.wikidata.org/entity/Q1253356, http://www.wikidata.org/entity/Q1295986, http://www.wikidata.org/entity/Q1366402, http://www.wikidata.org/entity/Q1532594, http://www.wikidata.org/entity/Q1588477, http://www.wikidata.org/entity/Q1977347, http://www.wikidata.org/entity/Q2404144, http://www.wikidata.org/entity/Q2419903, http://www.wikidata.org/entity/Q2501096, http://www.wikidata.org/entity/Q2557224, http://www.wikidata.org/entity/Q8192415, http://www.wikidata.org/entity/Q12056989, http://www.wikidata.org/entity/Q12160631, http://www.wikidata.org/entity/Q13862579, http://www.wikidata.org/entity/Q14646828, http://www.wikidata.org/entity/Q15790761, http://www.wikidata.org/entity/Q18206829, http://www.wikidata.org/entity/Q25381657, http://www.wikidata.org/entity/Q25508474, http://www.wikidata.org/entity/Q80806956, http://www.wikidata.org/entity/Q106321197, http://www.wikidata.org/entity/Q108501633, http://www.wikidata.org/entity/Q125390958"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q25428"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Voltage"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q248310, http://www.wikidata.org/entity/Q333853, http://www.wikidata.org/entity/Q352670, http://www.wikidata.org/entity/Q390700, http://www.wikidata.org/entity/Q816369, http://www.wikidata.org/entity/Q829389, http://www.wikidata.org/entity/Q832069, http://www.wikidata.org/entity/Q1139740, http://www.wikidata.org/entity/Q1267190, http://www.wikidata.org/entity/Q1344937, http://www.wikidata.org/entity/Q1470154, http://www.wikidata.org/entity/Q1504817, http://www.wikidata.org/entity/Q1773912, http://www.wikidata.org/entity/Q1774068, http://www.wikidata.org/entity/Q1794467, http://www.wikidata.org/entity/Q1812203, http://www.wikidata.org/entity/Q1979176, http://www.wikidata.org/entity/Q2083296, http://www.wikidata.org/entity/Q2193259, http://www.wikidata.org/entity/Q2223834, http://www.wikidata.org/entity/Q2705009, http://www.wikidata.org/entity/Q5459851, http://www.wikidata.org/entity/Q10429822, http://www.wikidata.org/entity/Q10677608, http://www.wikidata.org/entity/Q10684297, http://www.wikidata.org/entity/Q11789531, http://www.wikidata.org/entity/Q11812145, http://www.wikidata.org/entity/Q12057670, http://www.wikidata.org/entity/Q78514605, http://www.wikidata.org/entity/Q96796028, http://www.wikidata.org/entity/Q96796034, http://www.wikidata.org/entity/Q105761637, http://www.wikidata.org/entity/Q106541805, http://www.wikidata.org/entity/Q108057700, http://www.wikidata.org/entity/Q108067944, http://www.wikidata.org/entity/Q109436805, http://www.wikidata.org/entity/Q109610498, http://www.wikidata.org/entity/Q109610517, http://www.wikidata.org/entity/Q110107378, http://www.wikidata.org/entity/Q118309876, http://www.wikidata.org/entity/Q119285877, http://www.wikidata.org/entity/Q123998030"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11402"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Force"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q25288, http://www.wikidata.org/entity/Q145660, http://www.wikidata.org/entity/Q172137, http://www.wikidata.org/entity/Q172881, http://www.wikidata.org/entity/Q190663, http://www.wikidata.org/entity/Q212126, http://www.wikidata.org/entity/Q223325, http://www.wikidata.org/entity/Q228436, http://www.wikidata.org/entity/Q231633, http://www.wikidata.org/entity/Q245031, http://www.wikidata.org/entity/Q253011, http://www.wikidata.org/entity/Q336744, http://www.wikidata.org/entity/Q343546, http://www.wikidata.org/entity/Q533668, http://www.wikidata.org/entity/Q748254, http://www.wikidata.org/entity/Q759810, http://www.wikidata.org/entity/Q815284, http://www.wikidata.org/entity/Q822938, http://www.wikidata.org/entity/Q843565, http://www.wikidata.org/entity/Q868425, http://www.wikidata.org/entity/Q901768, http://www.wikidata.org/entity/Q906277, http://www.wikidata.org/entity/Q908584, http://www.wikidata.org/entity/Q1335400, http://www.wikidata.org/entity/Q1541234, http://www.wikidata.org/entity/Q1566236, http://www.wikidata.org/entity/Q1571801, http://www.wikidata.org/entity/Q1751425, http://www.wikidata.org/entity/Q1759756, http://www.wikidata.org/entity/Q2009590, http://www.wikidata.org/entity/Q2515143, http://www.wikidata.org/entity/Q2712821, http://www.wikidata.org/entity/Q2880612, http://www.wikidata.org/entity/Q2916417, http://www.wikidata.org/entity/Q3299483, http://www.wikidata.org/entity/Q3443987, http://www.wikidata.org/entity/Q3538122, http://www.wikidata.org/entity/Q3775766, http://www.wikidata.org/entity/Q3900737, http://www.wikidata.org/entity/Q4162367, http://www.wikidata.org/entity/Q4674704, http://www.wikidata.org/entity/Q5170715, http://www.wikidata.org/entity/Q5467462, http://www.wikidata.org/entity/Q7196358, http://www.wikidata.org/entity/Q7492174, http://www.wikidata.org/entity/Q7964839, http://www.wikidata.org/entity/Q9364384, http://www.wikidata.org/entity/Q11423906, http://www.wikidata.org/entity/Q11773690, http://www.wikidata.org/entity/Q12378993, http://www.wikidata.org/entity/Q12980679, http://www.wikidata.org/entity/Q15087352, http://www.wikidata.org/entity/Q19714621, http://www.wikidata.org/entity/Q25497093, http://www.wikidata.org/entity/Q38084560, http://www.wikidata.org/entity/Q55605540, http://www.wikidata.org/entity/Q59286602, http://www.wikidata.org/entity/Q69684056, http://www.wikidata.org/entity/Q90862568, http://www.wikidata.org/entity/Q91005629, http://www.wikidata.org/entity/Q101960694, http://www.wikidata.org/entity/Q105946155, http://www.wikidata.org/entity/Q110453295, http://www.wikidata.org/entity/Q110544007, http://www.wikidata.org/entity/Q110558361, http://www.wikidata.org/entity/Q111439208, http://www.wikidata.org/entity/Q112939462, http://www.wikidata.org/entity/Q118414969, http://www.wikidata.org/entity/Q118414970, http://www.wikidata.org/entity/Q119510698, http://www.wikidata.org/entity/Q123536894"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q29539"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Density"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q441412, http://www.wikidata.org/entity/Q589446, http://www.wikidata.org/entity/Q658784, http://www.wikidata.org/entity/Q899249, http://www.wikidata.org/entity/Q1511415, http://www.wikidata.org/entity/Q1990739, http://www.wikidata.org/entity/Q2334471, http://www.wikidata.org/entity/Q2699482, http://www.wikidata.org/entity/Q4241342, http://www.wikidata.org/entity/Q4365416, http://www.wikidata.org/entity/Q6546275, http://www.wikidata.org/entity/Q11868830, http://www.wikidata.org/entity/Q11872989, http://www.wikidata.org/entity/Q12767234, http://www.wikidata.org/entity/Q14179117, http://www.wikidata.org/entity/Q18408015, http://www.wikidata.org/entity/Q56401147, http://www.wikidata.org/entity/Q56401246, http://www.wikidata.org/entity/Q56402032, http://www.wikidata.org/entity/Q99890130, http://www.wikidata.org/entity/Q101584464, http://www.wikidata.org/entity/Q101961654, http://www.wikidata.org/entity/Q104671535, http://www.wikidata.org/entity/Q104671541, http://www.wikidata.org/entity/Q104723899, http://www.wikidata.org/entity/Q104743982, http://www.wikidata.org/entity/Q104774400, http://www.wikidata.org/entity/Q104774598, http://www.wikidata.org/entity/Q107693641, http://www.wikidata.org/entity/Q108123164"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q28123"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MagneticFieldStrength"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q18747500, http://www.wikidata.org/entity/Q106127565, http://www.wikidata.org/entity/Q106127763"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q29996"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricCurrent"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q884373, http://www.wikidata.org/entity/Q3150571, http://www.wikidata.org/entity/Q7170406, http://www.wikidata.org/entity/Q77995703, http://www.wikidata.org/entity/Q78514596, http://www.wikidata.org/entity/Q105404763, http://www.wikidata.org/entity/Q108057717, http://www.wikidata.org/entity/Q108067970, http://www.wikidata.org/entity/Q108167057, http://www.wikidata.org/entity/Q119285737"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q30204"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MagneticFluxDensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q106103200, http://www.wikidata.org/entity/Q106127355, http://www.wikidata.org/entity/Q106127634"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q36253"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Length"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q35059, http://www.wikidata.org/entity/Q37221, http://www.wikidata.org/entity/Q171594, http://www.wikidata.org/entity/Q173817, http://www.wikidata.org/entity/Q190291, http://www.wikidata.org/entity/Q193540, http://www.wikidata.org/entity/Q208826, http://www.wikidata.org/entity/Q209849, http://www.wikidata.org/entity/Q215932, http://www.wikidata.org/entity/Q245097, http://www.wikidata.org/entity/Q256077, http://www.wikidata.org/entity/Q303097, http://www.wikidata.org/entity/Q306578, http://www.wikidata.org/entity/Q339716, http://www.wikidata.org/entity/Q366058, http://www.wikidata.org/entity/Q369743, http://www.wikidata.org/entity/Q625641, http://www.wikidata.org/entity/Q670036, http://www.wikidata.org/entity/Q847073, http://www.wikidata.org/entity/Q863695, http://www.wikidata.org/entity/Q898268, http://www.wikidata.org/entity/Q903040, http://www.wikidata.org/entity/Q912925, http://www.wikidata.org/entity/Q930412, http://www.wikidata.org/entity/Q1062974, http://www.wikidata.org/entity/Q1267137, http://www.wikidata.org/entity/Q1371512, http://www.wikidata.org/entity/Q1578234, http://www.wikidata.org/entity/Q1778793, http://www.wikidata.org/entity/Q1817392, http://www.wikidata.org/entity/Q1960395, http://www.wikidata.org/entity/Q2014110, http://www.wikidata.org/entity/Q2594149, http://www.wikidata.org/entity/Q2633778, http://www.wikidata.org/entity/Q3052998, http://www.wikidata.org/entity/Q3198879, http://www.wikidata.org/entity/Q3250078, http://www.wikidata.org/entity/Q3277853, http://www.wikidata.org/entity/Q3589038, http://www.wikidata.org/entity/Q3749881, http://www.wikidata.org/entity/Q3951250, http://www.wikidata.org/entity/Q7144654, http://www.wikidata.org/entity/Q7430096, http://www.wikidata.org/entity/Q7643174, http://www.wikidata.org/entity/Q7814442, http://www.wikidata.org/entity/Q11486603, http://www.wikidata.org/entity/Q11611514, http://www.wikidata.org/entity/Q16042695, http://www.wikidata.org/entity/Q17145489, http://www.wikidata.org/entity/Q23758069, http://www.wikidata.org/entity/Q25380013, http://www.wikidata.org/entity/Q41717286, http://www.wikidata.org/entity/Q47226134, http://www.wikidata.org/entity/Q47327861, http://www.wikidata.org/entity/Q56296612, http://www.wikidata.org/entity/Q56316565, http://www.wikidata.org/entity/Q66319570, http://www.wikidata.org/entity/Q70080830, http://www.wikidata.org/entity/Q73454785, http://www.wikidata.org/entity/Q91308394, http://www.wikidata.org/entity/Q97499733, http://www.wikidata.org/entity/Q98681589, http://www.wikidata.org/entity/Q98950584, http://www.wikidata.org/entity/Q98996963, http://www.wikidata.org/entity/Q98997762, http://www.wikidata.org/entity/Q98998318, http://www.wikidata.org/entity/Q106097176, http://www.wikidata.org/entity/Q106704832, http://www.wikidata.org/entity/Q106704837, http://www.wikidata.org/entity/Q107657706, http://www.wikidata.org/entity/Q107693737, http://www.wikidata.org/entity/Q108338741, http://www.wikidata.org/entity/Q108525019, http://www.wikidata.org/entity/Q108535649, http://www.wikidata.org/entity/Q109356787, http://www.wikidata.org/entity/Q110592195, http://www.wikidata.org/entity/Q111900404, http://www.wikidata.org/entity/Q111900522, http://www.wikidata.org/entity/Q112274565, http://www.wikidata.org/entity/Q113142443, http://www.wikidata.org/entity/Q113378486, http://www.wikidata.org/entity/Q119949189, http://www.wikidata.org/entity/Q123183760, http://www.wikidata.org/entity/Q124216991, http://www.wikidata.org/entity/Q124288708, http://www.wikidata.org/entity/Q126689022"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q55451"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricPotential"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q62525, http://www.wikidata.org/entity/Q196823, http://www.wikidata.org/entity/Q901822"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q81809"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AtmosphericPressure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1423047, http://www.wikidata.org/entity/Q12717817"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q164399"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Capacitance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2157249, http://www.wikidata.org/entity/Q112652000"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q177831"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MagneticFlux"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q118255404, http://www.wikidata.org/entity/Q118574738"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q184550"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MechanicalEnergy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q46276, http://www.wikidata.org/entity/Q155640, http://www.wikidata.org/entity/Q3076906"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q193135"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "OsmoticPressure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q16670987"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q214518"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Admittance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q4683822"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q214881"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Curvature, CurvatureFromRadius"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q805071, http://www.wikidata.org/entity/Q945953, http://www.wikidata.org/entity/Q1072476, http://www.wikidata.org/entity/Q1147161, http://www.wikidata.org/entity/Q1318998, http://www.wikidata.org/entity/Q1383823, http://www.wikidata.org/entity/Q1460595, http://www.wikidata.org/entity/Q1589551, http://www.wikidata.org/entity/Q1892644, http://www.wikidata.org/entity/Q2250422, http://www.wikidata.org/entity/Q2303325, http://www.wikidata.org/entity/Q2534455, http://www.wikidata.org/entity/Q4240689, http://www.wikidata.org/entity/Q10477354, http://www.wikidata.org/entity/Q10526265, http://www.wikidata.org/entity/Q13425559, http://www.wikidata.org/entity/Q92972248, http://www.wikidata.org/entity/Q109316995, http://www.wikidata.org/entity/Q130249288"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q789775"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AmbientPressure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q81809"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q815588"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LuminousExposure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q107152168"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q834020"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AngularFrequency"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q97617059, http://www.wikidata.org/entity/Q97641779, http://www.wikidata.org/entity/Q97708211, http://www.wikidata.org/entity/Q105542394, http://www.wikidata.org/entity/Q105580986"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q902086"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AttenuationCoefficient"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q105623399"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1134348"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "VolumeFlowRate"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q488071, http://www.wikidata.org/entity/Q596579, http://www.wikidata.org/entity/Q1163287, http://www.wikidata.org/entity/Q1640308, http://www.wikidata.org/entity/Q8737769"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1357788"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Angle"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q13442, http://www.wikidata.org/entity/Q76287, http://www.wikidata.org/entity/Q165074, http://www.wikidata.org/entity/Q179745, http://www.wikidata.org/entity/Q216715, http://www.wikidata.org/entity/Q270897, http://www.wikidata.org/entity/Q271439, http://www.wikidata.org/entity/Q336092, http://www.wikidata.org/entity/Q370906, http://www.wikidata.org/entity/Q415829, http://www.wikidata.org/entity/Q662790, http://www.wikidata.org/entity/Q718647, http://www.wikidata.org/entity/Q734439, http://www.wikidata.org/entity/Q1057900, http://www.wikidata.org/entity/Q1196575, http://www.wikidata.org/entity/Q1973955, http://www.wikidata.org/entity/Q2059855, http://www.wikidata.org/entity/Q2105737, http://www.wikidata.org/entity/Q2839478, http://www.wikidata.org/entity/Q2849620, http://www.wikidata.org/entity/Q2919140, http://www.wikidata.org/entity/Q2940212, http://www.wikidata.org/entity/Q3259126, http://www.wikidata.org/entity/Q3305038, http://www.wikidata.org/entity/Q3352195, http://www.wikidata.org/entity/Q4112212, http://www.wikidata.org/entity/Q4116720, http://www.wikidata.org/entity/Q4363928, http://www.wikidata.org/entity/Q4384217, http://www.wikidata.org/entity/Q4763367, http://www.wikidata.org/entity/Q4764021, http://www.wikidata.org/entity/Q7180940, http://www.wikidata.org/entity/Q7180955, http://www.wikidata.org/entity/Q20180457, http://www.wikidata.org/entity/Q20820438, http://www.wikidata.org/entity/Q55393312, http://www.wikidata.org/entity/Q66852663, http://www.wikidata.org/entity/Q68297121, http://www.wikidata.org/entity/Q96323385, http://www.wikidata.org/entity/Q97222919, http://www.wikidata.org/entity/Q105488118, http://www.wikidata.org/entity/Q112704450, http://www.wikidata.org/entity/Q116609949, http://www.wikidata.org/entity/Q116757614, http://www.wikidata.org/entity/Q116768912, http://www.wikidata.org/entity/Q116814116, http://www.wikidata.org/entity/Q119244742, http://www.wikidata.org/entity/Q119244874, http://www.wikidata.org/entity/Q119396915, http://www.wikidata.org/entity/Q119396965"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1111"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricCharge"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q909960, http://www.wikidata.org/entity/Q1437449, http://www.wikidata.org/entity/Q2611270, http://www.wikidata.org/entity/Q2748792, http://www.wikidata.org/entity/Q18021646, http://www.wikidata.org/entity/Q108296019, http://www.wikidata.org/entity/Q113443956"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q41273"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Momentum"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q459067, http://www.wikidata.org/entity/Q692457, http://www.wikidata.org/entity/Q1068463, http://www.wikidata.org/entity/Q1425279"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q41364"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Wavelength"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q254758, http://www.wikidata.org/entity/Q305050, http://www.wikidata.org/entity/Q1145377, http://www.wikidata.org/entity/Q2557670, http://www.wikidata.org/entity/Q80173663, http://www.wikidata.org/entity/Q100981463, http://www.wikidata.org/entity/Q105488366, http://www.wikidata.org/entity/Q105581076"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q104831"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LuminousIntensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q647084, http://www.wikidata.org/entity/Q2104355"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q124003"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SpeedOfSound"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q6565993, http://www.wikidata.org/entity/Q86501878, http://www.wikidata.org/entity/Q86508881, http://www.wikidata.org/entity/Q112509497, http://www.wikidata.org/entity/Q112509984"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q128709"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Viscosity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q127694, http://www.wikidata.org/entity/Q2804680, http://www.wikidata.org/entity/Q4014770, http://www.wikidata.org/entity/Q6033731, http://www.wikidata.org/entity/Q9355614, http://www.wikidata.org/entity/Q15106259, http://www.wikidata.org/entity/Q15152757, http://www.wikidata.org/entity/Q16682780, http://www.wikidata.org/entity/Q18394423, http://www.wikidata.org/entity/Q56315952, http://www.wikidata.org/entity/Q97659809, http://www.wikidata.org/entity/Q115451682"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q131191"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "BodyMassIndex"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q10537347"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q160669"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MachNumber"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1777346"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q161635"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AngularVelocity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q3541840"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q182854"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MolecularMass"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q6895982"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q211569"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Permittivity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q6158"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q217690"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "IncidenceProportion"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q28777995"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q232431"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "QuantumNumber"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q110346, http://www.wikidata.org/entity/Q174012, http://www.wikidata.org/entity/Q380528, http://www.wikidata.org/entity/Q634781, http://www.wikidata.org/entity/Q736429, http://www.wikidata.org/entity/Q836938, http://www.wikidata.org/entity/Q867448, http://www.wikidata.org/entity/Q1141095, http://www.wikidata.org/entity/Q1194002, http://www.wikidata.org/entity/Q1364131, http://www.wikidata.org/entity/Q1916324, http://www.wikidata.org/entity/Q2009727, http://www.wikidata.org/entity/Q2555508, http://www.wikidata.org/entity/Q2639620, http://www.wikidata.org/entity/Q3879445, http://www.wikidata.org/entity/Q5583136, http://www.wikidata.org/entity/Q5604179, http://www.wikidata.org/entity/Q6935008, http://www.wikidata.org/entity/Q97577403, http://www.wikidata.org/entity/Q97577449, http://www.wikidata.org/entity/Q112691794, http://www.wikidata.org/entity/Q112691836"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q264647"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ThermodynamicTemperature"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q178828, http://www.wikidata.org/entity/Q327408, http://www.wikidata.org/entity/Q900304, http://www.wikidata.org/entity/Q1450516, http://www.wikidata.org/entity/Q3517821, http://www.wikidata.org/entity/Q4538627, http://www.wikidata.org/entity/Q4996491, http://www.wikidata.org/entity/Q6934620, http://www.wikidata.org/entity/Q25452284, http://www.wikidata.org/entity/Q56297886, http://www.wikidata.org/entity/Q67173088, http://www.wikidata.org/entity/Q92890596, http://www.wikidata.org/entity/Q93950941, http://www.wikidata.org/entity/Q93951203, http://www.wikidata.org/entity/Q105942324, http://www.wikidata.org/entity/Q108367432, http://www.wikidata.org/entity/Q109330092"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q317949"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Activity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q6380354"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q487005"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ThermalConductivity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q10404265"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q589446"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MassConcentration"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q432392, http://www.wikidata.org/entity/Q597889, http://www.wikidata.org/entity/Q658883, http://www.wikidata.org/entity/Q1273048, http://www.wikidata.org/entity/Q1993436, http://www.wikidata.org/entity/Q2185939, http://www.wikidata.org/entity/Q2537479, http://www.wikidata.org/entity/Q2964389, http://www.wikidata.org/entity/Q3256551, http://www.wikidata.org/entity/Q3963915, http://www.wikidata.org/entity/Q10431462, http://www.wikidata.org/entity/Q10438898, http://www.wikidata.org/entity/Q21028902, http://www.wikidata.org/entity/Q52309395, http://www.wikidata.org/entity/Q52310003, http://www.wikidata.org/entity/Q55435629, http://www.wikidata.org/entity/Q55435676, http://www.wikidata.org/entity/Q55435678, http://www.wikidata.org/entity/Q55435772, http://www.wikidata.org/entity/Q55435854, http://www.wikidata.org/entity/Q55435855, http://www.wikidata.org/entity/Q55442486, http://www.wikidata.org/entity/Q55442528, http://www.wikidata.org/entity/Q55442766, http://www.wikidata.org/entity/Q55442769, http://www.wikidata.org/entity/Q55442770, http://www.wikidata.org/entity/Q55443271, http://www.wikidata.org/entity/Q55443273, http://www.wikidata.org/entity/Q55443276, http://www.wikidata.org/entity/Q55443328, http://www.wikidata.org/entity/Q55443334, http://www.wikidata.org/entity/Q55443363, http://www.wikidata.org/entity/Q65956716, http://www.wikidata.org/entity/Q76378758, http://www.wikidata.org/entity/Q76378808, http://www.wikidata.org/entity/Q106378632"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q30006"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AccelerationOfGravity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q673166, http://www.wikidata.org/entity/Q1758384"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q35059"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Width"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q86850, http://www.wikidata.org/entity/Q908126, http://www.wikidata.org/entity/Q2356124, http://www.wikidata.org/entity/Q3372925, http://www.wikidata.org/entity/Q5444078, http://www.wikidata.org/entity/Q77835705, http://www.wikidata.org/entity/Q89694869, http://www.wikidata.org/entity/Q91308051, http://www.wikidata.org/entity/Q97380620, http://www.wikidata.org/entity/Q104519132, http://www.wikidata.org/entity/Q113142565"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q37221"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Diameter"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q170417, http://www.wikidata.org/entity/Q245657, http://www.wikidata.org/entity/Q256084, http://www.wikidata.org/entity/Q1327735, http://www.wikidata.org/entity/Q1670896, http://www.wikidata.org/entity/Q3026125, http://www.wikidata.org/entity/Q4241346, http://www.wikidata.org/entity/Q4876179, http://www.wikidata.org/entity/Q7674104, http://www.wikidata.org/entity/Q16001685, http://www.wikidata.org/entity/Q27204534, http://www.wikidata.org/entity/Q27864037, http://www.wikidata.org/entity/Q63572027, http://www.wikidata.org/entity/Q69505238, http://www.wikidata.org/entity/Q102110641, http://www.wikidata.org/entity/Q107646069, http://www.wikidata.org/entity/Q108337970, http://www.wikidata.org/entity/Q108338329, http://www.wikidata.org/entity/Q108395078, http://www.wikidata.org/entity/Q121707296"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q46276"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "EnergyKinetic, KineticEnergy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2140940, http://www.wikidata.org/entity/Q52664317, http://www.wikidata.org/entity/Q98930782, http://www.wikidata.org/entity/Q108296095, http://www.wikidata.org/entity/Q112658527"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q82580"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Friction"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1268968, http://www.wikidata.org/entity/Q1852039, http://www.wikidata.org/entity/Q2139080, http://www.wikidata.org/entity/Q2143425, http://www.wikidata.org/entity/Q2267664, http://www.wikidata.org/entity/Q9355614, http://www.wikidata.org/entity/Q9355616, http://www.wikidata.org/entity/Q11634871, http://www.wikidata.org/entity/Q11921440, http://www.wikidata.org/entity/Q16856760, http://www.wikidata.org/entity/Q25628682, http://www.wikidata.org/entity/Q57654909, http://www.wikidata.org/entity/Q90862568, http://www.wikidata.org/entity/Q99492067, http://www.wikidata.org/entity/Q112075599, http://www.wikidata.org/entity/Q118429832"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q155640"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "PotentialEnergy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q177812, http://www.wikidata.org/entity/Q420754, http://www.wikidata.org/entity/Q582668, http://www.wikidata.org/entity/Q841798, http://www.wikidata.org/entity/Q891408, http://www.wikidata.org/entity/Q2297853, http://www.wikidata.org/entity/Q10571806, http://www.wikidata.org/entity/Q22676898"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q161254"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AngularMomentum"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q133673, http://www.wikidata.org/entity/Q12764947, http://www.wikidata.org/entity/Q97496506"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q165618"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MomentOfInertia"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q28758267"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q173817"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Radius"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q72755, http://www.wikidata.org/entity/Q483788, http://www.wikidata.org/entity/Q746155, http://www.wikidata.org/entity/Q1136069, http://www.wikidata.org/entity/Q1194458, http://www.wikidata.org/entity/Q1426166, http://www.wikidata.org/entity/Q2482717, http://www.wikidata.org/entity/Q2556450, http://www.wikidata.org/entity/Q2558948, http://www.wikidata.org/entity/Q3421305, http://www.wikidata.org/entity/Q3535676, http://www.wikidata.org/entity/Q3678113, http://www.wikidata.org/entity/Q3799068, http://www.wikidata.org/entity/Q3929408, http://www.wikidata.org/entity/Q4512359, http://www.wikidata.org/entity/Q4925394, http://www.wikidata.org/entity/Q5349805, http://www.wikidata.org/entity/Q54494121, http://www.wikidata.org/entity/Q78257788, http://www.wikidata.org/entity/Q102310977, http://www.wikidata.org/entity/Q104054804, http://www.wikidata.org/entity/Q108367011, http://www.wikidata.org/entity/Q108367017, http://www.wikidata.org/entity/Q116610186"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q177897"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Inductance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1515253, http://www.wikidata.org/entity/Q10439211, http://www.wikidata.org/entity/Q78101401, http://www.wikidata.org/entity/Q102274741"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q39297"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Volume"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q466511, http://www.wikidata.org/entity/Q491774, http://www.wikidata.org/entity/Q754333, http://www.wikidata.org/entity/Q1073808, http://www.wikidata.org/entity/Q1150471, http://www.wikidata.org/entity/Q1332167, http://www.wikidata.org/entity/Q1358504, http://www.wikidata.org/entity/Q1698533, http://www.wikidata.org/entity/Q2164998, http://www.wikidata.org/entity/Q2327764, http://www.wikidata.org/entity/Q2334477, http://www.wikidata.org/entity/Q2682827, http://www.wikidata.org/entity/Q2933696, http://www.wikidata.org/entity/Q3531619, http://www.wikidata.org/entity/Q4469374, http://www.wikidata.org/entity/Q5957811, http://www.wikidata.org/entity/Q6002517, http://www.wikidata.org/entity/Q6803639, http://www.wikidata.org/entity/Q14645875, http://www.wikidata.org/entity/Q15088946, http://www.wikidata.org/entity/Q27653479, http://www.wikidata.org/entity/Q60790093, http://www.wikidata.org/entity/Q91308829, http://www.wikidata.org/entity/Q108239762, http://www.wikidata.org/entity/Q109461644, http://www.wikidata.org/entity/Q113570809"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q41377"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RelativeAtomicMass"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q28912964"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q42213"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Work"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q900231, http://www.wikidata.org/entity/Q1144923, http://www.wikidata.org/entity/Q1926935, http://www.wikidata.org/entity/Q12036252, http://www.wikidata.org/entity/Q28555555, http://www.wikidata.org/entity/Q28599240, http://www.wikidata.org/entity/Q105543999, http://www.wikidata.org/entity/Q124290144"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q44432"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Heat"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q207721, http://www.wikidata.org/entity/Q288706, http://www.wikidata.org/entity/Q1480581, http://www.wikidata.org/entity/Q1662393, http://www.wikidata.org/entity/Q4455329, http://www.wikidata.org/entity/Q10577628, http://www.wikidata.org/entity/Q16719623, http://www.wikidata.org/entity/Q29349240, http://www.wikidata.org/entity/Q34249508"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q45003"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Entropy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q367131, http://www.wikidata.org/entity/Q1583335, http://www.wikidata.org/entity/Q3814104, http://www.wikidata.org/entity/Q4958282, http://www.wikidata.org/entity/Q5159273, http://www.wikidata.org/entity/Q5160266, http://www.wikidata.org/entity/Q5380792, http://www.wikidata.org/entity/Q5380808, http://www.wikidata.org/entity/Q6675823, http://www.wikidata.org/entity/Q6961323, http://www.wikidata.org/entity/Q7269091, http://www.wikidata.org/entity/Q7979710, http://www.wikidata.org/entity/Q8776460, http://www.wikidata.org/entity/Q12727673, http://www.wikidata.org/entity/Q17090689, http://www.wikidata.org/entity/Q25398039, http://www.wikidata.org/entity/Q56320520, http://www.wikidata.org/entity/Q56320527, http://www.wikidata.org/entity/Q98681559, http://www.wikidata.org/entity/Q104210630, http://www.wikidata.org/entity/Q104210755, http://www.wikidata.org/entity/Q109467207"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q104946"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AmountOfSubstance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2002342, http://www.wikidata.org/entity/Q61770912, http://www.wikidata.org/entity/Q70452881, http://www.wikidata.org/entity/Q99541196, http://www.wikidata.org/entity/Q100273068, http://www.wikidata.org/entity/Q108147201, http://www.wikidata.org/entity/Q108156966, http://www.wikidata.org/entity/Q108157056, http://www.wikidata.org/entity/Q109222374"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q598305"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricSusceptibility"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q118423454"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q899138"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MassFraction"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q783618, http://www.wikidata.org/entity/Q1401905, http://www.wikidata.org/entity/Q76379025"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q899628"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ThermalResistance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q3457825"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q908584"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Tension"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q117568890"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1366187"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MassFlowRate"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q104774557, http://www.wikidata.org/entity/Q104774574"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1452104"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ThermalEfficiency"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q5042317"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1588477"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SoundPower"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q108124193"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1735592"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "CatalyticActivity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q22035510"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q2642727"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Period"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q37640, http://www.wikidata.org/entity/Q185981, http://www.wikidata.org/entity/Q432343, http://www.wikidata.org/entity/Q3150568, http://www.wikidata.org/entity/Q5333042, http://www.wikidata.org/entity/Q18668861, http://www.wikidata.org/entity/Q106268500, http://www.wikidata.org/entity/Q106329548"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q69425629"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricChargeDensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q97922972, http://www.wikidata.org/entity/Q107058879, http://www.wikidata.org/entity/Q112731152"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q76378808"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MassConcentrationOfWaterVapour"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q94730744"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q98601569"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ParticleNumberDensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q3343110, http://www.wikidata.org/entity/Q98831218, http://www.wikidata.org/entity/Q108266525"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q105435234"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LatticeVector"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q105451063"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q2199864"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Time"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q3983322, http://www.wikidata.org/entity/Q4445182, http://www.wikidata.org/entity/Q4671283, http://www.wikidata.org/entity/Q5073773, http://www.wikidata.org/entity/Q5169289, http://www.wikidata.org/entity/Q5316263, http://www.wikidata.org/entity/Q5321508, http://www.wikidata.org/entity/Q5476614, http://www.wikidata.org/entity/Q6073119, http://www.wikidata.org/entity/Q7259675, http://www.wikidata.org/entity/Q7370322, http://www.wikidata.org/entity/Q7702730, http://www.wikidata.org/entity/Q7805411, http://www.wikidata.org/entity/Q7833720, http://www.wikidata.org/entity/Q7911665, http://www.wikidata.org/entity/Q9019674, http://www.wikidata.org/entity/Q10291405, http://www.wikidata.org/entity/Q10544313, http://www.wikidata.org/entity/Q11488706, http://www.wikidata.org/entity/Q11714837, http://www.wikidata.org/entity/Q11792881, http://www.wikidata.org/entity/Q12912864, http://www.wikidata.org/entity/Q14517155, http://www.wikidata.org/entity/Q16038819, http://www.wikidata.org/entity/Q20830136, http://www.wikidata.org/entity/Q21030796, http://www.wikidata.org/entity/Q22675021, http://www.wikidata.org/entity/Q24035237, http://www.wikidata.org/entity/Q30201458, http://www.wikidata.org/entity/Q30592087, http://www.wikidata.org/entity/Q44134905, http://www.wikidata.org/entity/Q45315914, http://www.wikidata.org/entity/Q47015413, http://www.wikidata.org/entity/Q48110564, http://www.wikidata.org/entity/Q56026869, http://www.wikidata.org/entity/Q57727246, http://www.wikidata.org/entity/Q60820681, http://www.wikidata.org/entity/Q61917065, http://www.wikidata.org/entity/Q98118544, http://www.wikidata.org/entity/Q99337848, http://www.wikidata.org/entity/Q99518950, http://www.wikidata.org/entity/Q99932986, http://www.wikidata.org/entity/Q100157218, http://www.wikidata.org/entity/Q100157227, http://www.wikidata.org/entity/Q100343219, http://www.wikidata.org/entity/Q102310909, http://www.wikidata.org/entity/Q104884219, http://www.wikidata.org/entity/Q105482243, http://www.wikidata.org/entity/Q105965434, http://www.wikidata.org/entity/Q106601413, http://www.wikidata.org/entity/Q107084069, http://www.wikidata.org/entity/Q107126353, http://www.wikidata.org/entity/Q107359921, http://www.wikidata.org/entity/Q107376636, http://www.wikidata.org/entity/Q107376657, http://www.wikidata.org/entity/Q107376740, http://www.wikidata.org/entity/Q107376754, http://www.wikidata.org/entity/Q107657427, http://www.wikidata.org/entity/Q108338200, http://www.wikidata.org/entity/Q108456983, http://www.wikidata.org/entity/Q108457042, http://www.wikidata.org/entity/Q109355850, http://www.wikidata.org/entity/Q110157307, http://www.wikidata.org/entity/Q110157316, http://www.wikidata.org/entity/Q110157318, http://www.wikidata.org/entity/Q110310986, http://www.wikidata.org/entity/Q110310992, http://www.wikidata.org/entity/Q110724553, http://www.wikidata.org/entity/Q111339900, http://www.wikidata.org/entity/Q112939590, http://www.wikidata.org/entity/Q112939611, http://www.wikidata.org/entity/Q113189098, http://www.wikidata.org/entity/Q119505402, http://www.wikidata.org/entity/Q121914265, http://www.wikidata.org/entity/Q124178526, http://www.wikidata.org/entity/Q125135318, http://www.wikidata.org/entity/Q125365442, http://www.wikidata.org/entity/Q127425854, http://www.wikidata.org/entity/Q13961, http://www.wikidata.org/entity/Q47270, http://www.wikidata.org/entity/Q142954, http://www.wikidata.org/entity/Q185836, http://www.wikidata.org/entity/Q193566, http://www.wikidata.org/entity/Q245603, http://www.wikidata.org/entity/Q349600, http://www.wikidata.org/entity/Q606646, http://www.wikidata.org/entity/Q709277, http://www.wikidata.org/entity/Q815600, http://www.wikidata.org/entity/Q879128, http://www.wikidata.org/entity/Q1110362, http://www.wikidata.org/entity/Q1115478, http://www.wikidata.org/entity/Q1253369, http://www.wikidata.org/entity/Q1308875, http://www.wikidata.org/entity/Q1315135, http://www.wikidata.org/entity/Q1335249, http://www.wikidata.org/entity/Q1388667, http://www.wikidata.org/entity/Q1392696, http://www.wikidata.org/entity/Q1424376, http://www.wikidata.org/entity/Q1622041, http://www.wikidata.org/entity/Q1674999, http://www.wikidata.org/entity/Q1689021, http://www.wikidata.org/entity/Q1698004, http://www.wikidata.org/entity/Q1758559, http://www.wikidata.org/entity/Q1771903, http://www.wikidata.org/entity/Q1801206, http://www.wikidata.org/entity/Q1940665, http://www.wikidata.org/entity/Q2041949, http://www.wikidata.org/entity/Q2310373, http://www.wikidata.org/entity/Q2392001, http://www.wikidata.org/entity/Q2499334, http://www.wikidata.org/entity/Q2520821, http://www.wikidata.org/entity/Q2606384, http://www.wikidata.org/entity/Q2614603, http://www.wikidata.org/entity/Q2642727, http://www.wikidata.org/entity/Q2675325, http://www.wikidata.org/entity/Q2695006, http://www.wikidata.org/entity/Q2724365, http://www.wikidata.org/entity/Q2724728, http://www.wikidata.org/entity/Q2753043, http://www.wikidata.org/entity/Q3273230, http://www.wikidata.org/entity/Q3983320"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q3023293"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SpecificEnergy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q215313, http://www.wikidata.org/entity/Q256106, http://www.wikidata.org/entity/Q1129351, http://www.wikidata.org/entity/Q1129355, http://www.wikidata.org/entity/Q21572993, http://www.wikidata.org/entity/Q76357367, http://www.wikidata.org/entity/Q76359554, http://www.wikidata.org/entity/Q76360636, http://www.wikidata.org/entity/Q99566195, http://www.wikidata.org/entity/Q104217205"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q3589038"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Thickness"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q127526, http://www.wikidata.org/entity/Q831627, http://www.wikidata.org/entity/Q1957133, http://www.wikidata.org/entity/Q2698596, http://www.wikidata.org/entity/Q47011259, http://www.wikidata.org/entity/Q47501343, http://www.wikidata.org/entity/Q67172538, http://www.wikidata.org/entity/Q102727615, http://www.wikidata.org/entity/Q104774485, http://www.wikidata.org/entity/Q108920511"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q3711325"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Speed"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q13824, http://www.wikidata.org/entity/Q124003, http://www.wikidata.org/entity/Q221337, http://www.wikidata.org/entity/Q724183, http://www.wikidata.org/entity/Q986260, http://www.wikidata.org/entity/Q1053088, http://www.wikidata.org/entity/Q1141401, http://www.wikidata.org/entity/Q1197176, http://www.wikidata.org/entity/Q1267186, http://www.wikidata.org/entity/Q1428653, http://www.wikidata.org/entity/Q1464943, http://www.wikidata.org/entity/Q1518019, http://www.wikidata.org/entity/Q1675090, http://www.wikidata.org/entity/Q2646422, http://www.wikidata.org/entity/Q4422361, http://www.wikidata.org/entity/Q5457394, http://www.wikidata.org/entity/Q5466593, http://www.wikidata.org/entity/Q7239848, http://www.wikidata.org/entity/Q7302397, http://www.wikidata.org/entity/Q10498215, http://www.wikidata.org/entity/Q10716940, http://www.wikidata.org/entity/Q11830537, http://www.wikidata.org/entity/Q29032441, http://www.wikidata.org/entity/Q29476779, http://www.wikidata.org/entity/Q39998686, http://www.wikidata.org/entity/Q41578753, http://www.wikidata.org/entity/Q61951191, http://www.wikidata.org/entity/Q103036774, http://www.wikidata.org/entity/Q105295574, http://www.wikidata.org/entity/Q106322159, http://www.wikidata.org/entity/Q106956411, http://www.wikidata.org/entity/Q106956413, http://www.wikidata.org/entity/Q107646022, http://www.wikidata.org/entity/Q108338123, http://www.wikidata.org/entity/Q108338996, http://www.wikidata.org/entity/Q108395093, http://www.wikidata.org/entity/Q111872625, http://www.wikidata.org/entity/Q113336204, http://www.wikidata.org/entity/Q115155589, http://www.wikidata.org/entity/Q117290019, http://www.wikidata.org/entity/Q117290046, http://www.wikidata.org/entity/Q117461653, http://www.wikidata.org/entity/Q122801912"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q8067817"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Compressibility"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2990695, http://www.wikidata.org/entity/Q2990696"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q77835705"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Breadth"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2376482"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q98690850"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "InverseTime"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q11652, http://www.wikidata.org/entity/Q203516, http://www.wikidata.org/entity/Q317949, http://www.wikidata.org/entity/Q428083, http://www.wikidata.org/entity/Q1256787, http://www.wikidata.org/entity/Q6960532, http://www.wikidata.org/entity/Q7798498, http://www.wikidata.org/entity/Q11477200, http://www.wikidata.org/entity/Q25377096, http://www.wikidata.org/entity/Q83699542, http://www.wikidata.org/entity/Q98153151, http://www.wikidata.org/entity/Q106237881, http://www.wikidata.org/entity/Q106297286, http://www.wikidata.org/entity/Q112939630, http://www.wikidata.org/entity/Q112939647"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q102310909"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RelaxationTIme"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q104884205, http://www.wikidata.org/entity/Q106041085"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q208826"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Height"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q113205681, http://www.wikidata.org/entity/Q123199930, http://www.wikidata.org/entity/Q124814894, http://www.wikidata.org/entity/Q190200, http://www.wikidata.org/entity/Q476112, http://www.wikidata.org/entity/Q493456, http://www.wikidata.org/entity/Q821563, http://www.wikidata.org/entity/Q889522, http://www.wikidata.org/entity/Q904740, http://www.wikidata.org/entity/Q1409551, http://www.wikidata.org/entity/Q1481422, http://www.wikidata.org/entity/Q1929501, http://www.wikidata.org/entity/Q2247332, http://www.wikidata.org/entity/Q2446632, http://www.wikidata.org/entity/Q2674049, http://www.wikidata.org/entity/Q2916348, http://www.wikidata.org/entity/Q2997702, http://www.wikidata.org/entity/Q3425043, http://www.wikidata.org/entity/Q5804317, http://www.wikidata.org/entity/Q7596765, http://www.wikidata.org/entity/Q10623719, http://www.wikidata.org/entity/Q11385198, http://www.wikidata.org/entity/Q12432978, http://www.wikidata.org/entity/Q14321675, http://www.wikidata.org/entity/Q17176877, http://www.wikidata.org/entity/Q18026455, http://www.wikidata.org/entity/Q24192182, http://www.wikidata.org/entity/Q26833823, http://www.wikidata.org/entity/Q26970842, http://www.wikidata.org/entity/Q31271474, http://www.wikidata.org/entity/Q50600045, http://www.wikidata.org/entity/Q55280384, http://www.wikidata.org/entity/Q61864290, http://www.wikidata.org/entity/Q62398049, http://www.wikidata.org/entity/Q96190444, http://www.wikidata.org/entity/Q97771102, http://www.wikidata.org/entity/Q103712207, http://www.wikidata.org/entity/Q109520597, http://www.wikidata.org/entity/Q112586709"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q242657"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MagneticMoment"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q771367, http://www.wikidata.org/entity/Q1868884, http://www.wikidata.org/entity/Q3319737, http://www.wikidata.org/entity/Q4106098"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q336894"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SoundParticleVelocity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q106368512, http://www.wikidata.org/entity/Q106368530"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q533668"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Thrust"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q5562673, http://www.wikidata.org/entity/Q21026749, http://www.wikidata.org/entity/Q21026764"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q657936"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ShearStress"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1558328, http://www.wikidata.org/entity/Q108327941"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q779457"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SoundParticleDisplacement"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q106368491"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q846785"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Action"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q3631520, http://www.wikidata.org/entity/Q5347246, http://www.wikidata.org/entity/Q6721860"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q900648"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Mobility"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q6501076, http://www.wikidata.org/entity/Q11751004, http://www.wikidata.org/entity/Q98812474, http://www.wikidata.org/entity/Q104093888, http://www.wikidata.org/entity/Q106010835"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q930412"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Depth"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1026330, http://www.wikidata.org/entity/Q1792720, http://www.wikidata.org/entity/Q1896346, http://www.wikidata.org/entity/Q3406895, http://www.wikidata.org/entity/Q4580482, http://www.wikidata.org/entity/Q5384724, http://www.wikidata.org/entity/Q6795906, http://www.wikidata.org/entity/Q7711492, http://www.wikidata.org/entity/Q7847593, http://www.wikidata.org/entity/Q12017945, http://www.wikidata.org/entity/Q27864162, http://www.wikidata.org/entity/Q79149340, http://www.wikidata.org/entity/Q109061760, http://www.wikidata.org/entity/Q110197178, http://www.wikidata.org/entity/Q111891857, http://www.wikidata.org/entity/Q114839457, http://www.wikidata.org/entity/Q123738653, http://www.wikidata.org/entity/Q129962550, http://www.wikidata.org/entity/Q130096684"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1028259"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "InverseLength"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q192510, http://www.wikidata.org/entity/Q214881, http://www.wikidata.org/entity/Q632617, http://www.wikidata.org/entity/Q902086, http://www.wikidata.org/entity/Q1434913, http://www.wikidata.org/entity/Q86204330, http://www.wikidata.org/entity/Q86204782, http://www.wikidata.org/entity/Q98583077, http://www.wikidata.org/entity/Q98690755, http://www.wikidata.org/entity/Q105475278, http://www.wikidata.org/entity/Q105475399"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1057607"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "GeneralizedCoordinate"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1000646"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1068172"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SoundPressure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2323857, http://www.wikidata.org/entity/Q87473874, http://www.wikidata.org/entity/Q106355044"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q230895"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "DensityOfStates"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q105637294, http://www.wikidata.org/entity/Q105687031"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q336938"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Exposure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q69428534, http://www.wikidata.org/entity/Q69428825"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q719602"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Prevalence"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q3511357, http://www.wikidata.org/entity/Q7242343, http://www.wikidata.org/entity/Q113361605"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q737004"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ChemicalPotential"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q62525"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q756307"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MeanFreePath"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q105672255, http://www.wikidata.org/entity/Q105672307, http://www.wikidata.org/entity/Q112731087"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q857809"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "EquilibriumConstant"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q325519, http://www.wikidata.org/entity/Q898254, http://www.wikidata.org/entity/Q11229788"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1073121"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "HeartRate"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1913870, http://www.wikidata.org/entity/Q5868917, http://www.wikidata.org/entity/Q6311817, http://www.wikidata.org/entity/Q11976246"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1136069"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RadiusOfCurvature"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q14436715, http://www.wikidata.org/entity/Q16984090"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1140289"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SoundIntensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q106368671"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1253356"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RadiantFlux"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q105902, http://www.wikidata.org/entity/Q108112516, http://www.wikidata.org/entity/Q108112530, http://www.wikidata.org/entity/Q108112575, http://www.wikidata.org/entity/Q108112606"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1434913"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "PropagationCoefficient"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q106354596"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1504173"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LuminousEfficacy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q83387484"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q2230528"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SoundExposure"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q87544623"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q2499617"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RelativeHumidity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2514843"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q2937190"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MolarHeatCapacity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q107096006, http://www.wikidata.org/entity/Q107096023"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q3686031"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Concentration"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q172623, http://www.wikidata.org/entity/Q275157, http://www.wikidata.org/entity/Q589446, http://www.wikidata.org/entity/Q607000, http://www.wikidata.org/entity/Q672821, http://www.wikidata.org/entity/Q899502, http://www.wikidata.org/entity/Q909482, http://www.wikidata.org/entity/Q2166189, http://www.wikidata.org/entity/Q2466917, http://www.wikidata.org/entity/Q2624406, http://www.wikidata.org/entity/Q3028008, http://www.wikidata.org/entity/Q9338450, http://www.wikidata.org/entity/Q11254316, http://www.wikidata.org/entity/Q16667325, http://www.wikidata.org/entity/Q18023312, http://www.wikidata.org/entity/Q24276435, http://www.wikidata.org/entity/Q39078574, http://www.wikidata.org/entity/Q55433425, http://www.wikidata.org/entity/Q88865973, http://www.wikidata.org/entity/Q105971077, http://www.wikidata.org/entity/Q106412381, http://www.wikidata.org/entity/Q106635640, http://www.wikidata.org/entity/Q107447376, http://www.wikidata.org/entity/Q110162802, http://www.wikidata.org/entity/Q117218272"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q3840065"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AtomicMass"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q108131869"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q11945244"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Efficiency"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2628085, http://www.wikidata.org/entity/Q3932934, http://www.wikidata.org/entity/Q5227248"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q32745742"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "PhaseCoefficient"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q106354389"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q68972876"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MolarEntropy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q764278"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q77597807"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricPotentialDifference"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1048073, http://www.wikidata.org/entity/Q4530817"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q96941619"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RestMass"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q108211288"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q98497410"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ParticleFluenceRate"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q99518972, http://www.wikidata.org/entity/Q108266329"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q107780"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LuminousFlux"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q108112552, http://www.wikidata.org/entity/Q108112563, http://www.wikidata.org/entity/Q108112590, http://www.wikidata.org/entity/Q108112623"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q126017"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Distance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q36253, http://www.wikidata.org/entity/Q41364, http://www.wikidata.org/entity/Q125770, http://www.wikidata.org/entity/Q177348, http://www.wikidata.org/entity/Q214519, http://www.wikidata.org/entity/Q244777, http://www.wikidata.org/entity/Q253164, http://www.wikidata.org/entity/Q319030, http://www.wikidata.org/entity/Q333047, http://www.wikidata.org/entity/Q357545, http://www.wikidata.org/entity/Q390397, http://www.wikidata.org/entity/Q496939, http://www.wikidata.org/entity/Q548132, http://www.wikidata.org/entity/Q654068, http://www.wikidata.org/entity/Q756307, http://www.wikidata.org/entity/Q760248, http://www.wikidata.org/entity/Q843905, http://www.wikidata.org/entity/Q905424, http://www.wikidata.org/entity/Q908487, http://www.wikidata.org/entity/Q908492, http://www.wikidata.org/entity/Q912925, http://www.wikidata.org/entity/Q945118, http://www.wikidata.org/entity/Q1128004, http://www.wikidata.org/entity/Q1156822, http://www.wikidata.org/entity/Q1344747, http://www.wikidata.org/entity/Q1416154, http://www.wikidata.org/entity/Q1442204, http://www.wikidata.org/entity/Q1450530, http://www.wikidata.org/entity/Q1499121, http://www.wikidata.org/entity/Q1571884, http://www.wikidata.org/entity/Q1572443, http://www.wikidata.org/entity/Q1625677, http://www.wikidata.org/entity/Q1817392, http://www.wikidata.org/entity/Q1939209, http://www.wikidata.org/entity/Q1968632, http://www.wikidata.org/entity/Q2015185, http://www.wikidata.org/entity/Q2016299, http://www.wikidata.org/entity/Q2032861, http://www.wikidata.org/entity/Q2092045, http://www.wikidata.org/entity/Q2139851, http://www.wikidata.org/entity/Q2139853, http://www.wikidata.org/entity/Q2139855, http://www.wikidata.org/entity/Q2142613, http://www.wikidata.org/entity/Q2365749, http://www.wikidata.org/entity/Q2446632, http://www.wikidata.org/entity/Q2470364, http://www.wikidata.org/entity/Q2485106, http://www.wikidata.org/entity/Q2526919, http://www.wikidata.org/entity/Q2534396, http://www.wikidata.org/entity/Q2547402, http://www.wikidata.org/entity/Q2554326, http://www.wikidata.org/entity/Q2621865, http://www.wikidata.org/entity/Q2665934, http://www.wikidata.org/entity/Q2750134, http://www.wikidata.org/entity/Q2861536, http://www.wikidata.org/entity/Q3030660, http://www.wikidata.org/entity/Q3030677, http://www.wikidata.org/entity/Q3260021, http://www.wikidata.org/entity/Q3707396, http://www.wikidata.org/entity/Q3929404, http://www.wikidata.org/entity/Q4273701, http://www.wikidata.org/entity/Q5419721, http://www.wikidata.org/entity/Q5463579, http://www.wikidata.org/entity/Q5465320, http://www.wikidata.org/entity/Q5808600, http://www.wikidata.org/entity/Q6056567, http://www.wikidata.org/entity/Q7169518, http://www.wikidata.org/entity/Q7279983, http://www.wikidata.org/entity/Q13136755, http://www.wikidata.org/entity/Q14907059, http://www.wikidata.org/entity/Q17007861, http://www.wikidata.org/entity/Q17146642, http://www.wikidata.org/entity/Q20933380, http://www.wikidata.org/entity/Q21026829, http://www.wikidata.org/entity/Q21026838, http://www.wikidata.org/entity/Q21051416, http://www.wikidata.org/entity/Q25392540, http://www.wikidata.org/entity/Q28778414, http://www.wikidata.org/entity/Q29877670, http://www.wikidata.org/entity/Q29877676, http://www.wikidata.org/entity/Q30007394, http://www.wikidata.org/entity/Q31842201, http://www.wikidata.org/entity/Q55409932, http://www.wikidata.org/entity/Q62024868, http://www.wikidata.org/entity/Q64729900, http://www.wikidata.org/entity/Q78148275, http://www.wikidata.org/entity/Q85788096, http://www.wikidata.org/entity/Q98875089, http://www.wikidata.org/entity/Q98875099, http://www.wikidata.org/entity/Q100264278, http://www.wikidata.org/entity/Q105488046, http://www.wikidata.org/entity/Q107132074, http://www.wikidata.org/entity/Q109458849, http://www.wikidata.org/entity/Q109680601, http://www.wikidata.org/entity/Q110197178, http://www.wikidata.org/entity/Q110725468, http://www.wikidata.org/entity/Q117275612, http://www.wikidata.org/entity/Q121288959, http://www.wikidata.org/entity/Q122380172"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q178932"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ReynoldsNumber"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q20097465"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q179388"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "HeatCapacity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q28455414, http://www.wikidata.org/entity/Q112187490, http://www.wikidata.org/entity/Q112187521"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q185329"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectromotiveForce, SourceVoltage"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q368639"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q192388"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "PositionVector"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q903835, http://www.wikidata.org/entity/Q2945123, http://www.wikidata.org/entity/Q12874993, http://www.wikidata.org/entity/Q105533324"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q192510"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Wavenumber"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q80168855, http://www.wikidata.org/entity/Q106007899, http://www.wikidata.org/entity/Q106008527"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q215313"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AbsorbedDose"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q109061031, http://www.wikidata.org/entity/Q109061178, http://www.wikidata.org/entity/Q109061328, http://www.wikidata.org/entity/Q109061410"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q234072"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ElectricCurrentDensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q105883273"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q256106"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "DoseEquivalent"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q5152913, http://www.wikidata.org/entity/Q109120061, http://www.wikidata.org/entity/Q109448487"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q487756"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SpecificHeatCapacity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q75774282, http://www.wikidata.org/entity/Q75774757, http://www.wikidata.org/entity/Q75775005"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q604008"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "DiffusionCoefficient"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q97012754, http://www.wikidata.org/entity/Q105070847, http://www.wikidata.org/entity/Q105070852, http://www.wikidata.org/entity/Q114616674"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q663650"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Reflectance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q10358479"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q670036"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "PathLength"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q28474, http://www.wikidata.org/entity/Q177348, http://www.wikidata.org/entity/Q843905"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q683556"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SpecificVolume"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2334471"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q828402"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "EnergyDensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q2230505, http://www.wikidata.org/entity/Q15054312, http://www.wikidata.org/entity/Q77989624, http://www.wikidata.org/entity/Q107059415"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q830654"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Irradiance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q216973, http://www.wikidata.org/entity/Q7556707, http://www.wikidata.org/entity/Q107483029"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q856711"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Magnetization"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q7100077"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q909482"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "VolumeFraction"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q18385933, http://www.wikidata.org/entity/Q101584471"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1143513"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Vorticity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q245550"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q2009727"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MagneticQuantumNumber"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q103898631"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q17128025"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "CrossSection"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q751259, http://www.wikidata.org/entity/Q2562475, http://www.wikidata.org/entity/Q4843854, http://www.wikidata.org/entity/Q7189715, http://www.wikidata.org/entity/Q98206553, http://www.wikidata.org/entity/Q98208049"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q21572993"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "SpecificEnthalpy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q108858257"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q30338487"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "AngularWavenumber"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q105542089, http://www.wikidata.org/entity/Q105542314"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q82965908"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ParticleFluence"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q108266278"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q97496506"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "TotalAngularMomentum"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1147773"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q98690867"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "InverseVolume"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q176449, http://www.wikidata.org/entity/Q1303188, http://www.wikidata.org/entity/Q105979886, http://www.wikidata.org/entity/Q105979968"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q98842099"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RecombinationCoefficient"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q114353545, http://www.wikidata.org/entity/Q114616503"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q105533324"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "ParticlePositionVector"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q104628282, http://www.wikidata.org/entity/Q104628286, http://www.wikidata.org/entity/Q105533412, http://www.wikidata.org/entity/Q105533441, http://www.wikidata.org/entity/Q105533477"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q107028650"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "InverseTemperature"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q107028625"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q161064"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Enthalpy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q477945, http://www.wikidata.org/entity/Q483538, http://www.wikidata.org/entity/Q900787, http://www.wikidata.org/entity/Q902126, http://www.wikidata.org/entity/Q1657656, http://www.wikidata.org/entity/Q4531954, http://www.wikidata.org/entity/Q5380514, http://www.wikidata.org/entity/Q10273091, http://www.wikidata.org/entity/Q98175929"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q190200"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Altitude"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q1209487, http://www.wikidata.org/entity/Q1409756, http://www.wikidata.org/entity/Q1823312, http://www.wikidata.org/entity/Q2315532, http://www.wikidata.org/entity/Q2433871, http://www.wikidata.org/entity/Q2980001, http://www.wikidata.org/entity/Q3495324, http://www.wikidata.org/entity/Q4135665, http://www.wikidata.org/entity/Q5318980, http://www.wikidata.org/entity/Q6452016, http://www.wikidata.org/entity/Q11999871, http://www.wikidata.org/entity/Q14436769, http://www.wikidata.org/entity/Q18433596, http://www.wikidata.org/entity/Q61058773"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q190291"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Displacement"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q623093, http://www.wikidata.org/entity/Q779457, http://www.wikidata.org/entity/Q12162227, http://www.wikidata.org/entity/Q105435234, http://www.wikidata.org/entity/Q105533558, http://www.wikidata.org/entity/Q110042380"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q206175"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "Stress"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q76005, http://www.wikidata.org/entity/Q186191, http://www.wikidata.org/entity/Q657936, http://www.wikidata.org/entity/Q857201, http://www.wikidata.org/entity/Q904497, http://www.wikidata.org/entity/Q912214, http://www.wikidata.org/entity/Q1257918, http://www.wikidata.org/entity/Q1822167, http://www.wikidata.org/entity/Q1876832, http://www.wikidata.org/entity/Q1977085, http://www.wikidata.org/entity/Q2046476, http://www.wikidata.org/entity/Q2251807, http://www.wikidata.org/entity/Q2419918, http://www.wikidata.org/entity/Q2683004, http://www.wikidata.org/entity/Q2920781, http://www.wikidata.org/entity/Q3807177, http://www.wikidata.org/entity/Q7201019, http://www.wikidata.org/entity/Q7934788, http://www.wikidata.org/entity/Q11425837, http://www.wikidata.org/entity/Q12358885, http://www.wikidata.org/entity/Q13409892, http://www.wikidata.org/entity/Q49167267, http://www.wikidata.org/entity/Q55694602, http://www.wikidata.org/entity/Q112182734"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1578234"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "RadialDistance"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q104054826, http://www.wikidata.org/entity/Q107710225"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q1990546"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LinearStrain"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q991936, http://www.wikidata.org/entity/Q1530291, http://www.wikidata.org/entity/Q7561704, http://www.wikidata.org/entity/Q73432507, http://www.wikidata.org/entity/Q112411896"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q15152757"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "DynamicViscosity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q114975177, http://www.wikidata.org/entity/Q114975300"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q17232415"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MassRatioOfWaterVapourToDryGas"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q94937504"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q56298294"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LinearDensity"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q123194423"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q69427512"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "MolarEnergy"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q190474, http://www.wikidata.org/entity/Q737004, http://www.wikidata.org/entity/Q88523106, http://www.wikidata.org/entity/Q88769977, http://www.wikidata.org/entity/Q88862986, http://www.wikidata.org/entity/Q88863324, http://www.wikidata.org/entity/Q89333468, http://www.wikidata.org/entity/Q108847558, http://www.wikidata.org/entity/Q108898049"
+                }
+            },
+            {
+                "superquantity": {
+                    "type": "uri",
+                    "value": "http://www.wikidata.org/entity/Q101960694"
+                },
+                "sqlabels": {
+                    "type": "literal",
+                    "value": "LiftForce"
+                },
+                "quantities": {
+                    "type": "literal",
+                    "value": "http://www.wikidata.org/entity/Q568491"
+                }
+            }
+        ]
+    }
+}
