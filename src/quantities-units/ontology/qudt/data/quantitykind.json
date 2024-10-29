@@ -4471,11 +4471,11 @@
                 },
                 "applicableUnits": {
                     "type": "literal",
-                    "value": "http://qudt.org/vocab/unit/KiloGM-PER-M3, http://qudt.org/vocab/unit/MicroGM-PER-MilliL, http://qudt.org/vocab/unit/MilliGM-PER-MilliL, http://qudt.org/vocab/unit/NanoGM-PER-MilliL, http://qudt.org/vocab/unit/PicoGM-PER-MilliL"
+                    "value": "http://qudt.org/vocab/unit/KiloGM-PER-M3, http://qudt.org/vocab/unit/MicroGM-PER-L, http://qudt.org/vocab/unit/MicroGM-PER-MilliL, http://qudt.org/vocab/unit/MilliGM-PER-L, http://qudt.org/vocab/unit/MilliGM-PER-M3, http://qudt.org/vocab/unit/MilliGM-PER-MilliL, http://qudt.org/vocab/unit/NanoGM-PER-L, http://qudt.org/vocab/unit/NanoGM-PER-MilliL, http://qudt.org/vocab/unit/PicoGM-PER-MilliL"
                 },
                 "ucumCodes": {
                     "type": "literal",
-                    "value": "kg.m-3, kg/m3, ug.mL-1, ug/mL, mg.mL-1, mg/mL, ng.mL-1, ng/mL, pg/mL"
+                    "value": "kg.m-3, kg/m3, ug.L-1, ug/L, ug.mL-1, ug/mL, mg.L-1, mg/L, mg.m-3, mg/m3, mg.mL-1, mg/mL, ng.L-1, ng/L, ng.mL-1, ng/mL, pg/mL"
                 }
             },
             {
