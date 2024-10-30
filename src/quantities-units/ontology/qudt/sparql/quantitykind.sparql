@@ -1,3 +1,5 @@
+# https://www.qudt.org/fuseki/#/dataset/qudt/query/qudt/sparql
+
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX qudt: <http://qudt.org/schema/qudt/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -5,7 +7,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sou: <http://qudt.org/vocab/sou/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?quantity ?dimension
+SELECT DISTINCT ?quantity ?dimension ?broader ?dbpediaMatch ?siExactMatch 
 (GROUP_CONCAT(DISTINCT CONCAT(?qlabel, "@", LANG(?qlabel)); separator=", ") AS ?labels)
 (GROUP_CONCAT(DISTINCT ?description; separator=" #,# ") AS ?descriptions)
 (GROUP_CONCAT(DISTINCT ?plainTextDescription; separator=" #,#" ) AS ?plainTextDescriptions)
@@ -20,81 +22,15 @@ WHERE {
     ?quantity qudt:hasDimensionVector ?dimension .
     ?applicableUnit qudt:applicableSystem sou:SI .
     ?applicableUnit qudt:ucumCode ?ucumCode .
-  
-    FILTER NOT EXISTS { ?quantity skos:broader ?broader }
+  	
     FILTER (
       LANG(?qlabel) = "en" || LANG(?qlabel) = "de" || LANG(?qlabel) = "" || LANG(?qlabel) = "en-US"
     )
 
   OPTIONAL { ?quantity qudt:plainTextDescription ?plainTextDescription . }
   OPTIONAL { ?quantity dcterms:description ?description . }
+  OPTIONAL { ?quantity skos:broader ?broader . }
+  OPTIONAL { ?quantity qudt:dbpediaMatch ?dbpediaMatch . }
+  OPTIONAL { ?quantity qudt:siExactMatch ?siExactMatch . }
 }
-GROUP BY ?quantity ?dimension
-
-
-
-# BACKUP
-# ------
-
-# PREFIX dcterms: <http://purl.org/dc/terms/>
-# PREFIX qudt: <http://qudt.org/schema/qudt/>
-# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# PREFIX sou: <http://qudt.org/vocab/sou/>
-# PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-
-# SELECT DISTINCT ?quantity  
-# (GROUP_CONCAT(DISTINCT CONCAT(?qlabel, "@", REPLACE(LANG(?qlabel), "en-US", "en")); separator=", ") AS ?labels)
-# (GROUP_CONCAT(DISTINCT CONCAT(?description, "@", REPLACE(LANG(?description), "en-US", "en")); separator=" #,# ") AS ?descriptions)
-# (GROUP_CONCAT(DISTINCT CONCAT(?plainTextDescription, "@", REPLACE(LANG(?plainTextDescription), "en-US", "en")); separator=" #,# " ) AS ?plainTextDescriptions)
-
-#     (GROUP_CONCAT(DISTINCT ?applicableUnit; separator=", ") AS ?applicableUnits)
-#     (GROUP_CONCAT(DISTINCT ?ucumCode; separator=", ") AS ?ucumCodes)
-  
-# WHERE {
-#     ?quantity rdf:type qudt:QuantityKind .
-#     ?quantity rdfs:label ?qlabel .
-#     ?quantity qudt:applicableUnit ?applicableUnit .
-#     ?applicableUnit qudt:applicableSystem sou:SI .
-#     ?applicableUnit qudt:ucumCode ?ucumCode .
-  
-#     FILTER NOT EXISTS { ?quantity skos:broader ?broader }
-  
-#   OPTIONAL { ?quantity dcterms:description ?description .}
-#   OPTIONAL { ?quantity qudt:plainTextDescription ?plainTextDescription . }
-  
-# }
-# GROUP BY ?quantity
-
-
-
-
-# PREFIX dcterms: <http://purl.org/dc/terms/>
-# PREFIX qudt: <http://qudt.org/schema/qudt/>
-# PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-# PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-# PREFIX sou: <http://qudt.org/vocab/sou/>
-# PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-
-# SELECT DISTINCT ?quantity  
-# (GROUP_CONCAT(DISTINCT CONCAT(?qlabel, "@", REPLACE(LANG(?qlabel), "en-US", "en")); separator=", ") AS ?labels)
-# (GROUP_CONCAT(DISTINCT CONCAT(?description, "@", REPLACE(LANG(?description), "en-US", "en")); separator=" #,# ") AS ?descriptions)
-# (GROUP_CONCAT(DISTINCT CONCAT(?plainTextDescription, "@", REPLACE(LANG(?plainTextDescription), "en-US", "en")); separator=" #,#" ) AS ?plainTextDescriptions)
-
-#     (GROUP_CONCAT(DISTINCT ?applicableUnit; separator=", ") AS ?applicableUnits)
-#     (GROUP_CONCAT(DISTINCT ?ucumCode; separator=", ") AS ?ucumCodes)
-  
-# WHERE {
-#     ?quantity rdf:type qudt:QuantityKind .
-#     ?quantity rdfs:label ?qlabel .
-#     ?quantity qudt:applicableUnit ?applicableUnit .
-#     ?applicableUnit qudt:applicableSystem sou:SI .
-#     ?applicableUnit qudt:ucumCode ?ucumCode .
-  
-#     FILTER NOT EXISTS { ?quantity skos:broader ?broader }
-  
-#   OPTIONAL { ?quantity dcterms:description ?description .}
-#   OPTIONAL { ?quantity qudt:plainTextDescription ?plainTextDescription . }
-  
-# }
-# GROUP BY ?quantity
+GROUP BY ?quantity ?dimension ?broader ?dbpediaMatch ?siExactMatch 
