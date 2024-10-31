@@ -675,6 +675,21 @@
                 "type": [
                     "Category:OSW6ef70c808fb54abbbacb059c285713d4"
                 ],
+                "uuid": "51bd13e6-7a47-58bb-a503-88bd5cffe504",
+                "exact_ontology_match": [
+                    "http://qudt.org/vocab/unit/NanoMOL-PER-KiloGM"
+                ],
+                "close_ontology_match": null,
+                "osw_id": "Item:OSWfd92e9c2c69754f78e4145ad3d31c34b#OSW51bd13e67a4758bba50388bd5cffe504",
+                "conversion_factor_from_si": 1e-09,
+                "prefix": "Item:OSWb6a5fd00b91058d1909514095f84fe6f",
+                "prefix_symbol": null,
+                "main_symbol": "nmol/kg"
+            },
+            {
+                "type": [
+                    "Category:OSW6ef70c808fb54abbbacb059c285713d4"
+                ],
                 "uuid": "78a5da75-d0d1-5046-935d-f4e27fa7d3a9",
                 "exact_ontology_match": [
                     "http://qudt.org/vocab/unit/MilliMOL-PER-KiloGM"
@@ -690,16 +705,16 @@
                 "type": [
                     "Category:OSW6ef70c808fb54abbbacb059c285713d4"
                 ],
-                "uuid": "9abfd6b6-d96b-507a-bac8-057d6e35a74f",
+                "uuid": "84e7943c-ec52-5980-82a9-6c43ab77d33a",
                 "exact_ontology_match": [
-                    "http://qudt.org/vocab/unit/CentiMOL-PER-KiloGM"
+                    "http://qudt.org/vocab/unit/KiloMOL-PER-KiloGM"
                 ],
                 "close_ontology_match": null,
-                "osw_id": "Item:OSWfd92e9c2c69754f78e4145ad3d31c34b#OSW9abfd6b6d96b507abac8057d6e35a74f",
-                "conversion_factor_from_si": 0.01,
-                "prefix": "Item:OSWbca49386a57457c1a1b250da355d94fe",
+                "osw_id": "Item:OSWfd92e9c2c69754f78e4145ad3d31c34b#OSW84e7943cec52598082a96c43ab77d33a",
+                "conversion_factor_from_si": 1000.0,
+                "prefix": "Item:OSW4b3805547fd8582083aff8562ba4b4c5",
                 "prefix_symbol": null,
-                "main_symbol": "cmol/kg"
+                "main_symbol": "kmol/kg"
             },
             {
                 "type": [
@@ -715,21 +730,6 @@
                 "prefix": "Item:OSW59f1ae99ce85577d995c76e442b46e74",
                 "prefix_symbol": null,
                 "main_symbol": "\u00b5mol/kg"
-            },
-            {
-                "type": [
-                    "Category:OSW6ef70c808fb54abbbacb059c285713d4"
-                ],
-                "uuid": "51bd13e6-7a47-58bb-a503-88bd5cffe504",
-                "exact_ontology_match": [
-                    "http://qudt.org/vocab/unit/NanoMOL-PER-KiloGM"
-                ],
-                "close_ontology_match": null,
-                "osw_id": "Item:OSWfd92e9c2c69754f78e4145ad3d31c34b#OSW51bd13e67a4758bba50388bd5cffe504",
-                "conversion_factor_from_si": 1e-09,
-                "prefix": "Item:OSWb6a5fd00b91058d1909514095f84fe6f",
-                "prefix_symbol": null,
-                "main_symbol": "nmol/kg"
             },
             {
                 "type": [
@@ -765,16 +765,16 @@
                 "type": [
                     "Category:OSW6ef70c808fb54abbbacb059c285713d4"
                 ],
-                "uuid": "84e7943c-ec52-5980-82a9-6c43ab77d33a",
+                "uuid": "9abfd6b6-d96b-507a-bac8-057d6e35a74f",
                 "exact_ontology_match": [
-                    "http://qudt.org/vocab/unit/KiloMOL-PER-KiloGM"
+                    "http://qudt.org/vocab/unit/CentiMOL-PER-KiloGM"
                 ],
                 "close_ontology_match": null,
-                "osw_id": "Item:OSWfd92e9c2c69754f78e4145ad3d31c34b#OSW84e7943cec52598082a96c43ab77d33a",
-                "conversion_factor_from_si": 1000.0,
-                "prefix": "Item:OSW4b3805547fd8582083aff8562ba4b4c5",
+                "osw_id": "Item:OSWfd92e9c2c69754f78e4145ad3d31c34b#OSW9abfd6b6d96b507abac8057d6e35a74f",
+                "conversion_factor_from_si": 0.01,
+                "prefix": "Item:OSWbca49386a57457c1a1b250da355d94fe",
                 "prefix_symbol": null,
-                "main_symbol": "kmol/kg"
+                "main_symbol": "cmol/kg"
             }
         ]
     },

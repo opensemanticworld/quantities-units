@@ -93,3 +93,5 @@ target/
 examples/panel-min
 examples/panel-streaming
 tests/*/test_example_delete_me.py
+
+*credentials.pwd.yaml
