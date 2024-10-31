@@ -49,16 +49,12 @@ def extract_data(debug: bool = False) -> Ontology:
         tgt_filepath="../ontology/qudt/data/quantitykind.json",
         debug=debug,
     )
-    _prefixes = prefixes.get_prefixes_json()
-    _prefix_name_list = prefixes.get_prefix_name_list()
-    _qudt_units = sparql_qudt_units.execQuery()
-    _qudt_quantities = sparql_qudt_quantities.execQuery()
     # Initialize Ontology for transformation
     osw_ontology = Ontology(
-        prefixes_json=_prefixes,
-        prefix_name_list=_prefix_name_list,
-        qudt_units=_qudt_units,
-        qudt_quantity_kinds=_qudt_quantities,
+        prefixes_json=prefixes.get_prefixes_json(),
+        prefix_name_list=prefixes.get_prefix_name_list(),
+        qudt_units=sparql_qudt_units.execQuery(),
+        qudt_quantity_kinds=sparql_qudt_quantities.execQuery(),
         debug=debug,
     )
     return osw_ontology
