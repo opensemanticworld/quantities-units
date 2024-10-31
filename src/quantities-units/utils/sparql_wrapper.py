@@ -35,16 +35,21 @@ class Sparql:
 
     def execQuery(self):
         """Execute SPARQL query and return the result."""
+        if self.debug:
+            print(
+                f"Executing SPARQL query {os.path.abspath(self.src_filepath)}"
+            )
+            print(f"on endpoint {self.sparql_endpoint} ...")
         sparql = SPARQLWrapper(self.sparql_endpoint)
         sparql.setMethod(self.sparql_method)
         sparql.setQuery(self.sparql_query)
         sparql.setReturnFormat(self.sparql_return_format)
         result = sparql.query().convert()
         if self.debug:
-            print("\nEndpoint: ", self.sparql_endpoint)
-            print("\nSPARQL Query: ", self.sparql_query)
-            print("Counted JSON Objects: ", len(result["results"]["bindings"]))
-            print("\n")
+            print(
+                f"...fetched {len(result["results"]["bindings"])} JSON objects."
+            )
+
         return result
 
     def readSparqlFile(self):
@@ -61,7 +66,7 @@ class Sparql:
                 src_filepath = os.path.join(basedir, self.src_filepath)
 
             # Ensure the path is OS independent
-            print(f"Reading SPARQL Query from {src_filepath}")
+            # print(f"Reading SPARQL Query from {src_filepath}")
             normalizedPath = os.path.normpath(src_filepath)
 
             # Check if the file has a .sparql suffix
@@ -71,8 +76,8 @@ class Sparql:
             # Read the file
             with open(normalizedPath, "r") as file:
                 content = file.read()
-            if self.debug:
-                print(f"File content:\n{content}")
+            # if self.debug:
+            #     print(f"File content:\n{content}")
             return content
 
         except Exception as e:
