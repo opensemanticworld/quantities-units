@@ -77,6 +77,21 @@ class Ontology:
             ) as f:
                 f.write(osw_obj_json_dump)
 
+    def sort_label_list(
+        self,
+        label_list: list[model.Label] = None,
+    ) -> list[model.Label]:
+        "Function to sort label lists, english first, then other languages."
+        # check if elements of label_list are of type model.Label
+        if not label_list:
+            return []
+        if not all(isinstance(label, model.Label) for label in label_list):
+            raise ValueError(
+                "All elements of label_list must be of type model.Label"
+            )
+        else:
+            return sorted(label_list, key=lambda x: x.lang != "en")
+
     def get_deterministic_url_uuid(self, prefix="", uri=None) -> uuid.UUID:
         """Function to generate a deterministic UUID from a URI and prefix."""
         return uuid.uuid5(namespace=uuid.NAMESPACE_URL, name=f"{prefix}{uri}")
@@ -629,15 +644,18 @@ class Ontology:
             )
 
             label_dict = self.dict_from_comma_separated_list(qlabels)
-            ### clean missing "en"
+            # clean missing "en"
             if "" in label_dict.keys():
                 label_dict["en"] = label_dict[""]
                 del label_dict[""]
 
+            # Ensure that the label list is sorted with English first
             osw_label_list = [
                 model.Label(text=value, lang=key)
                 for key, value in label_dict.items()
             ]
+            osw_label_list = self.sort_label_list(label_list=osw_label_list)
+
             symbol = self.match_json_path_key(
                 self.qudt_units,
                 identifier=non_prefixed_unit_iri,
@@ -805,10 +823,12 @@ class Ontology:
 
                 # print(f"clean_label_dict: {clean_label_dict}")
 
+            # Ensure that the label list is sorted with English first
             osw_label_list = [
                 model.Label(text=value, lang=key)
                 for key, value in clean_label_dict.items()
             ]
+            osw_label_list = self.sort_label_list(label_list=osw_label_list)
 
             # Differentiate between is_broader and has_broader quantities/characteristics
             if "broader" not in quantity_binding:
@@ -878,6 +898,7 @@ class Ontology:
                     ],
                     close_ontology_match=quantity_close_ontology_match_list,
                     units=osw_unit_uuids,
+                    name=pascal_case(osw_label_list[0].text),
                 )
 
                 osw_quantitiy_list.append(osw_quantity)

@@ -18,7 +18,7 @@ def update_local_osw(osw_obj=None) -> None:
         "Category:OSW99e0f46a40ca4129a420b4bb89c4cc45",  # Unit prefix
         "Category:OSWd2520fa016844e01af0097a85bb25b25",  # Quantity Unit
         "Category:OSW00fbd6feecb5408997ca18d4e681a131",  # Quantity Kind
-        "Category:OSW268cc84d3dff4a7ba5fd489d53254cb0",  # Composed Quantity Unit with Unit Prefix (Ausreiser)
+        "Category:OSW268cc84d3dff4a7ba5fd489d53254cb0",  # Composed Quantity Unit with Unit Prefix (Outliers)
         "Category:OSWffe74f291d354037b318c422591c5023",  # Characteristic Type
         "Category:OSW4082937906634af992cf9a1b18d772cf",  # Quantity Value
         "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7",  # Meta Fundamental Quantiy Value
@@ -77,7 +77,6 @@ def transform_data(osw_ontology: Ontology = None):
     osw_quantity_kind_obj_list, osw_characteristic_obj_list = (
         osw_ontology.get_osw_quantitykind_characteristics_obj_list()
     )
-    # TODO: Define Pydantic Model?
     list_of_osw_obj_lists = [
         osw_prefix_obj_list,
         osw_quanity_unit_obj_list,
@@ -125,9 +124,11 @@ def main(
     list_of_osw_obj_lists = transform_data(osw_ontology=osw_ontology_instance)
     # III: Load Data
     if upload:
-        # TODO: To be tested for all sequences
-        load_data(list_of_osw_obj_lists)
+        load_data(
+            osw_obj=osw_obj,
+            list_of_osw_obj_lists=list_of_osw_obj_lists,
+        )
 
 
 if __name__ == "__main__":
-    main(auth_upd_osw=True, upload=False)
+    main(auth_upd_osw=True, upload=True)
