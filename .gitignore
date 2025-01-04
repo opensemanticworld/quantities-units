@@ -95,3 +95,5 @@ examples/panel-streaming
 tests/*/test_example_delete_me.py
 
 *credentials.pwd.yaml
+# Automatically added by osw.auth.CredentialManager.save_credentials_to_file:
+*/osw_files/*

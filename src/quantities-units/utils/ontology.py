@@ -727,6 +727,7 @@ class Ontology:
     # ----------------------------------
     def get_osw_quantitykind_characteristics_obj_list(self):
         osw_quantitiy_list = []
+        osw_fundamental_characteristic_list = []
         osw_characteristic_list = []
         is_broader_counter = 0
         has_broader_counter = 0
@@ -919,7 +920,7 @@ class Ontology:
                     close_ontology_match=characteristic_close_ontology_match_list,
                 )
 
-                osw_characteristic_list.append(characteristic)
+                osw_fundamental_characteristic_list.append(characteristic)
 
             else:
                 # This characteristic has a broader characteristic/quantity
@@ -954,14 +955,14 @@ class Ontology:
                 f"...transformed {len(osw_quantitiy_list)} OSW QuantityKind objects."
             )
             print(
-                f"...transformed {len(osw_characteristic_list)} OSW Characteristic/QuantityUnit objects."
+                f"...transformed {len(osw_fundamental_characteristic_list + osw_characteristic_list)} OSW Characteristic/QuantityUnit objects."
             )
         assert len(osw_quantitiy_list) == is_broader_counter
         assert (
-            len(osw_characteristic_list)
+            len(osw_fundamental_characteristic_list + osw_characteristic_list)
             == has_broader_counter + is_broader_counter
         )
-        return osw_quantitiy_list, osw_characteristic_list
+        return osw_quantitiy_list, osw_fundamental_characteristic_list, osw_characteristic_list
 
 
 if __name__ == "__main__":

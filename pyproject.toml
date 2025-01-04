@@ -6,13 +6,14 @@ authors = ["Andreas Raeder"]
 
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 sparqlwrapper = "^2.0.0"
 ipykernel = "^6.29.5"
 pandas = "^2.2.2"
 pyspark = "^3.5.3"
-osw = "^0.20.0"
+osw = "^0.32.0"
 deepdiff = "^8.0.1"
+importlib_metadata = "*"
 
 [tool.poetry.group.dev.dependencies]
 pdoc = "^14.4.0"

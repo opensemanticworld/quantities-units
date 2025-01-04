@@ -74,33 +74,58 @@ def transform_data(osw_ontology: Ontology = None):
         osw_ontology.get_osw_quantity_unit_obj_list(composed_units=True)
     )
     # Transform QuantityKind and Characteristics
-    osw_quantity_kind_obj_list, osw_characteristic_obj_list = (
+    osw_quantity_kind_obj_list, osw_fundamental_characteristic_list, osw_characteristic_obj_list = (
         osw_ontology.get_osw_quantitykind_characteristics_obj_list()
     )
-    list_of_osw_obj_lists = [
-        osw_prefix_obj_list,
-        osw_quanity_unit_obj_list,
-        osw_composed_prefix_quantity_unit_obj_list,
-        osw_quantity_kind_obj_list,
-        osw_characteristic_obj_list,
-    ]
-    return list_of_osw_obj_lists
+    list_of_osw_obj_dict = {
+        "prefixes": osw_prefix_obj_list,
+        "quanity_units": osw_quanity_unit_obj_list,
+        "composed_prefix_quantity_units": osw_composed_prefix_quantity_unit_obj_list,
+        "quantity_kinds": osw_quantity_kind_obj_list,
+        "fundamental_characteristics": osw_fundamental_characteristic_list,
+        "characteristics": osw_characteristic_obj_list,
+    }
+    return list_of_osw_obj_dict
 
 
 # III: Load Data
-def load_data(osw_obj=None, list_of_osw_obj_lists: list = None) -> None:
+def load_data(osw_obj=None, list_of_osw_obj_dict: dict = None, change_id=None) -> None:
     """Load data into the desired OSW instance."""
     # Check if the list of OSW objects is provided
-    if list_of_osw_obj_lists is None or osw_obj is None:
+    if list_of_osw_obj_dict is None or osw_obj is None:
         raise ValueError(
             "OSW object and list of OSW objects is required for loading data."
         )
+    
     # Load data into the OSW instance
-    for osw_obj_list in list_of_osw_obj_lists:
+    # re-defining the list_of_osw_obj_dict for a selective include
+    list_of_osw_obj_dict = {
+        "prefixes": list_of_osw_obj_dict["prefixes"],
+        "quanity_units": list_of_osw_obj_dict["quanity_units"],
+        "composed_prefix_quantity_units": list_of_osw_obj_dict["composed_prefix_quantity_units"],
+        "quantity_kinds": list_of_osw_obj_dict["quantity_kinds"],
+        "fundamental_characteristics": list_of_osw_obj_dict["fundamental_characteristics"],
+        "characteristics": list_of_osw_obj_dict["characteristics"],
+    }
+    for key, osw_obj_list in list_of_osw_obj_dict.items():
+        # Define the namespace
+        namespace = None
+        meta_category_title = None
+        if key == "fundamental_characteristics": 
+            namespace = "Category"
+            # MetaFundamentalQuantityValue
+            meta_category_title = "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7"
+        if key == "characteristics": 
+            namespace = "Category"
+            # MetaQuantityValue
+            meta_category_title = "Category:OSWac07a46c2cf14f3daec503136861f5ab"
         osw_obj.store_entity(
             OSW.StoreEntityParam(
                 entities=osw_obj_list,
                 overwrite=True,
+                change_id=change_id,
+                namespace=namespace,
+                meta_category_title=meta_category_title
             )
         )
 
@@ -121,12 +146,13 @@ def main(
     # I: Exctract Data
     osw_ontology_instance = extract_data(debug=True)
     # II: Transform Data
-    list_of_osw_obj_lists = transform_data(osw_ontology=osw_ontology_instance)
+    list_of_osw_obj_dict = transform_data(osw_ontology=osw_ontology_instance)
     # III: Load Data
     if upload:
         load_data(
             osw_obj=osw_obj,
-            list_of_osw_obj_lists=list_of_osw_obj_lists,
+            list_of_osw_obj_dict=list_of_osw_obj_dict,
+            change_id="50d1ad0b-8d58-4751-aab5-584d1741e98d", # Random generated change_id
         )
 
 
