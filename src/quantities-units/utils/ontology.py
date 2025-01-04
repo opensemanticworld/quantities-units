@@ -825,7 +825,7 @@ class Ontology:
 
             # Ensure that the label list is sorted with English first
             osw_label_list = [
-                model.Label(text=value, lang=key)
+                model.Label(text=value[:1].upper() + value[1:], lang=key)
                 for key, value in clean_label_dict.items()
             ]
             osw_label_list = self.sort_label_list(label_list=osw_label_list)
