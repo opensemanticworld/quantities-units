@@ -47,7 +47,7 @@ class Sparql:
         result = sparql.query().convert()
         if self.debug:
             print(
-                f"...fetched {len(result["results"]["bindings"])} JSON objects."
+                f'...fetched {len(result["results"]["bindings"])} JSON objects.'
             )
 
         return result

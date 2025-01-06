@@ -411,7 +411,7 @@ class Ontology:
                 name=prefix["label"],
                 exact_ontology_match=[prefix["pid"]],
                 label=[
-                    {"text": f"{prefix["label"]} (unit prefix)", "lang": "en"}
+                    {"text": f'{prefix["label"]} (unit prefix)', "lang": "en"}
                 ],
                 description=[],
                 type=[
