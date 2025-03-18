@@ -373,6 +373,8 @@ class Ontology:
         parts = qlabel.split(", ")
         ret = {}
         for part in parts:
+            if not "@" in part:
+                part += "@en" # default to English
             value, key = part.split("@")
             ret[key] = value
         return ret
