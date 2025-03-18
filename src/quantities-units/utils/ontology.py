@@ -934,7 +934,7 @@ class Ontology:
                         uri=quantity_binding["broader"]["value"],
                     ),
                 )
-                characteristic = model.MetaFundamentalQuantityValue(
+                characteristic = model.MetaQuantityValue(
                     characteristics=None,  # only used for existing references
                     subclass_of=[
                         broader_characteristic
