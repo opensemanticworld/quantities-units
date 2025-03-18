@@ -92,11 +92,13 @@ class Ontology:
         else:
             return sorted(label_list, key=lambda x: x.lang != "en")
 
-    def get_deterministic_url_uuid(self, prefix="", uri=None) -> uuid.UUID:
+    @staticmethod
+    def get_deterministic_url_uuid(prefix="", uri=None) -> uuid.UUID:
         """Function to generate a deterministic UUID from a URI and prefix."""
         return uuid.uuid5(namespace=uuid.NAMESPACE_URL, name=f"{prefix}{uri}")
 
-    def get_osw_uuid_str(self, namespace="", _uuid=None) -> str:
+    @staticmethod
+    def get_osw_uuid_str(namespace="", _uuid=None) -> str:
         """Function to get the OSW category by URI."""
         return f"{namespace}OSW{str(_uuid).replace('-', '')}"
 
