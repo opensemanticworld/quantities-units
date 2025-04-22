@@ -1,6 +1,8 @@
 """Implementation of Ontology class for handling ontology related operations."""
 
+from logging import warning
 import os
+from typing import List
 import uuid
 import json
 import re
@@ -9,6 +11,12 @@ from osw.utils.wiki import get_full_title
 from osw.utils.strings import pascal_case
 from jsonpath_ng.ext import parse
 
+import pint
+from pint import UnitRegistry
+from ucumvert import PintUcumRegistry
+
+ureg = UnitRegistry()
+ucum_ureg = PintUcumRegistry()
 
 class Ontology:
     """
@@ -1013,6 +1021,281 @@ class Ontology:
             == has_broader_counter + is_broader_counter
         )
         return osw_quantitiy_list, osw_fundamental_characteristic_list, osw_characteristic_list
+        
+    @staticmethod
+    def get_pint_quantity(unit) -> pint.Quantity:
+        unit: model.QuantityUnit = unit
+        # get the qudt ontology match
+        non_prefixed_unit_iri = [iri for iri in unit.exact_ontology_match if iri.startswith("http://qudt.org/vocab/unit/")][0]
+        ucum_mappings = {
+            "http://qudt.org/vocab/unit/VA-HR": {"code": "V.A.h", "pint": "", "name": "", "description": "product of the volt ampere and the unit hour"},
+            "http://qudt.org/vocab/unit/GM-PER-DEG_C": {"code": "d.Cel-1", "pint": "gram per delta_degC", "name": "", "description": "$\textit{Gram Degree Celsius}$ is a C.G.S System unit for 'Mass Temperature' expressed as $g \cdot degC$."},
+            "http://qudt.org/vocab/unit/DEG_C-PER-M": {"code": "Cel.m-1", "pint": "delta_degC per meter", "name": "", "description": ""},
+            "http://qudt.org/vocab/unit/DEG_F-PER-K": {"code": "[degF].K-1", "pint": "delta_degF per kelvin", "name": "", "description": "traditional unit degree Fahrenheit for temperature according to the Anglo-American system of units divided by the SI base unit Kelvin"},
+            "http://qudt.org/vocab/unit/J-PER-GM-DEG_C": {"code": "J.g-1.Cel-1", "pint": "joule per gram per delta_degC", "name": "", "description": "Unit for expressing the specific heat capacity."},
+            "http://qudt.org/vocab/unit/PPT": {"code": "[ppt]", "pint": "", "name": "", "description": "trillionth of a quantity, unit of proportion equal to 10⁻¹²"},
+            "http://qudt.org/vocab/unit/FRACTION": {"code": "{fraction}", "pint": "", "name": "", "description": "Fraction is a unit for 'Dimensionless Ratio' expressed as the value of the ratio itself."},
+            "http://qudt.org/vocab/unit/M2-PER-SEC2-K": {"code": "m2.s2-1.K-1", "pint": "", "name": "", "description": "Unit for expressing the specific heat capacity."},
+            "http://qudt.org/vocab/unit/PH": {"code": "[pH]", "pint": "", "name": "", "description": "In chemistry the unit $\textit{pH}$, also referred to as $\textit{acidity}$ or $\textit{basicity}$ is the negative logarithm (base 10) of the concentration of free protons (or hydronium ions)."},
+            "http://qudt.org/vocab/unit/GM-PER-M2-HR": {"code": "g.m-2.hr-1", "pint": "", "name": "", "description": "0.0001-fold of the SI base unit kilogram divided by the SI base unit meter with the exponent 2 over a period of 1 hour "},
+            "http://qudt.org/vocab/unit/DEG_C-PER-K": {"code": "Cel.K-1", "pint": "delta_degC per kelvin", "name": "", "description": "unit with the name Degree Celsius divided by the SI base unit kelvin"},
+            "http://qudt.org/vocab/unit/DEG_C-PER-MIN": {"code": "Cel.min-1", "pint": "delta_degC per minute", "name": "", "description": "$\textit{Degree Celsius per Minute}$ is a unit for 'Temperature Per Time' expressed as $degC / m$."},
+            "http://qudt.org/vocab/unit/DEG_C-WK": {"code": "Cel.wk", "pint": "delta_degC per week", "name": "", "description": "temperature multiplied by unit of time."},
+            "http://qudt.org/vocab/unit/NUM": {"code": "1", "pint": "", "name": "", "description": "Number is a unit for  'Dimensionless' expressed as (\#$."},
+            "http://qudt.org/vocab/unit/A-PER-DEG_C": {"code": "A.Cel-1", "pint": "ampere per delta_degC", "name": "", "description": "A measure used to express how a current is subject to temperature. Originally used in Wien's Law to describe phenomena related to filaments. One use today is to express how a current generator derates with temperature."},
+            "http://qudt.org/vocab/unit/DEG_C-PER-YR": {"code": "Cel.a-1", "pint": "delta_degC per year", "name": "", "description": "A rate of change of temperature expressed on the Celsius scale over a period of an average calendar year (365.25 days)."},
+            "http://qudt.org/vocab/unit/VA": {"code": "V.A", "pint": "", "name": "", "description": "Product of the RMS value of the voltage and the RMS value of an alternating electric current"},
+            "http://qudt.org/vocab/unit/K-PER-SEC2": {"code": "K/s^2", "pint": "", "name": "", "description": "$\textit{Kelvin per Square Second}$ is a unit for 'Temperature Per Time Squared' expressed as $K / s^2$."},
+            "http://qudt.org/vocab/unit/TONNE-PER-HA-YR": {"code": "t.har-1.year-1", "pint": "", "name": "", "description": "A measure of density equivalent to 1000kg per hectare per year or one Megagram per hectare per year, typically used to express a volume of biomass or crop yield."},
+            "http://qudt.org/vocab/unit/DEG_C-PER-SEC": {"code": "Cel.s-1", "pint": "delta_degC per second", "name": "", "description": "$\textit{Degree Celsius per Second}$ is a unit for 'Temperature Per Time' expressed as $degC / s$."},
+            "http://qudt.org/vocab/unit/DEG_C-PER-HR": {"code": "Cel.h-1", "pint": "delta_degC per hour", "name": "", "description": "$\textit{Degree Celsius per Hour}$ is a unit for 'Temperature Per Time' expressed as $degC / h$."},
+            "http://qudt.org/vocab/unit/MOL-DEG_C": {"code": "mol.Cel", "pint": "mol delta_degC", "name": "", "description": "$\textit{Mole Degree Celsius}$ is a C.G.S System unit for $\textit{Temperature Amount Of Substance}$ expressed as $mol-degC$."},
+            "http://qudt.org/vocab/unit/PPQ": {"code": "[ppq]", "pint": "", "name": "", "description": "unit of proportion equal to 10⁻¹⁶"},
+            "http://qudt.org/vocab/unit/PER-KiloVA-HR": {"code": "kV.A-1.h-1", "pint": "per kilo volt per ampere per hour", "name": "", "description": "reciprocal of the 1,000-fold of the product of the SI derived unit volt ampere and the unit hour"},
+            "http://qudt.org/vocab/unit/CentiM-SEC-DEG_C": {"code": "cm.s.Cel-1", "pint": "centimeter second delta_degC", "name": "", "description": "$\textit{Centimeter Second Degree Celsius}$ is a C.G.S System unit for 'Length Temperature Time' expressed as $cm-s-degC$."},
+            "http://qudt.org/vocab/unit/MicroGM-PER-GM-HR": {"code": "ug.g-1.hr-1", "pint": "microgram per gram per hour", "name": "", "description": "0.0000000001-fold of the SI base unit kilogram divided by 0.0001-fold of the SI base unit kilogram over a period of 1 hour "},
+            
+            "http://qudt.org/vocab/unit/CentiM2-PER-V-SEC": {"code": "cm2.V.s-1", "pint": "centimeter squared per volt second", "name": "", "description": "$\textit{Centimeter Squared Volt Second}$ is a C.G.S System unit for 'Length Area Electric Potential Time' expressed as $cm2-V-s$."},
+        }
+                
+        if non_prefixed_unit_iri in ucum_mappings.keys():
+            if ucum_mappings[non_prefixed_unit_iri]["code"] != "":
+                unit.ucum_codes = [ucum_mappings[non_prefixed_unit_iri]["code"]]
+        
+        pQ = None
+        
+        try:
+            # get the pint quantity from the unit
+            if unit.main_symbol.startswith("/"):
+                unit.main_symbol = "1" + unit.main_symbol
+            symbol = unit.main_symbol
+            symbol = symbol.replace("°C", "delta_degC")
+            symbol = symbol.replace("°F", "delta_degF")
+            symbol = symbol.replace("2", "²")
+            symbol = symbol.replace("3", "³")
+            symbol = symbol.replace("4", "⁴")
+            symbol = symbol.replace("#", "")
+            pQ = ureg[symbol]
+            return pQ
+        except Exception as e:
+            print(f"Error parsing unit '{unit.main_symbol}'")
+            print(e)
+        
+        for code in unit.ucum_codes if unit.ucum_codes else []:
+            try:
+                if non_prefixed_unit_iri in ucum_mappings.keys():
+                    if ucum_mappings[non_prefixed_unit_iri]["pint"] != "":
+                        pQ = ureg[ucum_mappings[non_prefixed_unit_iri]["pint"]]
+                        
+                else:
+                    pQ = ucum_ureg.from_ucum(code)
+                value = f"{pQ:9fLx}" # 9f => round to 8 digits, '#' => simplify the unit
+                # e.g. \SI[]{1.0}{\kilo\gram\meter\per\ampere\squared\per\second\squared}
+                # select the last curly brace
+                if non_prefixed_unit_iri in ucum_mappings.keys():
+                    print(f"{non_prefixed_unit_iri}: {pQ:9fLx}")
+                siunix_symbol = siunix_symbol = value.split("{")[-1].replace("}", "")
+                siunix_symbol = siunix_symbol.replace("delta_degree_Fahrenheit", "Fahrenheit")
+                siunix_symbol = siunix_symbol.replace("delta_degree_Celsius", "Celsius")
+                
+                # replace backslashes with underscores
+                siunix_symbol = siunix_symbol.replace("\\", "_").strip("_")
+                break
+                
+            except Exception as e:
+                print(f"Error parsing UCUM code '{code}'")
+                #print('"' + non_prefixed_unit_iri +  '": {"code": "' + code + '", "pint": "", "name": "", "description": "' + (plainTextDescription if plainTextDescription else "") + '"},')
+                #print(e)
+                continue
+                #break
+        return pQ
+    
+    @staticmethod
+    def get_unit_name(pQ: pint.Quantity):
+        """Get the unit name from a Pint Quantity."""
+        value = f"{pQ:9fLx}" # 9f => round to 8 digits, '#' => simplify the unit
+        # e.g. \SI[]{1.0}{\kilo\gram\meter\per\ampere\squared\per\second\squared}
+        # select the last curly brace
+        siunix_symbol = siunix_symbol = value.split("{")[-1].replace("}", "")
+        siunix_symbol = siunix_symbol.replace("delta_degree_Fahrenheit", "Fahrenheit")
+        siunix_symbol = siunix_symbol.replace("delta_degree_Celsius", "Celsius")
+        siunix_symbol = siunix_symbol.replace("\\", "_").strip("_")
+        return siunix_symbol
+    
+    @staticmethod
+    def get_unit_enum_name(unit):
+        unit: model.QuantityUnit = unit
+        pQ = Ontology.get_pint_quantity(unit)
+        if pQ is None:
+            return None
+        unit_name = Ontology.get_unit_name(pQ)
+        return unit_name
+
+    @staticmethod
+    def get_osw_id(entity) -> str:
+        """Determines the OSW-ID based on the entity's data - either from the entity's
+        attribute 'osw_id' or 'uuid'.
+
+        Parameters
+        ----------
+        entity
+            The entity to determine the OSW-ID for
+
+        Returns
+        -------
+            The OSW-ID as a string or None if the OSW-ID could not be determined
+        """
+        osw_id = getattr(entity, "osw_id", None)
+        uuid = entity.get_uuid()
+        from_uuid = None if uuid is None else f"OSW{str(uuid).replace('-', '')}"
+        if osw_id is None:
+            return from_uuid
+        return osw_id    
+
+    @staticmethod
+    def create_smw_quantity_properties(list_of_osw_obj_dict: dict = None): # -> Dict[str, Union[model.MainQuantityProperty, model.SubQuantityProperty]]:
+        """Create SMW Quantity Properties."""
+        # Check if the list of OSW objects is provided
+        if list_of_osw_obj_dict is None:
+            raise ValueError(
+                "OSW object and list of OSW objects is required for creating SMW Quantity Properties."
+            )
+            
+        # create a map <entity_title, entity> for all entities
+        entity_map = {}
+        for key, osw_obj_list in list_of_osw_obj_dict.items():
+            for entity in osw_obj_list:
+                entity_map[get_full_title(entity)] = entity
+
+        quantity_property_entitites = {}
+        osw_characteristic: model.FundamentalQuantityValueType
+        for osw_characteristic in list_of_osw_obj_dict["fundamental_characteristics"]:
+            osw_quantity: model.QuantityKind = entity_map[osw_characteristic.quantity]
+            units: List[model.QuantityUnit] = [entity_map[u] for u in osw_quantity.units]
+            prefix_units: List[model.QuantityUnit] = []
+            for u in units:
+                if u.prefix_units is not None:
+                    prefix_units.extend(u.prefix_units)
+            units.extend(prefix_units)
+            main_unit: model.QuantityUnit = None
+            other_units: List[model.QuantityUnit] = []
+            for unit in units:
+                if unit.conversion_factor_from_si == 1.0 and main_unit is None:
+                    main_unit = unit
+                else:
+                    other_units.append(unit)
+            if main_unit is None and len(other_units) == 1:
+                warning("There is only one unit with conversion factor != 1.0 for characteristic: " + osw_characteristic.name + ": " + other_units[0].main_symbol)
+                main_unit = other_units[0]
+                other_units = []
+            if main_unit is None:
+                warning("No main unit found for characteristic, set first unit as main unit: " + osw_characteristic.name)
+                main_unit = units[0]
+                other_units = units[1:]
+                # continue
+                
+            unit_enumeration: List[model.UnitEnumerationElement] = [
+                model.UnitEnumerationElement(
+                    osw_id="Item:" + Ontology.get_osw_id(main_unit).replace("Item:", ""), # may or may not include namespace
+                    name=Ontology.get_unit_enum_name(main_unit),
+                    symbol=main_unit.main_symbol,
+                )
+            ]
+            
+                
+            additional_units: List[model.Unit] = []  
+            if hasattr(main_unit, "prefix_units") and main_unit.prefix_units is not None:
+                for pu in main_unit.prefix_units:
+                    if pu.conversion_factor_from_si is None:
+                        warning("No conversion factor found for unit: " + pu.main_symbol)
+                        continue
+                    u = model.Unit(
+                        uuid=Ontology.get_deterministic_url_uuid(
+                            prefix="smwunit:",
+                            uri=pu.uuid,
+                        ),
+                        name=pu.main_symbol,
+                        main_symbol=pu.main_symbol,
+                        #main_unit.conversion_factor_from_si,
+                        conversion_factor_to_main_unit=round(1/pu.conversion_factor_from_si, 6),
+                        
+                    )
+                    additional_units.append(u)
+                    
+                    pue = model.UnitEnumerationElement(
+                        osw_id=Ontology.get_osw_id(pu),
+                        name=Ontology.get_unit_enum_name(pu),
+                        symbol=pu.main_symbol,
+                    )
+                    unit_enumeration.append(pue)
+                    
+            
+            name = "Has" + osw_characteristic.name + "Value"
+            title = "Property:" + name
+            osw_characteristic.quantity_property = title
+            p = model.MainQuantityProperty(
+                uuid=Ontology.get_deterministic_url_uuid(
+                    prefix="property:",
+                    uri=osw_characteristic.name,
+                ),
+                meta=model.Meta(
+                    uuid=Ontology.get_deterministic_url_uuid(
+                        prefix="meta:",
+                        uri=title,
+                    ),
+                    wiki_page=model.WikiPage(title=name, namespace="Property")
+                ),
+                label=osw_characteristic.label,
+                description=osw_characteristic.description,
+                name=name,
+                main_unit=model.MainUnit(
+                    uuid=Ontology.get_deterministic_url_uuid(
+                        prefix="smwunit:",
+                        uri=main_unit.uuid,
+                    ),
+                    name=main_unit.main_symbol,
+                    main_symbol=main_unit.main_symbol,
+                ),
+                additional_units=additional_units
+            )
+            
+            osw_characteristic.unit_enumeration = unit_enumeration
+            osw_characteristic.default_unit = unit_enumeration[0].osw_id
+
+            quantity_property_entitites[title] = p
+        
+        osw_characteristic: model.QuantityValueType  
+        for osw_characteristic in list_of_osw_obj_dict["characteristics"]:
+            # osw_quantity: model.QuantityKind = entity_map[osw_characteristic.quantity] 
+    
+            name = "Has" + osw_characteristic.name + "Value"
+            title = "Property:" + name
+            osw_characteristic.quantity_property = title
+            
+            base_characteristic: model.CharacteristicType = entity_map[osw_characteristic.subclass_of[0]]
+            #bc = base_characteristic
+            #subproperty_of = bc.quantity_property
+            subproperty_of = "Property:Has" + base_characteristic.name + "Value"
+            while not isinstance(base_characteristic, model.FundamentalQuantityValueType):
+                base_characteristic = entity_map[base_characteristic.subclass_of[0]]
+            base_property = base_characteristic.quantity_property
+            
+            p = model.SubQuantityProperty(
+                uuid=Ontology.get_deterministic_url_uuid(
+                    prefix="property:",
+                    uri=osw_characteristic.name,
+                ),
+                meta=model.Meta(wiki_page=model.WikiPage(title=name, namespace="Property")),
+                label=osw_characteristic.label,
+                description=osw_characteristic.description,
+                name=name,
+                subproperty_of=subproperty_of,
+                base_property=base_property,
+            )
+
+            quantity_property_entitites[title] = p
+            
+        return quantity_property_entitites
 
 
 if __name__ == "__main__":

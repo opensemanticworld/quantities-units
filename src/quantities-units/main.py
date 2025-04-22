@@ -23,6 +23,8 @@ def update_local_osw(osw_obj=None) -> None:
         "Category:OSW4082937906634af992cf9a1b18d772cf",  # Quantity Value
         "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7",  # Fundamental Quantiy Value Type
         "Category:OSWac07a46c2cf14f3daec503136861f5ab",  # Quantiy Value Type
+        "Category:OSW1b15ddcf042c4599bd9d431cbfdf3430",  # Main Quantity Property
+        "Category:OSW69f251a900944602a08d1cca830249b5",  # Sub Quantity Property 
     ]
     osw_obj.fetch_schema(
         OSW.FetchSchemaParam(
@@ -86,6 +88,9 @@ def transform_data(osw_ontology: Ontology = None):
         "fundamental_characteristics": osw_fundamental_characteristic_list,
         "characteristics": osw_characteristic_obj_list,
     }
+    
+    osw_ontology.create_smw_quantity_properties(list_of_osw_obj_dict=list_of_osw_obj_dict)
+    
     return list_of_osw_obj_dict
 
 
@@ -130,6 +135,8 @@ def load_data(osw_obj=None, list_of_osw_obj_dict: dict = None, change_id=None) -
             )
         )
 
+def create_smw_quantity_properties(list_of_osw_obj_dict):
+    return Ontology.create_smw_quantity_properties(list_of_osw_obj_dict=list_of_osw_obj_dict)
 
 def main(
     osw_domain="wiki-dev.open-semantic-lab.org",
