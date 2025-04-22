@@ -850,9 +850,35 @@ class Ontology:
                 for key, value in clean_label_dict.items()
             ]
             osw_label_list = self.sort_label_list(label_list=osw_label_list)
+            
+            label_corrections = {
+                "http://qudt.org/vocab/quantitykind/VaporPermeance": "VaporPermeance", # label 'Vapor Permeability' collides with http://qudt.org/vocab/quantitykind/VaporPermeability
+                "http://qudt.org/vocab/quantitykind/ConductivityVariance_NEON": "NEON Conductivity Variance", # label 'NEON' collides with http://qudt.org/vocab/quantitykind/TemperatureVariance_NEON
+                "http://qudt.org/vocab/quantitykind/TemperatureVariance_NEON": "NEON Temperature Variance", # label 'NEON' collides with http://qudt.org/vocab/quantitykind/ConductivityVariance_NEON
+                "http://qudt.org/vocab/quantitykind/EvaporativeHeatTransferCoefficient": "Evaporative Heat Transfer Coefficient", # label 'Combined Non Evaporative Heat Transfer Coefficient' collides with http://qudt.org/vocab/quantitykind/CombinedNonEvaporativeHeatTransferCoefficient
+            }
+            
+            if quantity_binding["quantity"]["value"] in label_corrections.keys():
+                osw_label_list[0].text = label_corrections[
+                    quantity_binding["quantity"]["value"]
+                ]
+            
+            hardcoded_fundamental_characteristic_list = [
+                "http://qudt.org/vocab/quantitykind/Frequency", # broader has no units
+                "http://qudt.org/vocab/quantitykind/Radiance", # broader has no units
+                "http://qudt.org/vocab/quantitykind/SpecificImpulseByWeight", # broader (Time) is not applicable
+            ]
+            hardcoded_nonfundamental_characteristic_list = [
+            ]
 
             # Differentiate between is_broader and has_broader quantities/characteristics
-            if "broader" not in quantity_binding:
+            is_fundamental = (
+                quantity_binding["quantity"]["value"] in hardcoded_fundamental_characteristic_list or (
+                    quantity_binding["quantity"]["value"] not in hardcoded_nonfundamental_characteristic_list
+                    and "broader" not in quantity_binding
+                )
+            )
+            if is_fundamental:
                 # This quantity is a broader quantity/characteristic
                 is_broader_counter += 1
                 # Algorithm to identify uploaded, referenceable or composed units
@@ -952,12 +978,16 @@ class Ontology:
                         uri=quantity_binding["broader"]["value"],
                     ),
                 )
+                
+                # we could get the quantity of the broader characteristic here but rely on inheritance instead
+                osw_quantity = None
+                
                 characteristic = model.QuantityValueType(
                     characteristics=None,  # only used for existing references
                     subclass_of=[
                         broader_characteristic
                     ],  # Broader Characteristic
-                    quantity=get_full_title(osw_quantity),
+                    quantity=osw_quantity,
                     uuid=self.get_deterministic_url_uuid(
                         prefix="characteristic:",
                         uri=quantity_binding["quantity"]["value"],
