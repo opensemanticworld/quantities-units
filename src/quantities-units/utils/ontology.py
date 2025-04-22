@@ -665,6 +665,20 @@ class Ontology:
                 identifier=non_prefixed_unit_iri,
                 key="symbol",
             )
+            
+            ucum_codes = self.match_json_path_key(
+                self.qudt_units,
+                identifier=non_prefixed_unit_iri,
+                key="ucumCodes",
+            )
+            
+            if isinstance(ucum_codes, str):
+                if "," in ucum_codes:
+                    # split and trim whitespace
+                    ucum_codes = [code.strip() for code in ucum_codes.split(",")]
+                else:
+                    ucum_codes = [ucum_codes]
+            
             _uuid = uuid.uuid5(
                 namespace=uuid.NAMESPACE_URL, name=non_prefixed_unit_iri
             )
@@ -688,6 +702,7 @@ class Ontology:
                     prefix_units=prefix_unit_list,
                     description=description_list,
                     conversion_factor_from_si=conversion_multiplier,
+                    ucum_codes=ucum_codes,
                 )
             else:
                 if unit_property_dict != None:
@@ -712,6 +727,7 @@ class Ontology:
                     prefix_units=prefix_unit_list,
                     description=description_list,
                     conversion_factor_from_si=conversion_multiplier,
+                    ucum_codes=ucum_codes,
                 )
 
             units.append(unit)
