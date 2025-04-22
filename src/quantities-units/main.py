@@ -21,7 +21,8 @@ def update_local_osw(osw_obj=None) -> None:
         "Category:OSW268cc84d3dff4a7ba5fd489d53254cb0",  # Composed Quantity Unit with Unit Prefix (Outliers)
         "Category:OSWffe74f291d354037b318c422591c5023",  # Characteristic Type
         "Category:OSW4082937906634af992cf9a1b18d772cf",  # Quantity Value
-        "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7",  # Meta Fundamental Quantiy Value
+        "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7",  # Fundamental Quantiy Value Type
+        "Category:OSWac07a46c2cf14f3daec503136861f5ab",  # Quantiy Value Type
     ]
     osw_obj.fetch_schema(
         OSW.FetchSchemaParam(
@@ -113,11 +114,11 @@ def load_data(osw_obj=None, list_of_osw_obj_dict: dict = None, change_id=None) -
         meta_category_title = None
         if key == "fundamental_characteristics": 
             namespace = "Category"
-            # MetaFundamentalQuantityValue
+            # FundamentalQuantityValueType
             meta_category_title = "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7"
         if key == "characteristics": 
             namespace = "Category"
-            # MetaQuantityValue
+            # QuantityValueType
             meta_category_title = "Category:OSWac07a46c2cf14f3daec503136861f5ab"
         osw_obj.store_entity(
             OSW.StoreEntityParam(

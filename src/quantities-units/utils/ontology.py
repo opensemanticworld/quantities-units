@@ -908,7 +908,7 @@ class Ontology:
 
                 osw_quantitiy_list.append(osw_quantity)
 
-                characteristic = model.MetaFundamentalQuantityValue(
+                characteristic = model.FundamentalQuantityValueType(
                     characteristics=None,  # only used for existing references
                     subclass_of=[
                         "Category:OSW4082937906634af992cf9a1b18d772cf"
@@ -936,7 +936,7 @@ class Ontology:
                         uri=quantity_binding["broader"]["value"],
                     ),
                 )
-                characteristic = model.MetaQuantityValue(
+                characteristic = model.QuantityValueType(
                     characteristics=None,  # only used for existing references
                     subclass_of=[
                         broader_characteristic
