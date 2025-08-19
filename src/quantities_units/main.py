@@ -2,9 +2,9 @@
 
 from osw.core import OSW
 from osw.express import OswExpress
-from utils.prefixes import SiPrefixes
-from utils.ontology import Ontology
-from utils.sparql_wrapper import Sparql
+from quantities_units.utils.prefixes import SiPrefixes
+from quantities_units.utils.ontology import Ontology
+from quantities_units.utils.sparql_wrapper import Sparql
 
 
 # Initially update the local OSW model with the required schemas
