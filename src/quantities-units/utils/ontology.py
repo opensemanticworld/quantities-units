@@ -1346,6 +1346,6 @@ if __name__ == "__main__":
     )
 
     # Transform QuantityKind and Characteristics
-    osw_quantity_kind_obj_list, osw_characteristic_obj_list = (
+    osw_quantity_kind_obj_list, osw_fundamental_characteristic_obj_list, osw_characteristic_obj_list = (
         osw_ontology.get_osw_quantitykind_characteristics_obj_list()
     )
