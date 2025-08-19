@@ -1165,13 +1165,15 @@ class Ontology:
         entity_map = {}
         for key, osw_obj_list in list_of_osw_obj_dict.items():
             for entity in osw_obj_list:
-                entity_map[get_full_title(entity)] = entity
+                entity_map[entity.get_iri()] = entity
 
         quantity_property_entitites = {}
         osw_characteristic: model.FundamentalQuantityValueType
         for osw_characteristic in list_of_osw_obj_dict["fundamental_characteristics"]:
-            osw_quantity: model.QuantityKind = entity_map[osw_characteristic.quantity]
-            units: List[model.QuantityUnit] = [entity_map[u] for u in osw_quantity.units]
+            # osw_quantity: model.QuantityKind = entity_map[osw_characteristic.quantity.get_iri()]
+            osw_quantity: model.QuantityKind = entity_map[osw_characteristic.__iris__["quantity"]]
+            # units: List[model.QuantityUnit] = [entity_map[u.get_iri()] for u in osw_quantity.units]
+            units: List[model.QuantityUnit] = [entity_map[u] for u in osw_quantity.__iris__["units"]]
             prefix_units: List[model.QuantityUnit] = []
             for u in units:
                 if u.prefix_units is not None:
@@ -1266,19 +1268,23 @@ class Ontology:
         
         osw_characteristic: model.QuantityValueType  
         for osw_characteristic in list_of_osw_obj_dict["characteristics"]:
-            # osw_quantity: model.QuantityKind = entity_map[osw_characteristic.quantity] 
+            # osw_quantity: model.QuantityKind = entity_map[osw_characteristic.quantity.get_iri()]
+            # osw_quantity: model.QuantityKind = entity_map[osw_characteristic.__iris__["quantity"]] 
     
             name = "Has" + osw_characteristic.name + "Value"
             title = "Property:" + name
             osw_characteristic.quantity_property = title
             
-            base_characteristic: model.CharacteristicType = entity_map[osw_characteristic.subclass_of[0]]
+            # base_characteristic: model.CharacteristicType = entity_map[osw_characteristic.subclass_of[0].get_iri()]
+            base_characteristic: model.CharacteristicType = entity_map[osw_characteristic.__iris__["subclass_of"][0]]
             #bc = base_characteristic
             #subproperty_of = bc.quantity_property
             subproperty_of = "Property:Has" + base_characteristic.name + "Value"
             while not isinstance(base_characteristic, model.FundamentalQuantityValueType):
-                base_characteristic = entity_map[base_characteristic.subclass_of[0]]
-            base_property = base_characteristic.quantity_property
+                #base_characteristic = entity_map[base_characteristic.subclass_of[0].get_iri()]
+                base_characteristic = entity_map[base_characteristic.__iris__["subclass_of"][0]]
+            #base_property = base_characteristic.quantity_property
+            base_property = base_characteristic.__iris__["quantity_property"]
             
             p = model.SubQuantityProperty(
                 uuid=Ontology.get_deterministic_url_uuid(
