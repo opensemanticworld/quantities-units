@@ -3,7 +3,9 @@ name = "quantities-units"
 version = "0.0.1"
 description = "Project to fetch quantities and units from ontologies to provide a applied data source to OSW."
 authors = ["Andreas Raeder"]
-
+packages = [
+    { include = "quantities-units", from = "src" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
