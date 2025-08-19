@@ -1,4 +1,4 @@
-"""Entrypoint for the quantities-units app."""
+"""Entrypoint for the quantities_units app."""
 
 from osw.core import OSW
 from osw.express import OswExpress

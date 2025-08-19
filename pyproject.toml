@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "quantities-units"
+name = "quantities_units"
 version = "0.0.1"
 description = "Project to fetch quantities and units from ontologies to provide a applied data source to OSW."
 authors = ["Andreas Raeder"]
 packages = [
-    { include = "quantities-units", from = "src" }
+    { include = "quantities_units", from = "src" }
 ]
 
 [tool.poetry.dependencies]
@@ -16,7 +16,9 @@ pyspark = "^3.5.3"
 osw = "^0.32.0"
 deepdiff = "^8.0.1"
 importlib_metadata = "*"
-ucumvert = "^0.2.1"
+ucumvert = "0.2.1"
+pint = "0.24.4"
+#opensemantic.characteristics.quantitative = "^0.2.4"
 
 [tool.poetry.group.dev.dependencies]
 pdoc = "^14.4.0"
