@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quantities_units"
-version = "0.0.1"
+version = "0.0.2"
 description = "Project to fetch quantities and units from ontologies to provide a applied data source to OSW."
 authors = ["Andreas Raeder"]
 packages = [
@@ -8,22 +8,21 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-sparqlwrapper = "^2.0.0"
-ipykernel = "^6.29.5"
-pandas = "^2.2.2"
+python = ">=3.11"
+sparqlwrapper = ">=2.0.0"
+ipykernel = ">=6.29.5"
+pandas = ">=2.2.2"
 pyspark = "^3.5.3"
-osw = "^0.32.0"
-deepdiff = "^8.0.1"
+osw = ">=0.32.0"
+deepdiff = ">=8.0.1"
 importlib_metadata = "*"
 ucumvert = "0.2.1"
 pint = "0.24.4"
-#opensemantic.characteristics.quantitative = "^0.2.4"
 
 [tool.poetry.group.dev.dependencies]
-pdoc = "^14.4.0"
-pytest = "^8.2.0"
-pre-commit = "^3.7.0"
+pdoc = ">=14.4.0"
+pytest = ">=8.2.0"
+pre-commit = ">=3.7.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
