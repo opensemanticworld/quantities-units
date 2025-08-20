@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 import json
 from SPARQLWrapper import SPARQLWrapper, GET, POST, JSON  # noqa
-from rdflib import Graph
+from rdflib import Graph, URIRef
 
 
 class Sparql:
@@ -53,9 +53,25 @@ class Sparql:
             self.graph = Graph()
             self.graph.parse(source=self.sparql_endpoint, format="turtle")
             qres = self.graph.query(self.sparql_query)
-            result = {"head": {"vars": qres.vars}}
-            if qres.bindings:
-                result["results"] = {"bindings": [row for row in qres.bindings]}
+
+            result = {
+                "head": {"vars": [str(var) for var in qres.vars]},
+                "results": {
+                    "bindings": [
+                        {
+                            var: {
+                                "type": (
+                                    "uri" if isinstance(val, URIRef)
+                                    else "literal"
+                                ),
+                                "value": str(val)
+                            }
+                            for var, val in row.asdict().items()
+                        }
+                        for row in qres
+                    ]
+                }
+            }
 
         if self.debug and not self.read_file:
             print(f'...fetched {len(result["results"]["bindings"])} JSON objects.')

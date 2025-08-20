@@ -808,11 +808,11 @@ class Ontology:
                 # if len(description_split_list) > 1:
                 #     # This is just one case, set default to use the first description and english
                 #     print(description_split_list)
+                text = description_split_list[0].strip()
+                if len(text) == 0:
+                    text = "No description provided by QUDT"
                 description_list = [
-                    model.Description(
-                        text=description_split_list[0].strip(),
-                        lang="en",
-                    )
+                    model.Description(text=text, lang="en", )
                 ]
             # Overwrite description if plainTextDescription is present
             if "plainTextDescriptions" in quantity_binding:
@@ -822,12 +822,11 @@ class Ontology:
                 # if len(plain_description_split_list) > 1:
                 #     # This is just one case, set default to use the first description and englishSW
                 #     print(plain_description_split_list)
-                description_list = [
-                    model.Description(
-                        text=plain_description_split_list[0].strip(),
-                        lang="en",
-                    )
-                ]
+                text = plain_description_split_list[0].strip()
+                if not len(text) == 0:
+                    description_list = [
+                        model.Description(text=text, lang="en",)
+                    ]
 
             qlabels = quantity_binding["labels"]["value"]
             label_dict = self.dict_from_comma_separated_list(qlabels)
@@ -1210,6 +1209,9 @@ class Ontology:
                 for pu in main_unit.prefix_units:
                     if pu.conversion_factor_from_si is None:
                         warning("No conversion factor found for unit: " + pu.main_symbol)
+                        continue
+                    if pu.conversion_factor_from_si == 0:
+                        warning(f"Conversion factor for unit: {pu.main_symbol} was 0")
                         continue
                     u = model.Unit(
                         uuid=Ontology.get_deterministic_url_uuid(

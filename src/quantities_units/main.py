@@ -75,7 +75,7 @@ def extract_data(debug: bool = False, qudt_version: str = "latest") -> Ontology:
 
 # II: Transform Data
 def transform_data(osw_ontology: Ontology):
-    """Transform exctracted data into osw compatible format."""
+    """Transform extracted data into osw compatible format."""
     # Transform Prefixes
     osw_prefix_obj_list = osw_ontology.get_osw_prefix_obj_list()
     # Transform Quantity Units
