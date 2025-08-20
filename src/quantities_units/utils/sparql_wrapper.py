@@ -1,9 +1,10 @@
 """SPAQRL Wrapper for different SPARQL Endpoints."""
 
 import os
-import pathlib
+from pathlib import Path
 import json
 from SPARQLWrapper import SPARQLWrapper, GET, POST, JSON  # noqa
+from rdflib import Graph
 
 
 class Sparql:
@@ -13,11 +14,12 @@ class Sparql:
         self,
         method=GET,
         return_format=JSON,
-        endpoint="https://www.qudt.org/fuseki/qudt/sparql",
-        src_filepath="",
-        tgt_filepath="",
-        debug=False,
-        query="",
+        endpoint: str | Path = "https://www.qudt.org/fuseki/qudt/sparql",
+        src_filepath: str | Path = "",
+        tgt_filepath: str | Path = "",
+        debug: bool = False,
+        query: str = "",
+        read_file: bool = False,
     ):
         """Constructor to initialize the SPARQL Wrapper."""
         self.sparql_method = method
@@ -26,6 +28,8 @@ class Sparql:
         self.src_filepath = src_filepath
         self.tgt_filepath = tgt_filepath
         self.debug = debug
+        self.read_file = read_file
+        self.graph = None
         # Read the SPARQL query from a file if a file path is provided
         if self.src_filepath:
             self.sparql_query = self.readSparqlFile()
@@ -36,19 +40,25 @@ class Sparql:
     def execQuery(self):
         """Execute SPARQL query and return the result."""
         if self.debug:
-            print(
-                f"Executing SPARQL query {os.path.abspath(self.src_filepath)}"
-            )
+            print(f"Executing SPARQL query {os.path.abspath(self.src_filepath)}")
             print(f"on endpoint {self.sparql_endpoint} ...")
-        sparql = SPARQLWrapper(self.sparql_endpoint)
-        sparql.setMethod(self.sparql_method)
-        sparql.setQuery(self.sparql_query)
-        sparql.setReturnFormat(self.sparql_return_format)
-        result = sparql.query().convert()
-        if self.debug:
-            print(
-                f'...fetched {len(result["results"]["bindings"])} JSON objects.'
-            )
+
+        if not self.read_file:
+            sparql = SPARQLWrapper(self.sparql_endpoint)
+            sparql.setMethod(self.sparql_method)
+            sparql.setQuery(self.sparql_query)
+            sparql.setReturnFormat(self.sparql_return_format)
+            result = sparql.query().convert()
+        else:
+            self.graph = Graph()
+            self.graph.parse(source=self.sparql_endpoint, format="turtle")
+            qres = self.graph.query(self.sparql_query)
+            result = {"head": {"vars": qres.vars}}
+            if qres.bindings:
+                result["results"] = {"bindings": [row for row in qres.bindings]}
+
+        if self.debug and not self.read_file:
+            print(f'...fetched {len(result["results"]["bindings"])} JSON objects.')
 
         return result
 
@@ -62,7 +72,7 @@ class Sparql:
         try:
             # Check if path is a relative or absolute path
             if not os.path.isabs(self.src_filepath):
-                basedir = pathlib.Path(__file__).parent
+                basedir = Path(__file__).parent
                 src_filepath = os.path.join(basedir, self.src_filepath)
 
             # Ensure the path is OS independent
@@ -94,7 +104,7 @@ class Sparql:
         try:
             # Check if path is a relative or absolute path
             if not os.path.isabs(self.tgt_filepath):
-                basedir = pathlib.Path(__file__).parent
+                basedir = Path(__file__).parent
                 tgt_filepath = os.path.join(basedir, self.tgt_filepath)
             else:
                 tgt_filepath = self.tgt_filepath
@@ -129,6 +139,16 @@ if __name__ == "__main__":
     )
     qudt_qk = sparql_qudt.execQuery()
     # pprint(qudt_qk)
+
+    # Qudt dump / RDF file
+    sparql_qudt_from_file = Sparql(
+        endpoint="https://qudt.org/3.1.4/qudt-all",
+        src_filepath="../ontology/qudt/sparql/quantitykind.sparql",
+        debug=False,
+        read_file=True,
+    )
+    qudt_ff_qk = sparql_qudt_from_file.execQuery()
+    # pprint(qudt_ff_qk)
 
     # Wikidata instance
     sparql_wikidata = Sparql(

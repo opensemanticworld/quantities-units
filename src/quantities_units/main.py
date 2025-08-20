@@ -1,5 +1,7 @@
 """Entrypoint for the quantities_units app."""
 
+import re
+
 from osw.core import OSW
 from osw.express import OswExpress
 from quantities_units.utils.prefixes import SiPrefixes
@@ -24,7 +26,7 @@ def update_local_osw(osw_obj=None) -> None:
         "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7",  # Fundamental Quantiy Value Type
         "Category:OSWac07a46c2cf14f3daec503136861f5ab",  # Quantiy Value Type
         "Category:OSW1b15ddcf042c4599bd9d431cbfdf3430",  # Main Quantity Property
-        "Category:OSW69f251a900944602a08d1cca830249b5",  # Sub Quantity Property 
+        "Category:OSW69f251a900944602a08d1cca830249b5",  # Sub Quantity Property
     ]
     osw_obj.fetch_schema(
         OSW.FetchSchemaParam(
@@ -34,23 +36,31 @@ def update_local_osw(osw_obj=None) -> None:
     )
 
 
-# I: Exctract Data
-def extract_data(debug: bool = False) -> Ontology:
+# I: Extract Data
+def extract_data(debug: bool = False, qudt_version: str = "latest") -> Ontology:
     """Extract unit prefixes from SI Digital Framework."""
+    if qudt_version == "latest":
+        endpoint = "https://qudt.org/qudt-all"
+    else:
+        if not re.match(r"^\d+\.\d+\.\d+$", qudt_version):
+            raise ValueError("Invalid QUDT version format. Use 'latest' or 'X.Y.Z'.")
+        endpoint = f"https://qudt.org/{qudt_version}/qudt-all"
     # Initialize Prefixes
     prefixes = SiPrefixes()
     # Initialize Sparql QUDT Units and QuantityKinds
     sparql_qudt_units = Sparql(
-        endpoint="https://www.qudt.org/fuseki/qudt/sparql",
+        endpoint=endpoint,
         src_filepath="../ontology/qudt/sparql/units.sparql",
         tgt_filepath="../ontology/qudt/data/units.json",
         debug=debug,
+        read_file=True,
     )
     sparql_qudt_quantities = Sparql(
-        endpoint="https://www.qudt.org/fuseki/qudt/sparql",
+        endpoint=endpoint,
         src_filepath="../ontology/qudt/sparql/quantitykind.sparql",
         tgt_filepath="../ontology/qudt/data/quantitykind.json",
         debug=debug,
+        read_file=True,
     )
     # Initialize Ontology for transformation
     osw_ontology = Ontology(
@@ -64,7 +74,7 @@ def extract_data(debug: bool = False) -> Ontology:
 
 
 # II: Transform Data
-def transform_data(osw_ontology: Ontology = None):
+def transform_data(osw_ontology: Ontology):
     """Transform exctracted data into osw compatible format."""
     # Transform Prefixes
     osw_prefix_obj_list = osw_ontology.get_osw_prefix_obj_list()
@@ -77,9 +87,11 @@ def transform_data(osw_ontology: Ontology = None):
         osw_ontology.get_osw_quantity_unit_obj_list(composed_units=True)
     )
     # Transform QuantityKind and Characteristics
-    osw_quantity_kind_obj_list, osw_fundamental_characteristic_list, osw_characteristic_obj_list = (
-        osw_ontology.get_osw_quantitykind_characteristics_obj_list()
-    )
+    (
+        osw_quantity_kind_obj_list,
+        osw_fundamental_characteristic_list,
+        osw_characteristic_obj_list,
+    ) = osw_ontology.get_osw_quantitykind_characteristics_obj_list()
     list_of_osw_obj_dict = {
         "prefixes": osw_prefix_obj_list,
         "quanity_units": osw_quanity_unit_obj_list,
@@ -88,40 +100,46 @@ def transform_data(osw_ontology: Ontology = None):
         "fundamental_characteristics": osw_fundamental_characteristic_list,
         "characteristics": osw_characteristic_obj_list,
     }
-    
-    osw_ontology.create_smw_quantity_properties(list_of_osw_obj_dict=list_of_osw_obj_dict)
-    
+
+    osw_ontology.create_smw_quantity_properties(
+        list_of_osw_obj_dict=list_of_osw_obj_dict
+    )
+
     return list_of_osw_obj_dict
 
 
-# III: Load Data
-def load_data(osw_obj=None, list_of_osw_obj_dict: dict = None, change_id=None) -> None:
-    """Load data into the desired OSW instance."""
+# III: Upload Data
+def upload_data(osw_obj: OSW, list_of_osw_obj_dict: dict, change_id=None) -> None:
+    """Upload data into the desired OSW instance."""
     # Check if the list of OSW objects is provided
     if list_of_osw_obj_dict is None or osw_obj is None:
         raise ValueError(
             "OSW object and list of OSW objects is required for loading data."
         )
-    
-    # Load data into the OSW instance
+
+    # Upload data into the OSW instance
     # re-defining the list_of_osw_obj_dict for a selective include
     list_of_osw_obj_dict = {
         "prefixes": list_of_osw_obj_dict["prefixes"],
         "quanity_units": list_of_osw_obj_dict["quanity_units"],
-        "composed_prefix_quantity_units": list_of_osw_obj_dict["composed_prefix_quantity_units"],
+        "composed_prefix_quantity_units": list_of_osw_obj_dict[
+            "composed_prefix_quantity_units"
+        ],
         "quantity_kinds": list_of_osw_obj_dict["quantity_kinds"],
-        "fundamental_characteristics": list_of_osw_obj_dict["fundamental_characteristics"],
+        "fundamental_characteristics": list_of_osw_obj_dict[
+            "fundamental_characteristics"
+        ],
         "characteristics": list_of_osw_obj_dict["characteristics"],
     }
     for key, osw_obj_list in list_of_osw_obj_dict.items():
         # Define the namespace
         namespace = None
         meta_category_title = None
-        if key == "fundamental_characteristics": 
+        if key == "fundamental_characteristics":
             namespace = "Category"
             # FundamentalQuantityValueType
             meta_category_title = "Category:OSWc7f9aec4f71f4346b6031f96d7e46bd7"
-        if key == "characteristics": 
+        if key == "characteristics":
             namespace = "Category"
             # QuantityValueType
             meta_category_title = "Category:OSWac07a46c2cf14f3daec503136861f5ab"
@@ -131,12 +149,17 @@ def load_data(osw_obj=None, list_of_osw_obj_dict: dict = None, change_id=None) -
                 overwrite=True,
                 change_id=change_id,
                 namespace=namespace,
-                meta_category_title=meta_category_title
+                meta_category_title=meta_category_title,
             )
         )
 
+
 def create_smw_quantity_properties(list_of_osw_obj_dict):
-    return Ontology.create_smw_quantity_properties(list_of_osw_obj_dict=list_of_osw_obj_dict)
+    """Creates semantic mediawiki quantity properties."""
+    return Ontology.create_smw_quantity_properties(
+        list_of_osw_obj_dict=list_of_osw_obj_dict
+    )
+
 
 def main(
     osw_domain="wiki-dev.open-semantic-lab.org",
@@ -144,23 +167,23 @@ def main(
     upload: bool = False,
 ) -> None:
     """Main function."""
+    osw_obj = OswExpress(
+        domain=osw_domain,  # cred_filepath=pwd_file_path
+    )
     # Authentication and update local OSW model
     if auth_upd_osw:
-        osw_obj = OswExpress(
-            domain=osw_domain,  # cred_filepath=pwd_file_path
-        )
         update_local_osw(osw_obj=osw_obj)
 
-    # I: Exctract Data
+    # I: Extract Data
     osw_ontology_instance = extract_data(debug=True)
     # II: Transform Data
     list_of_osw_obj_dict = transform_data(osw_ontology=osw_ontology_instance)
     # III: Load Data
     if upload:
-        load_data(
+        upload_data(
             osw_obj=osw_obj,
             list_of_osw_obj_dict=list_of_osw_obj_dict,
-            change_id="50d1ad0b-8d58-4751-aab5-584d1741e98d", # Random generated change_id
+            change_id="50d1ad0b-8d58-4751-aab5-584d1741e98d",  # Random generated change_id
         )
 
 

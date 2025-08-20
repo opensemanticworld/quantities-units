@@ -8,9 +8,10 @@ PREFIX sou: <http://qudt.org/vocab/sou/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT DISTINCT ?quantity ?dimension ?broader ?dbpediaMatch ?siExactMatch 
+
 (GROUP_CONCAT(DISTINCT CONCAT(?qlabel, "@", LANG(?qlabel)); separator=", ") AS ?labels)
-(GROUP_CONCAT(DISTINCT ?description; separator=" #,# ") AS ?descriptions)
-(GROUP_CONCAT(DISTINCT ?plainTextDescription; separator=" #,#" ) AS ?plainTextDescriptions)
+(GROUP_CONCAT(DISTINCT COALESCE(?description, ""); separator=" #,# ") AS ?descriptions)
+(GROUP_CONCAT(DISTINCT COALESCE(?plainTextDescription, ""); separator=" #,#" ) AS ?plainTextDescriptions)
 
     (GROUP_CONCAT(DISTINCT ?applicableUnit; separator=", ") AS ?applicableUnits)
     (GROUP_CONCAT(DISTINCT ?ucumCode; separator=", ") AS ?ucumCodes)
@@ -22,7 +23,7 @@ WHERE {
     ?quantity qudt:hasDimensionVector ?dimension .
     ?applicableUnit qudt:applicableSystem sou:SI .
     ?applicableUnit qudt:ucumCode ?ucumCode .
-  	
+    
     FILTER (
       LANG(?qlabel) = "en" || LANG(?qlabel) = "de" || LANG(?qlabel) = "" || LANG(?qlabel) = "en-US"
     )
