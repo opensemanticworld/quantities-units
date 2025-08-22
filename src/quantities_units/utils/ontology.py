@@ -2,10 +2,12 @@
 
 from logging import warning
 import os
-from typing import List
+from typing import List, overload
 import uuid
 import json
 import re
+
+import jsonpath_ng.ext.filter
 import osw.model.entity as model
 from osw.utils.wiki import get_full_title
 from osw.utils.strings import pascal_case
@@ -53,8 +55,9 @@ class Ontology:
 
     # Utility Functions
     # -----------------
+    @staticmethod
     def export_osw_obj_json(
-        self, osw_obj_list=None, ontology_name=None, file_name=None
+        osw_obj_list=None, ontology_name=None, file_name=None
     ):
         """Function to export a list of OSW objects to a JSON file."""
         # Check if all the parameters are provided
@@ -85,11 +88,9 @@ class Ontology:
             ) as f:
                 f.write(osw_obj_json_dump)
 
-    def sort_label_list(
-        self,
-        label_list: list[model.Label] = None,
-    ) -> list[model.Label]:
-        "Function to sort label lists, english first, then other languages."
+    @staticmethod
+    def sort_label_list(label_list: list[model.Label] = None) -> list[model.Label]:
+        """Function to sort label lists, english first, then other languages."""
         # check if elements of label_list are of type model.Label
         if not label_list:
             return []
@@ -110,7 +111,8 @@ class Ontology:
         """Function to get the OSW category by URI."""
         return f"{namespace}OSW{str(_uuid).replace('-', '')}"
 
-    def merge_unify_tuples_to_dict(self, tuple_list=None):
+    @staticmethod
+    def merge_unify_tuples_to_dict(tuple_list: list[tuple]):
         """Function to merge and unify tuples to a dictionary."""
         if tuple_list is None:
             return {}
@@ -121,10 +123,10 @@ class Ontology:
             if key not in result_dict:
                 result_dict[key] = set(values) if values else None
             else:
-                if result_dict[key] is not None:
-                    result_dict[key].update(values if values else [])
-                else:
+                if result_dict[key] is None:
                     result_dict[key] = set(values) if values else None
+                else:
+                    result_dict[key].update(values if values else [])
 
         # Convert sets back to lists
         for key in result_dict:
@@ -133,8 +135,9 @@ class Ontology:
 
         return result_dict
 
+    @staticmethod
     def check_path_end_in_list(
-        self, unit_uri=None, check_unit_list=None, get_bool=True
+        unit_uri=None, check_unit_list=None, get_bool=True
     ):
         """Function to check if the path end of a unit URI is in another list of units using regex."""
         matched_units = []
@@ -155,7 +158,8 @@ class Ontology:
 
         return matched_units
 
-    def has_multiple_prefixes(self, unit_uri_list, prefix_list):
+    @staticmethod
+    def has_multiple_prefixes(unit_uri_list, prefix_list):
         """
         Check if any unit in the unit URI list has more than one prefix from the given prefix list.
 
@@ -204,7 +208,7 @@ class Ontology:
         units_with_multiple_prefixes, units_with_no_or_single_prefix = (
             self.has_multiple_prefixes(unit_uri_list, prefix_list)
         )
-        if units_with_no_or_single_prefix != []:
+        if units_with_no_or_single_prefix:  # non empty list
             # Check if any unit in units_with_no_or_single_prefix can be a base compound unit
             for possible_compound_unit in units_with_no_or_single_prefix:
                 # Check if possible_compound_unit is part of units_with_multiple_prefixes
@@ -231,16 +235,17 @@ class Ontology:
                 not_determinable_unit_list.append((not_compound_unit, None))
 
         return compound_prefix_unit_tuple_list, not_determinable_unit_list
-
-    def lookup_existing_non_prefixed_units(
-        self, all_non_prefixed_units=None, lookup_list=None
-    ):
-        """Function to lookup existing non prefixed units in a given list of units."""
-        existing_unit_list = []
-        for unit in lookup_list:
-            if unit in all_non_prefixed_units:
-                existing_unit_list.append(unit)
-        return existing_unit_list
+    @staticmethod
+    def common_items(
+        list_a: list[str], list_b: list[str]
+    ) -> list[str]:
+        """Checks for items in list_b that are also present in list_a and returns
+        those"""
+        common_items = []
+        for item in list_b:
+            if item in list_a:
+                common_items.append(item)
+        return common_items
 
     def remove_prefix(self, uri=None, debug=False):
         """Function to remove any prefix from a given URI."""
@@ -249,7 +254,7 @@ class Ontology:
             print(pattern.sub("", uri))
         return pattern.sub("", uri)
 
-    def remove_prefix_list(self, uri_list=None, debug=False):
+    def remove_prefixes(self, uri_list: list[str], debug: bool = False) -> list[str]:
         """Function to remove any prefix from a given list of URIs
         and return the cleaned list with no duplicates."""
         _list = [self.remove_prefix(uri, debug) for uri in uri_list]
@@ -257,46 +262,33 @@ class Ontology:
             print(_list)
         return list(set(_list))
 
-    def split_prefixed_applicable_units(
-        self, applicable_units_str=None, prefix_name_list=None, debug=False
+    def group_units_into_prefixed_and_non_prefixed(
+        self, applicable_units_str: str, prefix_name_list: list[str], debug: bool =
+        False
     ):
         """Function to split the applicable units into prefixed and non-prefixed units."""
-        # Check that parameters are provided
-        if applicable_units_str is None or prefix_name_list is None:
-            exception_message = "Please provide all the parameters."
-            raise Exception(exception_message)
-        non_prefixed_units = []
-        prefixed_units = []
+        non_prefixed_units: list[str] = []
+        prefixed_units: list[str] = []
         for unit_str in applicable_units_str.split(", "):
-
+            found_prefixes = self.get_unit_prefixes(
+                unit_str=unit_str,
+                prefix_name_list=prefix_name_list,
+                return_first=False
+            )
             if debug:
-                print(unit_str)
-                print(
-                    self.get_unit_prefix(
-                        unit_str=unit_str, prefix_name_list=prefix_name_list
-                    )
-                )
-            if (
-                self.get_unit_prefix(
-                    unit_str=unit_str, prefix_name_list=prefix_name_list
-                )
-                == None
-            ):
-                if debug:
-                    print("no prefix: ", unit_str)
-                non_prefixed_units.append(unit_str)
-            else:
-                if debug:
+                if found_prefixes:
                     print(
-                        "prefix: ",
-                        self.get_unit_prefix(
-                            unit_str=unit_str,
-                            prefix_name_list=prefix_name_list,
-                        ),
-                        "found in ",
-                        unit_str,
+                        f"Found {len(found_prefixes)} prefixes in unit '{unit_str}': "
+                        f"{', '.join(found_prefixes)}"
                     )
+                else:
+                    print(f"No prefix found in unit '{unit_str}'")
+
+            if found_prefixes:
                 prefixed_units.append(unit_str)
+            else:
+                non_prefixed_units.append(unit_str)
+
         return non_prefixed_units, prefixed_units
 
     def get_all_prefixed_non_prefixed_units(self):
@@ -305,7 +297,7 @@ class Ontology:
         all_non_prefixed_units = []
         quant_kind_list = self.qudt_quantity_kinds["results"]["bindings"]
         for quantity in quant_kind_list:
-            non_prefixed, prefixed = self.split_prefixed_applicable_units(
+            non_prefixed, prefixed = self.group_units_into_prefixed_and_non_prefixed(
                 applicable_units_str=quantity["applicableUnits"]["value"],
                 prefix_name_list=self.prefix_name_list,
             )
@@ -316,13 +308,13 @@ class Ontology:
         all_non_prefixed_units = list(set(all_non_prefixed_units))
         return all_non_prefixed_units, all_prefixed_units
 
-    def get_unit_dict(self):
+    def get_unit_dict(self) -> dict[str, dict[str, list[str]]]:
         """Function to extract units as dictionary from quantity kind."""
         # Check that parameters are provided
         if self.qudt_quantity_kinds is None or self.prefix_name_list is None:
             exception_message = "Please provide all the parameters."
             raise Exception(exception_message)
-        unit_dict = {}
+        # unit_dict = {}
         all_non_prefixed_units, all_prefixed_units = (
             self.get_all_prefixed_non_prefixed_units()
         )
@@ -332,53 +324,112 @@ class Ontology:
         )
         return unit_dict
 
-    def get_path(self, url):
+    @staticmethod
+    def get_path(url):
         """Function to extract the path from a URL."""
         return url.split("/")[-1]
 
-    def get_main_string(self, unit_str=None, prefix_name_list=None):
-        # Check that parameters are provided
-        if unit_str is None or prefix_name_list is None:
-            exception_message = "Please provide all the parameters."
-            raise Exception(exception_message)
+    @staticmethod
+    def get_main_string(unit_str: str, prefix_name_list: list[str],
+                        remove_all_prefix: bool = False):
+        """Strips the (leading) prefix(es) from a unit string so that it can be
+        compared with a non prefixed unit string"""
         for prefix in prefix_name_list:
             capitalized_prefix = prefix.capitalize()
-            if capitalized_prefix in unit_str:
-                return unit_str.replace(capitalized_prefix, "")
+            if remove_all_prefix and capitalized_prefix in unit_str:
+                    unit_str = unit_str.replace(capitalized_prefix, "")
+            elif unit_str.startswith(capitalized_prefix):
+                    return unit_str.replace(capitalized_prefix, "")
+            #
+        # todo:
+        #  * problem 1: identifies only one prefix (the first match) which does not have
+        #  to be at the beginning
+        #  removing all prefixes from the prefixed unit string -> 856 non-prefixed and
+        #  prefixed units in units_dict
+        #  removing the prefix at the start --> 760
+        #  * problem 2: what about units that are not containing a prefix - e.g.
+        #  pressure: bar for 10^5 pascal
+        #  time: second, minute, hour, day, year, decade,
+        #  mass: gramm, kg, tonne
         return unit_str
 
+
     def merge_prefixed_and_non_prefixed_units(
-        self, all_non_prefixed_units, all_prefixed_units, prefix_name_list
+        self, all_non_prefixed_units: list[str], all_prefixed_units: list[str],
+        prefix_name_list: list[str]
     ):
         """Function to merge prefixed and non-prefixed units."""
         unit_dict = {}
         for non_prefixed_unit in all_non_prefixed_units:
             prefixed_units = []
             # Match the non prefixed unit with all the prefixed units
+            npu_path = self.get_path(non_prefixed_unit)
             for prefixed_unit in all_prefixed_units:
-                if self.get_path(non_prefixed_unit) == self.get_main_string(
-                    self.get_path(prefixed_unit), prefix_name_list
-                ):
+                pu_path = self.get_path(prefixed_unit)
+                if npu_path == self.get_main_string(pu_path, prefix_name_list, False):
                     prefixed_units.append(prefixed_unit)
             unit_dict[non_prefixed_unit] = {"prefixed_units": prefixed_units}
+            # todo: add logic for time, mass, pressure - not prefixed?
+        unit_dict_alt = {}
+        for non_prefixed_unit_ in all_non_prefixed_units:
+            prefixed_units_ = []
+            # Match the non prefixed unit with all the prefixed units
+            npu_path_ = self.get_path(non_prefixed_unit_)
+            for prefixed_unit_ in all_prefixed_units:
+                pu_path_ = self.get_path(prefixed_unit_)
+                if npu_path_ == self.get_main_string(pu_path_, prefix_name_list, True):
+                    prefixed_units_.append(prefixed_unit_)
+            unit_dict_alt[non_prefixed_unit_] = {"prefixed_units": prefixed_units_}
 
+        def dict_to_list(dd: dict[str, dict[str, list[str]]], key: str) -> list[str]:
+            lok = []
+            for kk, vv in dd.items():
+                lok.append(kk)
+                if isinstance(vv, dict) and vv.get(key):
+                    lok.extend(vv[key])
+            return lok
+
+        units_in_dict1 = set(dict_to_list(unit_dict, "prefixed_units"))
+        """units that have been listed based on their first prefix removed prior to 
+        matching them with a non-prefixed unit"""
+        len(units_in_dict1)
+        units_in_dict2 = set(dict_to_list(unit_dict_alt, "prefixed_units"))
+        """units that have been listed based on all first prefixes removed prior to 
+        matching them with a non-prefixed unit"""
+        len(units_in_dict2)
+        all_units = set(all_non_prefixed_units + all_prefixed_units)
+        len(all_units)
+        units_missing_in_dict1 = all_units - units_in_dict1
+        len(units_missing_in_dict1)
+        units_missing_in_dict2 = all_units - units_in_dict2
+        len(units_missing_in_dict2)
+        units_from_dict2_but_not_in1 = units_in_dict2 - units_in_dict1
+        """Mostly units with a non leading prefix, but also some with a leading 
+        prefix"""
+        len(units_from_dict2_but_not_in1)
+
+        # unit_dict now does not include multi prefixed units with a non-leading prefix
         return unit_dict
 
-    def match_json_path_key(self, qudt_units_param_res, identifier="", key=""):
+    @staticmethod
+    def match_json_path_key(qudt_units_param_res: dict, identifier: str, key: str) ->\
+            str:
         """Function to match the JSON key path."""
         jsonpath_expr = parse(
             f'$.results.bindings[?(@.applicableUnit.value = "{identifier}")].{key}.value'
         )
         return jsonpath_expr.find(qudt_units_param_res)[0].value
 
-    def match_object_json_path(self, qudt_units_param_res=None, identifier=""):
+    @staticmethod
+    def match_object_json_path(qudt_units_query_res: dict, identifier: str) -> dict:
         """Function to match the JSON object path."""
-        jsonpath_expr = parse(
+        jsonpath_expr: jsonpath_ng.ext.filter.Expression = parse(
             f'$.results.bindings[?(@.applicableUnit.value = "{identifier}")]'
         )
-        return jsonpath_expr.find(qudt_units_param_res)[0].value
+        return jsonpath_expr.find(qudt_units_query_res)[0].value
 
-    def dict_from_comma_separated_list(self, qlabel):
+    @staticmethod
+    def dict_from_comma_separated_list(qlabel: str) -> dict[str, str]:
         """Function to convert a comma separated list to a dictionary."""
         parts = qlabel.split(", ")
         ret = {}
@@ -389,7 +440,8 @@ class Ontology:
             ret[key] = value
         return ret
 
-    def get_prefix_uuid(self, data=[], prefix=""):
+    @staticmethod
+    def uuid_for_prefix(data: dict, prefix: str) -> uuid.UUID:
         """Function to get the prefix UUID."""
         jsonpath_expr = parse(f'$[?(@.label = "{prefix}")].pid')
         return uuid.uuid5(
@@ -397,20 +449,39 @@ class Ontology:
             name=jsonpath_expr.find(data)[0].value,
         )
 
-    def get_unit_prefix(self, unit_str=None, prefix_name_list=None):
+    # fmt: off
+    @staticmethod
+    @overload
+    def get_unit_prefixes(
+        unit_str: str, prefix_name_list: list[str], return_first: bool = True
+    ) -> str | None: ...
+
+
+    @staticmethod
+    @overload
+    def get_unit_prefixes(
+        unit_str: str, prefix_name_list: list[str], return_first: bool = False
+    ) -> list[str]: ...
+    # fmt: on
+
+    @staticmethod
+    def get_unit_prefixes(
+        unit_str: str, prefix_name_list: list[str], return_first: bool = True
+    ) -> str | list[str] | None:
         """Function to extract the prefix from a unit string."""
-        # Check that parameters are provided
-        if unit_str is None or prefix_name_list is None:
-            exception_message = "Please provide all the parameters."
-            raise Exception(exception_message)
+        found_prefixes = []
         for prefix in prefix_name_list:
             if prefix in str(unit_str).lower():
-                return prefix
-        return None
+                found_prefixes.append(prefix)
+        if found_prefixes and return_first:
+            return found_prefixes[0]
+        if not found_prefixes and return_first:
+            return None
+        return found_prefixes
 
     # Prefixes
     # --------
-    def get_osw_prefix_obj_list(self):
+    def prefixes_as_entities(self) -> list[model.UnitPrefix]:
         """Get the list of prefixes from OSW."""
         if self.debug:
             print("Transforming ontology data to OSW UnitPrefix objects...")
@@ -442,76 +513,75 @@ class Ontology:
 
     # Quantity Units
     # --------------
-    def get_osw_prefix_unit(
+    def prefixed_unit_as_entities(
         self,
-        qudt_units_param_res=None,
-        prefixes_list=None,
-        url=None,
-        parent_uuid=None,
-        prefix_name_list=None,
-    ):
-
-        prefix_unit_dict = self.match_object_json_path(
-            qudt_units_param_res=qudt_units_param_res,
+        qudt_units_query_res: dict,
+        prefixes_dict: dict,
+        url: str,
+        parent_uuid: str | uuid.UUID,
+        prefix_name_list: list[str],
+    ) -> model.PrefixUnit:
+        if isinstance(parent_uuid, uuid.UUID):
+            parent_uuid = str(parent_uuid)
+        prefixed_unit_dict = self.match_object_json_path(
+            qudt_units_query_res=qudt_units_query_res,
             identifier=url,
         )
-        # print(prefix_unit_dict)
-        ontology_match_list = [prefix_unit_dict["applicableUnit"]["value"]]
-        # print("dbpediaMatch" in prefix_unit_dict.keys())
-        # print(prefix_unit_dict.keys())
-        if "dbpediaMatch" in prefix_unit_dict.keys():
-            ontology_match_list.append(
-                prefix_unit_dict["dbpediaMatch"]["value"]
+        # print(prefixed_unit_dict)
+        ontology_matches = [prefixed_unit_dict["applicableUnit"]["value"]]
+        # print("dbpediaMatch" in prefixed_unit_dict.keys())
+        # print(prefixed_unit_dict.keys())
+        if "dbpediaMatch" in prefixed_unit_dict.keys():
+            ontology_matches.append(
+                prefixed_unit_dict["dbpediaMatch"]["value"]
             )
-            # print(prefix_unit_dict["dbpediaMatch"]["value"])
-        if "siExactMatch" in prefix_unit_dict:
-            ontology_match_list.append(
-                prefix_unit_dict["siExactMatch"]["value"]
+            # print(prefixed_unit_dict["dbpediaMatch"]["value"])
+        if "siExactMatch" in prefixed_unit_dict:
+            ontology_matches.append(
+                prefixed_unit_dict["siExactMatch"]["value"]
             )
         conversion_multiplier = None
-        if "conversionMultiplierSN" in prefix_unit_dict:
+        if "conversionMultiplierSN" in prefixed_unit_dict:
 
-            conversion_multiplier = prefix_unit_dict["conversionMultiplierSN"][
-                "value"
-            ]
+            conversion_multiplier = \
+                prefixed_unit_dict["conversionMultiplierSN"]["value"]
             # print(conversion_multiplier)
 
         _uuid = str(uuid.uuid5(namespace=uuid.NAMESPACE_URL, name=url))
         # print(_uuid)
+        osw_id = \
+            f"Item:OSW{str(parent_uuid).replace('-', '')}#OSW{_uuid.replace('-', '')}"
+        prefix_uuid = self.uuid_for_prefix(
+            prefixes_dict,
+            self.get_unit_prefixes(
+                unit_str=url, prefix_name_list=prefix_name_list, return_first=True
+            ),
+        )
+        prefix = f"Item:OSW{str(prefix_uuid).replace('-', '')}"
+        main_symbol = self.match_json_path_key(
+            qudt_units_query_res,
+            identifier=url,
+            key="symbol",
+        )
         prefix_unit = model.PrefixUnit(
             uuid=_uuid,
-            osw_id="Item:OSW"
-            + str(parent_uuid).replace("-", "")
-            + "#OSW"
-            + _uuid.replace("-", ""),
-            prefix="Item:OSW"
-            + str(
-                self.get_prefix_uuid(
-                    prefixes_list,
-                    self.get_unit_prefix(
-                        unit_str=url, prefix_name_list=prefix_name_list
-                    ),
-                )
-            ).replace("-", ""),
+            osw_id=osw_id,
+            prefix=prefix,
             # prefix_symbol="",  # Causes edge case error
-            main_symbol=self.match_json_path_key(
-                qudt_units_param_res,
-                identifier=url,
-                key="symbol",
-            ),
-            exact_ontology_match=ontology_match_list,
+            main_symbol=main_symbol,
+            exact_ontology_match=ontology_matches,
             conversion_factor_from_si=conversion_multiplier,
             description=[{"text": "Description", "lang": "en"}],
+            # todo: replace text
         )
 
         return prefix_unit
 
-    def get_composed_quantitiy_unit_dict(self):
+    def get_composed_quantity_unit_dict(self) -> dict[str, dict[str, list[str]]]:
         """Function to determine all the composed quantity units and their prefixed units."""
 
-        # Inititializations
+        # Initializations
         aggregated_to_be_uploaded_unit_tuple_list = []
-        composed_quantity_unit_dict = {}
 
         # Iterate over all the quantity kind bindings
         for quantity_binding in self.qudt_quantity_kinds["results"][
@@ -520,42 +590,38 @@ class Ontology:
 
             # Get all the prefixed and non prefixed units of the quantity kind
             non_prefixed_units, prefixed_units = (
-                self.split_prefixed_applicable_units(
-                    applicable_units_str=quantity_binding["applicableUnits"][
-                        "value"
-                    ],
+                self.group_units_into_prefixed_and_non_prefixed(
+                    applicable_units_str=quantity_binding["applicableUnits"]["value"],
                     prefix_name_list=self.prefix_name_list,
                 )
-            )
+            )  # todo: will return non-prefixed units that contain no prefix at all
 
             # Algorithm to identify uploaded units and construct pattern for to be uploaded units
-            uploaded_units = []
-            compound_prefix_unit_tuple_list = []
-            not_determinable_unit_tuple_list = []
             # Step 1 - Remove prefixes from the applicable units
-            removed_prefixes_applicable_units = self.remove_prefix_list(
+            applicable_units_wo_prefixes = self.remove_prefixes(
                 uri_list=prefixed_units
-            )
+            )  # todo: will now return the prefixed units without prefixes
 
-            # Step 2 - Lookup existing non prefixed units
-            uploaded_units = self.lookup_existing_non_prefixed_units(
-                all_non_prefixed_units=self.all_non_prefixed_units,
-                lookup_list=non_prefixed_units,
+            # Step 2 - Check if the non-prefixed units are within the list
+            # 'all_non_prefixed_units' that resulted from the processed sparql query
+            uploaded_units = self.common_items(
+                list_a=self.all_non_prefixed_units,
+                list_b=non_prefixed_units,
             )
-
+            # todo: look closer here
             # Step 3 - Check if any uploaded, referenceable or to be uploaded units are found
-            if uploaded_units != []:
+            if uploaded_units:  # non-empty list
                 pass
             else:
-                referenceable_uploaded_units = []
                 referenceable_uploaded_units = (
-                    self.lookup_existing_non_prefixed_units(
-                        all_non_prefixed_units=self.all_non_prefixed_units,
-                        lookup_list=removed_prefixes_applicable_units,
+                    self.common_items(
+                        list_a=self.all_non_prefixed_units,
+                        list_b=applicable_units_wo_prefixes,
                     )
                 )
-                if referenceable_uploaded_units != []:
+                if referenceable_uploaded_units:  # non-empty list
                     uploaded_units = referenceable_uploaded_units
+                    # todo: what should happen with them?
                 else:
                     # print(f"Quantity: {quantity_binding['quantity']['value']}")
                     # print(f"To be defined units: {to_be_defined_units}")
@@ -582,46 +648,53 @@ class Ontology:
 
         return composed_quantity_unit_dict
 
-    def get_osw_quantity_unit_obj_list(self, composed_units=False):
+    def quantity_units_as_entities(self, composed_units: bool = False):
         """Function to extract the QuantityUnit objects from the QUDT API."""
 
         i = 0
+        units_with_no_description = []
         units = []
-        if not composed_units:
+        if composed_units:
+            if self.debug:
+                print(
+                    "Transforming ontology data to OSW "
+                    "ComposedQuantityUnitWithUnitPrefix objects..."
+                )
+            unit_dict = self.get_composed_quantity_unit_dict()
+        else:
             if self.debug:
                 print(
                     "Transforming ontology data to OSW QuantityUnit objects..."
                 )
             unit_dict = self.get_unit_dict()
-        else:
-            if self.debug:
-                print(
-                    "Transforming ontology data to OSW ComposedQuantityUnitWithUnitPrefix objects..."
-                )
-            unit_dict = self.get_composed_quantitiy_unit_dict()
+            """Dictionary {<non-prefixed unit iri>: {'prefixed_units': [<prefixed 
+            unit iri>]}"""
+
         # Iteration over the unit_dict to create the QuantityUnit objects
         for non_prefixed_unit_iri, unit_property_dict in unit_dict.items():
             name = non_prefixed_unit_iri.split("/")[-1]
+            """Name of the non-prefixed unit"""
 
             match_unit_dict = self.match_object_json_path(
-                qudt_units_param_res=self.qudt_units,
+                qudt_units_query_res=self.qudt_units,
                 identifier=non_prefixed_unit_iri,
             )
+            """matching section of the SPARQL query result dictionary"""
+
             ontology_match_list = [match_unit_dict["applicableUnit"]["value"]]
+            """List of iris to ontology terms that specify a close match"""
             if "dbpediaMatch" in match_unit_dict.keys():
-                ontology_match_list.append(
-                    match_unit_dict["dbpediaMatch"]["value"]
-                )
+                ontology_match_list.append(match_unit_dict["dbpediaMatch"]["value"])
             if "siExactMatch" in match_unit_dict:
-                ontology_match_list.append(
-                    match_unit_dict["siExactMatch"]["value"]
-                )
+                ontology_match_list.append(match_unit_dict["siExactMatch"]["value"])
             conversion_multiplier = None
+            """Conversion multiplier to SI unit as in QUDT"""
             if "conversionMultiplierSN" in match_unit_dict:
-                conversion_multiplier = match_unit_dict[
-                    "conversionMultiplierSN"
-                ]["value"]
-            # sequence of description before plainTextDescription is essential for overwriting
+                conversion_multiplier = \
+                    match_unit_dict["conversionMultiplierSN"]["value"]
+
+            # Sequence of description before plainTextDescription is essential for
+            #  overwriting
             description_list = None
             plainTextDescription = None
             if "description" in match_unit_dict:
@@ -647,6 +720,7 @@ class Ontology:
                 # print(description_list)
             if description_list == None:
                 i += 1
+                units_with_no_description.append(name)
                 # print("No description found for ", name)
 
             qlabels = self.match_json_path_key(
@@ -661,11 +735,12 @@ class Ontology:
                 label_dict["en"] = label_dict[""]
                 del label_dict[""]
 
-            # Ensure that the label list is sorted with English first
+            # Create label list
             osw_label_list = [
                 model.Label(text=value, lang=key)
                 for key, value in label_dict.items()
             ]
+            # Ensure that the label list is sorted with English first
             osw_label_list = self.sort_label_list(label_list=osw_label_list)
 
             symbol = self.match_json_path_key(
@@ -690,34 +765,12 @@ class Ontology:
             _uuid = uuid.uuid5(
                 namespace=uuid.NAMESPACE_URL, name=non_prefixed_unit_iri
             )
-            if not composed_units:
-                prefix_unit_list = [
-                    self.get_osw_prefix_unit(
-                        qudt_units_param_res=self.qudt_units,
-                        prefixes_list=self.prefixes_json,
-                        url=url,
-                        parent_uuid=_uuid,
-                        prefix_name_list=self.prefix_name_list,
-                    )
-                    for url in unit_property_dict["prefixed_units"]
-                ]
-                unit = model.QuantityUnit(
-                    uuid=_uuid,
-                    exact_ontology_match=ontology_match_list,
-                    name=name,
-                    label=osw_label_list,
-                    main_symbol=symbol,
-                    prefix_units=prefix_unit_list,
-                    description=description_list,
-                    conversion_factor_from_si=conversion_multiplier,
-                    ucum_codes=ucum_codes,
-                )
-            else:
+            if composed_units:
                 if unit_property_dict != None:
                     prefix_unit_list = [
-                        self.get_osw_prefix_unit(
-                            qudt_units_param_res=self.qudt_units,
-                            prefixes_list=self.prefixes_json,
+                        self.prefixed_unit_as_entities(
+                            qudt_units_query_res=self.qudt_units,
+                            prefixes_dict=self.prefixes_json,
                             url=url,
                             parent_uuid=_uuid,
                             prefix_name_list=self.prefix_name_list,
@@ -737,24 +790,47 @@ class Ontology:
                     conversion_factor_from_si=conversion_multiplier,
                     ucum_codes=ucum_codes,
                 )
-
+            else:
+                prefix_unit_list = [
+                    self.prefixed_unit_as_entities(
+                        qudt_units_query_res=self.qudt_units,
+                        prefixes_dict=self.prefixes_json,
+                        url=url,
+                        parent_uuid=_uuid,
+                        prefix_name_list=self.prefix_name_list,
+                    )
+                    for url in unit_property_dict["prefixed_units"]
+                ]
+                unit = model.QuantityUnit(
+                    uuid=_uuid,
+                    exact_ontology_match=ontology_match_list,
+                    name=name,
+                    label=osw_label_list,
+                    main_symbol=symbol,
+                    prefix_units=prefix_unit_list,
+                    description=description_list,
+                    conversion_factor_from_si=conversion_multiplier,
+                    ucum_codes=ucum_codes,
+                )
             units.append(unit)
 
         if self.debug:
-            if not composed_units:
-                print(
-                    f"...successfully transformed {len(units)} QuantityUnit objects."
-                )
-            else:
+            if composed_units:
                 print(
                     f"...successfully transformed {len(units)} ComposedQuantityUnitWithUnitPrefix objects."
                 )
+            else:
+                print(
+                    f"...successfully transformed {len(units)} QuantityUnit objects."
+                )
+            print(f"No description found for {i} units: {units_with_no_description}")
+
         return units
 
     # Quantity Kinds and Characteristics
     # ----------------------------------
-    def get_osw_quantitykind_characteristics_obj_list(self):
-        osw_quantitiy_list = []
+    def quantitykind_characteristics_as_entities(self):
+        osw_quantity_list = []
         osw_fundamental_characteristic_list = []
         osw_characteristic_list = []
         is_broader_counter = 0
@@ -764,37 +840,30 @@ class Ontology:
             print(
                 "Transforming ontology data to OSW QuantityKind and Characteristic objects..."
             )
-        for quantity_binding in self.qudt_quantity_kinds["results"][
-            "bindings"
-        ]:
-
+        for quantity_binding in self.qudt_quantity_kinds["results"]["bindings"]:
             # Close Ontology Match
-            quantity_close_ontology_match_list = []
-            characteristic_close_ontology_match_list = []
-            characteristic_close_ontology_match_list.append(
-                quantity_binding["quantity"]["value"]
-            )
+            quantity_close_ontology_matches = []
+            characteristic_close_ontology_matches = \
+                [quantity_binding["quantity"]["value"]]
             if "dbpediaMatch" in quantity_binding:
-                quantity_close_ontology_match_list.append(
+                quantity_close_ontology_matches.append(
                     quantity_binding["dbpediaMatch"]["value"]
                 )
-                characteristic_close_ontology_match_list.append(
+                characteristic_close_ontology_matches.append(
                     quantity_binding["dbpediaMatch"]["value"]
                 )
             if "siExactMatch" in quantity_binding:
-                quantity_close_ontology_match_list.append(
+                quantity_close_ontology_matches.append(
                     quantity_binding["siExactMatch"]["value"]
                 )
-                characteristic_close_ontology_match_list.append(
+                characteristic_close_ontology_matches.append(
                     quantity_binding["siExactMatch"]["value"]
                 )
 
             # Get all the prefixed and non prefixed units of the quantity kind
             non_prefixed_units, prefixed_units = (
-                self.split_prefixed_applicable_units(
-                    applicable_units_str=quantity_binding["applicableUnits"][
-                        "value"
-                    ],
+                self.group_units_into_prefixed_and_non_prefixed(
+                    applicable_units_str=quantity_binding["applicableUnits"]["value"],
                     prefix_name_list=self.prefix_name_list,
                 )
             )
@@ -890,18 +959,17 @@ class Ontology:
                 is_broader_counter += 1
                 # Algorithm to identify uploaded, referenceable or composed units
                 osw_unit_uuids = []
-                uploaded_units = []
                 # Step 1 - Remove prefixes from the applicable units
-                removed_prefixes_applicable_units = self.remove_prefix_list(
+                removed_prefixes_applicable_units = self.remove_prefixes(
                     uri_list=prefixed_units
                 )
                 # Step 2 - Lookup existing non prefixed units
-                uploaded_units = self.lookup_existing_non_prefixed_units(
-                    all_non_prefixed_units=self.all_non_prefixed_units,
-                    lookup_list=non_prefixed_units,
+                uploaded_units = self.common_items(
+                    list_a=self.all_non_prefixed_units,
+                    list_b=non_prefixed_units,
                 )
                 # Step 3 - Check if any uploaded, referenceable or to be uploaded units are found
-                if uploaded_units != []:
+                if uploaded_units:  # non-empty list
                     # Set deterministic UUIDs for the non prefixed units
                     osw_unit_uuids = [
                         f"Item:OSW{str(uuid.uuid5(namespace=uuid.NAMESPACE_URL, name=unit)).replace('-', '')}"
@@ -909,22 +977,21 @@ class Ontology:
                     ]
                 else:
                     # Set deterministic UUIDs for the referencable applicable non prefixed units
-                    referenceable_uploaded_units = []
-                    referenceable_uploaded_units = (
-                        self.lookup_existing_non_prefixed_units(
-                            all_non_prefixed_units=self.all_non_prefixed_units,
-                            lookup_list=removed_prefixes_applicable_units,
+                    referencable_uploaded_units = (
+                        self.common_items(
+                            list_a=self.all_non_prefixed_units,
+                            list_b=removed_prefixes_applicable_units,
                         )
                     )
-                    if referenceable_uploaded_units != []:
+                    if referencable_uploaded_units:  # non-empty list
                         osw_unit_uuids = [
                             f"Item:OSW{str(uuid.uuid5(namespace=uuid.NAMESPACE_URL, name=unit)).replace('-', '')}"
-                            for unit in referenceable_uploaded_units
+                            for unit in referencable_uploaded_units
                         ]
                     else:
                         # Set deterministic UUIDs for the composed units
                         composed_quantity_unit_dict = (
-                            self.get_composed_quantitiy_unit_dict()
+                            self.get_composed_quantity_unit_dict()
                         )
                         # Step 4 - Get all removed prefixes of the applicable units
                         for unit in composed_quantity_unit_dict.keys():
@@ -950,12 +1017,12 @@ class Ontology:
                     exact_ontology_match=[
                         quantity_binding["quantity"]["value"]
                     ],
-                    close_ontology_match=quantity_close_ontology_match_list,
+                    close_ontology_match=quantity_close_ontology_matches,
                     units=osw_unit_uuids,
                     name=pascal_case(osw_label_list[0].text),
                 )
 
-                osw_quantitiy_list.append(osw_quantity)
+                osw_quantity_list.append(osw_quantity)
 
                 characteristic = model.FundamentalQuantityValueType(
                     characteristics=None,  # only used for existing references
@@ -963,6 +1030,7 @@ class Ontology:
                         "Category:OSW4082937906634af992cf9a1b18d772cf"
                     ],  # QuantityValue
                     quantity=get_full_title(osw_quantity),
+                    # todo: on all e.g. mobility, this is a Traceback string / None
                     uuid=self.get_deterministic_url_uuid(
                         prefix="characteristic:",
                         uri=quantity_binding["quantity"]["value"],
@@ -970,7 +1038,7 @@ class Ontology:
                     description=description_list,
                     name=pascal_case(osw_label_list[0].text),
                     label=osw_label_list,
-                    close_ontology_match=characteristic_close_ontology_match_list,
+                    close_ontology_match=characteristic_close_ontology_matches,
                 )
 
                 osw_fundamental_characteristic_list.append(characteristic)
@@ -1002,28 +1070,27 @@ class Ontology:
                     description=description_list,
                     name=pascal_case(osw_label_list[0].text),
                     label=osw_label_list,
-                    close_ontology_match=characteristic_close_ontology_match_list,
+                    close_ontology_match=characteristic_close_ontology_matches,
                 )
 
                 osw_characteristic_list.append(characteristic)
 
         if self.debug:
             print(
-                f"...transformed {len(osw_quantitiy_list)} OSW QuantityKind objects."
+                f"...transformed {len(osw_quantity_list)} OSW QuantityKind objects."
             )
             print(
                 f"...transformed {len(osw_fundamental_characteristic_list + osw_characteristic_list)} OSW Characteristic/QuantityUnit objects."
             )
-        assert len(osw_quantitiy_list) == is_broader_counter
+        assert len(osw_quantity_list) == is_broader_counter
         assert (
             len(osw_fundamental_characteristic_list + osw_characteristic_list)
             == has_broader_counter + is_broader_counter
         )
-        return osw_quantitiy_list, osw_fundamental_characteristic_list, osw_characteristic_list
+        return osw_quantity_list, osw_fundamental_characteristic_list, osw_characteristic_list
         
     @staticmethod
-    def get_pint_quantity(unit) -> pint.Quantity:
-        unit: model.QuantityUnit = unit
+    def get_pint_quantity(unit: model.QuantityUnit) -> pint.Quantity:
         # get the qudt ontology match
         non_prefixed_unit_iri = [iri for iri in unit.exact_ontology_match if iri.startswith("http://qudt.org/vocab/unit/")][0]
         ucum_mappings = {
@@ -1074,7 +1141,7 @@ class Ontology:
             symbol = symbol.replace("3", "³")
             symbol = symbol.replace("4", "⁴")
             symbol = symbol.replace("#", "")
-            pQ = ureg[symbol]
+            pQ = ureg(symbol)
             return pQ
         except Exception as e:
             print(f"Error parsing unit '{unit.main_symbol}'")
@@ -1084,7 +1151,7 @@ class Ontology:
             try:
                 if non_prefixed_unit_iri in ucum_mappings.keys():
                     if ucum_mappings[non_prefixed_unit_iri]["pint"] != "":
-                        pQ = ureg[ucum_mappings[non_prefixed_unit_iri]["pint"]]
+                        pQ = ureg(ucum_mappings[non_prefixed_unit_iri]["pint"])
                         
                 else:
                     pQ = ucum_ureg.from_ucum(code)
@@ -1115,15 +1182,14 @@ class Ontology:
         value = f"{pQ:9fLx}" # 9f => round to 8 digits, '#' => simplify the unit
         # e.g. \SI[]{1.0}{\kilo\gram\meter\per\ampere\squared\per\second\squared}
         # select the last curly brace
-        siunix_symbol = siunix_symbol = value.split("{")[-1].replace("}", "")
+        siunix_symbol = value.split("{")[-1].replace("}", "")
         siunix_symbol = siunix_symbol.replace("delta_degree_Fahrenheit", "Fahrenheit")
         siunix_symbol = siunix_symbol.replace("delta_degree_Celsius", "Celsius")
         siunix_symbol = siunix_symbol.replace("\\", "_").strip("_")
         return siunix_symbol
     
     @staticmethod
-    def get_unit_enum_name(unit):
-        unit: model.QuantityUnit = unit
+    def get_unit_enum_name(unit: model.QuantityUnit):
         pQ = Ontology.get_pint_quantity(unit)
         if pQ is None:
             return None
@@ -1131,7 +1197,7 @@ class Ontology:
         return unit_name
 
     @staticmethod
-    def get_osw_id(entity) -> str:
+    def get_osw_id(entity: model.Entity) -> str:
         """Determines the OSW-ID based on the entity's data - either from the entity's
         attribute 'osw_id' or 'uuid'.
 
@@ -1145,28 +1211,22 @@ class Ontology:
             The OSW-ID as a string or None if the OSW-ID could not be determined
         """
         osw_id = getattr(entity, "osw_id", None)
-        uuid = entity.get_uuid()
-        from_uuid = None if uuid is None else f"OSW{str(uuid).replace('-', '')}"
-        if osw_id is None:
-            return from_uuid
-        return osw_id    
+        uuid_ = entity.get_uuid()
+        from_uuid = None if uuid_ is None else f"OSW{str(uuid_).replace('-', '')}"
+        if osw_id:
+            return osw_id
+        return from_uuid
 
     @staticmethod
-    def create_smw_quantity_properties(list_of_osw_obj_dict: dict = None): # -> Dict[str, Union[model.MainQuantityProperty, model.SubQuantityProperty]]:
+    def create_smw_quantity_properties(list_of_osw_obj_dict: dict): # -> Dict[str, Union[model.MainQuantityProperty, model.SubQuantityProperty]]:
         """Create SMW Quantity Properties."""
-        # Check if the list of OSW objects is provided
-        if list_of_osw_obj_dict is None:
-            raise ValueError(
-                "OSW object and list of OSW objects is required for creating SMW Quantity Properties."
-            )
-            
         # create a map <entity_title, entity> for all entities
         entity_map = {}
         for key, osw_obj_list in list_of_osw_obj_dict.items():
             for entity in osw_obj_list:
                 entity_map[entity.get_iri()] = entity
 
-        quantity_property_entitites = {}
+        quantity_property_entities = {}
         osw_characteristic: model.FundamentalQuantityValueType
         for osw_characteristic in list_of_osw_obj_dict["fundamental_characteristics"]:
             # osw_quantity: model.QuantityKind = entity_map[osw_characteristic.quantity.get_iri()]
@@ -1186,11 +1246,20 @@ class Ontology:
                 else:
                     other_units.append(unit)
             if main_unit is None and len(other_units) == 1:
-                warning("There is only one unit with conversion factor != 1.0 for characteristic: " + osw_characteristic.name + ": " + other_units[0].main_symbol)
+                warning(
+                    "There is only one unit and this unit has a conversion factor "
+                    "!= 1.0 for characteristic: " + osw_characteristic.name + ": "
+                    + other_units[0].main_symbol + ". Conversion factor: " +
+                    str(other_units[0].conversion_factor_from_si) + ". It will be used "
+                    "as main unit for this characteristic"
+                )
                 main_unit = other_units[0]
                 other_units = []
             if main_unit is None:
-                warning("No main unit found for characteristic, set first unit as main unit: " + osw_characteristic.name)
+                warning(
+                    "No main unit found for characteristic, set first unit as main "
+                    "unit: " + osw_characteristic.name
+                )
                 main_unit = units[0]
                 other_units = units[1:]
                 # continue
@@ -1208,6 +1277,8 @@ class Ontology:
             if hasattr(main_unit, "prefix_units") and main_unit.prefix_units is not None:
                 for pu in main_unit.prefix_units:
                     if pu.conversion_factor_from_si is None:
+                        # todo: discuss why are we skipping the unit here
+                        #  entirely?
                         warning("No conversion factor found for unit: " + pu.main_symbol)
                         continue
                     if pu.conversion_factor_from_si == 0:
@@ -1221,6 +1292,15 @@ class Ontology:
                         name=pu.main_symbol,
                         main_symbol=pu.main_symbol,
                         #main_unit.conversion_factor_from_si,
+                        # todo: handle cases where there is no conversion_factor_from_si
+                        #  * since 3.1.3 when there is none. qudt now specifies it to 0
+                        #  * for dB and Bel this would mean that the conversion
+                        #  factor to the main unit would have to be calculated otherwise
+                        #  * for dimensionless units in general the conversion_factor
+                        #  in qudt is now 0
+                        #  The logic should now better rely on scalingOf and
+                        #  conversion_factor
+
                         conversion_factor_to_main_unit=round(1/pu.conversion_factor_from_si, 6),
                         
                     )
@@ -1237,7 +1317,7 @@ class Ontology:
             name = "Has" + osw_characteristic.name + "Value"
             title = "Property:" + name
             osw_characteristic.quantity_property = title
-            p = model.MainQuantityProperty(
+            property_ = model.MainQuantityProperty(
                 uuid=Ontology.get_deterministic_url_uuid(
                     prefix="property:",
                     uri=osw_characteristic.name,
@@ -1266,7 +1346,7 @@ class Ontology:
             osw_characteristic.unit_enumeration = unit_enumeration
             osw_characteristic.default_unit = unit_enumeration[0].osw_id
 
-            quantity_property_entitites[title] = p
+            quantity_property_entities[title] = property_
         
         osw_characteristic: model.QuantityValueType  
         for osw_characteristic in list_of_osw_obj_dict["characteristics"]:
@@ -1288,7 +1368,7 @@ class Ontology:
             #base_property = base_characteristic.quantity_property
             base_property = base_characteristic.__iris__["quantity_property"]
             
-            p = model.SubQuantityProperty(
+            property_ = model.SubQuantityProperty(
                 uuid=Ontology.get_deterministic_url_uuid(
                     prefix="property:",
                     uri=osw_characteristic.name,
@@ -1301,9 +1381,9 @@ class Ontology:
                 base_property=base_property,
             )
 
-            quantity_property_entitites[title] = p
+            quantity_property_entities[title] = property_
             
-        return quantity_property_entitites
+        return quantity_property_entities
 
 
 if __name__ == "__main__":
@@ -1341,19 +1421,21 @@ if __name__ == "__main__":
     )
 
     # Transform Prefixes
-    osw_prefix_obj_list = osw_ontology.get_osw_prefix_obj_list()
+    prefixes_as_osw_obj_list = osw_ontology.prefixes_as_entities()
 
     # Transform Quantity Units
-    osw_quanity_unit_obj_list = osw_ontology.get_osw_quantity_unit_obj_list(
+    quantity_unit_entities = osw_ontology.quantity_units_as_entities(
         composed_units=False
     )
+    # todo: look into
 
     # Transform Composed Quantity Units with Unit Prefixes
-    osw_composed_prefix_quantity_unit_obj_list = (
-        osw_ontology.get_osw_quantity_unit_obj_list(composed_units=True)
-    )
+    composed_quantity_unit_with_prefix_entities = osw_ontology.quantity_units_as_entities(composed_units=True)
 
+    print("pause")
     # Transform QuantityKind and Characteristics
-    osw_quantity_kind_obj_list, osw_fundamental_characteristic_obj_list, osw_characteristic_obj_list = (
-        osw_ontology.get_osw_quantitykind_characteristics_obj_list()
-    )
+    (
+        quantity_kind_entities,
+        fundamental_characteristic_entities,
+        characteristic_entities
+    ) = osw_ontology.quantitykind_characteristics_as_entities()

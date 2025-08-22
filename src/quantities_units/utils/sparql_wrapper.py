@@ -151,6 +151,7 @@ if __name__ == "__main__":
     sparql_qudt = Sparql(
         endpoint="https://www.qudt.org/fuseki/qudt/sparql",
         src_filepath="../ontology/qudt/sparql/quantitykind.sparql",
+        # src_filepath="../ontology/qudt/sparql/units.sparql",
         debug=False,
     )
     qudt_qk = sparql_qudt.execQuery()
@@ -160,11 +161,14 @@ if __name__ == "__main__":
     sparql_qudt_from_file = Sparql(
         endpoint="https://qudt.org/3.1.4/qudt-all",
         src_filepath="../ontology/qudt/sparql/quantitykind.sparql",
+        # src_filepath="../ontology/qudt/sparql/units.sparql",
         debug=False,
         read_file=True,
     )
     qudt_ff_qk = sparql_qudt_from_file.execQuery()
     # pprint(qudt_ff_qk)
+
+    """
 
     # Wikidata instance
     sparql_wikidata = Sparql(
@@ -186,3 +190,6 @@ if __name__ == "__main__":
     om2_qk = sparql_om2.execQuery()
 
     pprint(om2_qk)
+    
+    
+    """

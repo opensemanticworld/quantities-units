@@ -77,33 +77,34 @@ def extract_data(debug: bool = False, qudt_version: str = "latest") -> Ontology:
 def transform_data(osw_ontology: Ontology):
     """Transform extracted data into osw compatible format."""
     # Transform Prefixes
-    osw_prefix_obj_list = osw_ontology.get_osw_prefix_obj_list()
+    osw_prefix_obj_list = osw_ontology.prefixes_as_entities()
     # Transform Quantity Units
-    osw_quanity_unit_obj_list = osw_ontology.get_osw_quantity_unit_obj_list(
-        composed_units=False
+    osw_quantity_unit_obj_list = (
+        osw_ontology.quantity_units_as_entities(composed_units=False)
     )
     # Transform Composed Quantity Units with Unit Prefixes
     osw_composed_prefix_quantity_unit_obj_list = (
-        osw_ontology.get_osw_quantity_unit_obj_list(composed_units=True)
+        osw_ontology.quantity_units_as_entities(composed_units=True)
     )
     # Transform QuantityKind and Characteristics
     (
         osw_quantity_kind_obj_list,
         osw_fundamental_characteristic_list,
         osw_characteristic_obj_list,
-    ) = osw_ontology.get_osw_quantitykind_characteristics_obj_list()
+    ) = osw_ontology.quantitykind_characteristics_as_entities()
     list_of_osw_obj_dict = {
         "prefixes": osw_prefix_obj_list,
-        "quanity_units": osw_quanity_unit_obj_list,
+        "quantity_units": osw_quantity_unit_obj_list,
         "composed_prefix_quantity_units": osw_composed_prefix_quantity_unit_obj_list,
         "quantity_kinds": osw_quantity_kind_obj_list,
         "fundamental_characteristics": osw_fundamental_characteristic_list,
         "characteristics": osw_characteristic_obj_list,
     }
 
-    osw_ontology.create_smw_quantity_properties(
-        list_of_osw_obj_dict=list_of_osw_obj_dict
-    )
+    # smw_quantity_properties = osw_ontology.create_smw_quantity_properties(
+    #     list_of_osw_obj_dict=list_of_osw_obj_dict
+    # )
+    # list_of_osw_obj_dict["smw_quantity_properties"] = smw_quantity_properties
 
     return list_of_osw_obj_dict
 
@@ -118,19 +119,17 @@ def upload_data(osw_obj: OSW, list_of_osw_obj_dict: dict, change_id=None) -> Non
         )
 
     # Upload data into the OSW instance
-    # re-defining the list_of_osw_obj_dict for a selective include
-    list_of_osw_obj_dict = {
-        "prefixes": list_of_osw_obj_dict["prefixes"],
-        "quanity_units": list_of_osw_obj_dict["quanity_units"],
-        "composed_prefix_quantity_units": list_of_osw_obj_dict[
-            "composed_prefix_quantity_units"
-        ],
-        "quantity_kinds": list_of_osw_obj_dict["quantity_kinds"],
-        "fundamental_characteristics": list_of_osw_obj_dict[
-            "fundamental_characteristics"
-        ],
-        "characteristics": list_of_osw_obj_dict["characteristics"],
-    }
+    # Re-defining the list_of_osw_obj_dict for a selective include
+    keys_to_keep = [
+        "prefixes",
+        "quantity_units",
+        "composed_prefix_quantity_units",
+        "quantity_kinds",
+        "fundamental_characteristics",
+        "characteristics",
+    ]
+    list_of_osw_obj_dict = {key: list_of_osw_obj_dict[key] for key in keys_to_keep}
+
     for key, osw_obj_list in list_of_osw_obj_dict.items():
         # Define the namespace
         namespace = None
@@ -178,6 +177,10 @@ def main(
     osw_ontology_instance = extract_data(debug=True)
     # II: Transform Data
     list_of_osw_obj_dict = transform_data(osw_ontology=osw_ontology_instance)
+    # todo: check number of quantities and listed applicable units
+    #  - is the number of Units reduced?
+    #  - are all applicable units contained?
+
     # III: Load Data
     if upload:
         upload_data(
