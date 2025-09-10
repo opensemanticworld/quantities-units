@@ -1,0 +1,315 @@
+C:\Users\gold\github\osw-package-maintenance\.venv\Scripts\python.exe -X pycache_prefix=C:\Users\gold\AppData\Local\JetBrains\PyCharm2025.2\cpython-cache "C:/Program Files/JetBrains/PyCharm 2025.2 stable/plugins/python-ce/helpers/pydev/pydevd.py" --multiprocess --qt-support=auto --client 127.0.0.1 --port 60584 --file C:\Users\gold\github\osw-package-maintenance\scripts\world.opensemantic.characteristics.quantitative.py
+Connected to: <socket.socket fd=2036, family=2, type=1, proto=0, laddr=('127.0.0.1', 60623), raddr=('127.0.0.1', 60584)>.
+Connected to pydev debugger (build 252.23892.515)
+C:\Users\gold\github\osw-package-maintenance\tools\quantities-units\src\quantities_units\utils\ontology.py:1031: SyntaxWarning: invalid escape sequence '\c'
+  "http://qudt.org/vocab/unit/GM-PER-DEG_C": {"code": "d.Cel-1", "pint": "gram per delta_degC", "name": "", "description": "$\textit{Gram Degree Celsius}$ is a C.G.S System unit for 'Mass Temperature' expressed as $g \cdot degC$."},
+C:\Users\gold\github\osw-package-maintenance\tools\quantities-units\src\quantities_units\utils\ontology.py:1043: SyntaxWarning: invalid escape sequence '\#'
+  "http://qudt.org/vocab/unit/NUM": {"code": "1", "pint": "", "name": "", "description": "Number is a unit for  'Dimensionless' expressed as (\#$."},
+Executing SPARQL query C:\Users\gold\github\osw-package-maintenance\ontology\qudt\sparql\units.sparql
+on endpoint https://qudt.org/qudt-all ...
+Executing SPARQL query C:\Users\gold\github\osw-package-maintenance\ontology\qudt\sparql\quantitykind.sparql
+on endpoint https://qudt.org/qudt-all ...
+Transforming ontology data to OSW UnitPrefix objects...
+...successfully transformed 24 OSW UnitPrefix objects.
+Transforming ontology data to OSW QuantityUnit objects...
+...successfully transformed 381 QuantityUnit objects.
+Transforming ontology data to OSW ComposedQuantityUnitWithUnitPrefix objects...
+...successfully transformed 44 ComposedQuantityUnitWithUnitPrefix objects.
+Transforming ontology data to OSW QuantityKind and Characteristic objects...
+...transformed 344 OSW QuantityKind objects.
+...transformed 835 OSW Characteristic/QuantityUnit objects.
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: Acidity: pH
+WARNING:root:No main unit found for characteristic, set first unit as main unit: FractionalAmountOfSubstance
+Error parsing unit 'PPB'
+'PPB' is not defined in the unit registry
+WARNING:root:No main unit found for characteristic, set first unit as main unit: AreaTime
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: Basicity: pH
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: ConductivityVariance: μS²/cm²
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: Emissivity: %
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: InverseEnergy: /(kVA·h)
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: ReciprocalMass: /g
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LengthEnergy: MeV·fm
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LengthTemperatureTime: cm·s·°C
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LinearCompressibility: μm/N
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LuminousExposure: lx·h
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: MassConcentrationRateOfChange: μg/(L·d)
+WARNING:root:No main unit found for characteristic, set first unit as main unit: MassPerAreaTime
+WARNING:root:No main unit found for characteristic, set first unit as main unit: MassSpecificBiogeochemicalRate
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundExposureLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundPowerLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundPressureLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundReductionIndex
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: VentilationRatePerFloorArea: L/(s·m²)
+WARNING:root:No main unit found for characteristic, set first unit as main unit: VolumetricFlux
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: Acidity: pH
+WARNING:root:No main unit found for characteristic, set first unit as main unit: FractionalAmountOfSubstance
+Error parsing unit 'PPB'
+'PPB' is not defined in the unit registry
+WARNING:root:No main unit found for characteristic, set first unit as main unit: AreaTime
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: Basicity: pH
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: ConductivityVariance: μS²/cm²
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: Emissivity: %
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: InverseEnergy: 1/(kVA·h)
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: ReciprocalMass: 1/g
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LengthEnergy: MeV·fm
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LengthTemperatureTime: cm·s·°C
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LinearCompressibility: μm/N
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: LuminousExposure: lx·h
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: MassConcentrationRateOfChange: μg/(L·d)
+WARNING:root:No main unit found for characteristic, set first unit as main unit: MassPerAreaTime
+WARNING:root:No main unit found for characteristic, set first unit as main unit: MassSpecificBiogeochemicalRate
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundExposureLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundPowerLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundPressureLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundReductionIndex
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:There is only one unit with conversion factor != 1.0 for characteristic: VentilationRatePerFloorArea: L/(s·m²)
+WARNING:root:No main unit found for characteristic, set first unit as main unit: VolumetricFlux
+WARNING:mwclient.client:Connection error. Retrying in a moment.
+Entities to be uploaded have been sorted according to their type.
+If you would like to overwrite existing entities or properties, pass a StoreEntityParam to store_entity() with attribute 'overwrite' or 'overwrite_per_class' set to, e.g., True.
+Performing parallel execution of handle_upload_object_ (344 tasks).
+100%|██████████| 344/344 [00:00<00:00, 6185.04it/s]
+Entities to be uploaded have been sorted according to their type.
+If you would like to overwrite existing entities or properties, pass a StoreEntityParam to store_entity() with attribute 'overwrite' or 'overwrite_per_class' set to, e.g., True.
+Performing parallel execution of handle_upload_object_ (491 tasks).
+100%|██████████| 491/491 [00:03<00:00, 144.20it/s]
+Entities to be uploaded have been sorted according to their type.
+If you would like to overwrite existing entities or properties, pass a StoreEntityParam to store_entity() with attribute 'overwrite' or 'overwrite_per_class' set to, e.g., True.
+Performing parallel execution of handle_upload_object_ (809 tasks).
+100%|██████████| 809/809 [00:04<00:00, 186.00it/s]
+WARNING:mwclient.client:Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes.
+WARNING:mwclient.client:Main-account login via "action=login" is deprecated and may stop working without warning. To continue login with "action=login", see [[Special:BotPasswords]]. To safely continue using main-account login, see "action=clientlogin".
+Delete dir 'C:\Users\gold\github\osw-package-maintenance\packages\world.opensemantic.characteristics.quantitative\base'
+WARNING:mwclient.client:Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes.
+WARNING:mwclient.client:Main-account login via "action=login" is deprecated and may stop working without warning. To continue login with "action=login", see [[Special:BotPasswords]]. To safely continue using main-account login, see "action=clientlogin".
+Performing parallel execution of get_page_ (30 tasks).
+  0%|          | 0/30 [00:00<?, ?it/s]C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWeb5b34a350205d1f9427a61b7b945960' does not exist.
+  work_item.run()
+  3%|▎         | 1/30 [00:01<00:50,  1.74s/it]C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW98c40340cfd659508d2aacce2c2ae6fe' does not exist.
+Page loaded. Page with title 'Item:OSWeb5b34a350205d1f9427a61b7b945960' does not exist.
+Page loaded. Page with title 'Item:OSW98c40340cfd659508d2aacce2c2ae6fe' does not exist.
+Page loaded. Page with title 'Item:OSW84acbc06409e5b5582f6e454b672cb49' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW84acbc06409e5b5582f6e454b672cb49' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSWbc07166833ae540ab5e76726e4d53d04' does not exist.
+Page loaded. Page with title 'Item:OSW74555169ee9a593b9ae0cf7f3fb29bbe' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWbc07166833ae540ab5e76726e4d53d04' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW74555169ee9a593b9ae0cf7f3fb29bbe' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW590cb8abf8b955a8acbde8919ec5ae42' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW10a8f8f1cda351a4849a0443cd543b8f' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW010eaa21484d5e30bb35dd02c2850c4d' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWc9f1d0da58415bfc8150d928b9fce26e' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSW590cb8abf8b955a8acbde8919ec5ae42' does not exist.
+Page loaded. Page with title 'Item:OSWc9f1d0da58415bfc8150d928b9fce26e' does not exist.Page loaded. Page with title 'Item:OSW010eaa21484d5e30bb35dd02c2850c4d' does not exist.Page loaded. Page with title 'Item:OSW10a8f8f1cda351a4849a0443cd543b8f' does not exist.
+
+
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWfc6e77c9ce7a564c9b7803bc8487f779' does not exist.
+  work_item.run()
+ 20%|██        | 6/30 [00:02<00:06,  3.80it/s]C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW326f7aacca3e5392a347036864b7baea' does not exist.
+Page loaded. Page with title 'Item:OSWfc6e77c9ce7a564c9b7803bc8487f779' does not exist.
+Page loaded. Page with title 'Item:OSW326f7aacca3e5392a347036864b7baea' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWf283acddcb05590caedfbf2e998ee05a' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSWf283acddcb05590caedfbf2e998ee05a' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWd38166d0b91c51e7b08c8155bd32fd66' does not exist.
+  work_item.run()
+ 43%|████▎     | 13/30 [00:03<00:03,  4.37it/s]C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW13fc03e790a452ad8e9423aa9cef3d05' does not exist.
+Page loaded. Page with title 'Item:OSWd38166d0b91c51e7b08c8155bd32fd66' does not exist.
+Page loaded. Page with title 'Item:OSW13fc03e790a452ad8e9423aa9cef3d05' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW38222e1d591f5c8bb4a9725da404f33c' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSW38222e1d591f5c8bb4a9725da404f33c' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW56bbf029a3a6596ea3b79a48d6cea4ce' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSW56bbf029a3a6596ea3b79a48d6cea4ce' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW98c14d48aecc52fdab52023fb924debd' does not exist.
+  work_item.run()
+ 57%|█████▋    | 17/30 [00:03<00:02,  5.92it/s]Page loaded. Page with title 'Item:OSW98c14d48aecc52fdab52023fb924debd' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWd9cb8583836d53228ac7907d5bf8f0f9' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW3ac39ad3fd725738a73af0f3e3639935' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSWd9cb8583836d53228ac7907d5bf8f0f9' does not exist.
+Page loaded. Page with title 'Item:OSW3ac39ad3fd725738a73af0f3e3639935' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWe362097950ff5522865e835757765c17' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW89e525be6d675802a9d695d2d6655505' does not exist.
+  work_item.run()
+ 67%|██████▋   | 20/30 [00:03<00:01,  7.51it/s]Page loaded. Page with title 'Item:OSWe362097950ff5522865e835757765c17' does not exist.
+Page loaded. Page with title 'Item:OSW89e525be6d675802a9d695d2d6655505' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWbd7ca94b15825358b3c2578b285a90cc' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSWbd7ca94b15825358b3c2578b285a90cc' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW56559133e3f752568d6567052de3a43c' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSW56559133e3f752568d6567052de3a43c' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW9108816e33465625bcd9b4850d64cf9a' does not exist.
+  work_item.run()
+ 80%|████████  | 24/30 [00:03<00:00, 10.31it/s]Page loaded. Page with title 'Item:OSW9108816e33465625bcd9b4850d64cf9a' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW7ed252bb9ca75ffdafb198c9c2ce126e' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWe114cdd9faad59b7bb5fe00221dc9cfc' does not exist.
+  work_item.run()
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW6ed5bdf09c8c544d87724a93c6c46c8e' does not exist.
+  work_item.run()
+ 90%|█████████ | 27/30 [00:04<00:00,  6.54it/s]Page loaded. Page with title 'Item:OSW7ed252bb9ca75ffdafb198c9c2ce126e' does not exist.
+Page loaded. Page with title 'Item:OSWe114cdd9faad59b7bb5fe00221dc9cfc' does not exist.
+Page loaded. Page with title 'Item:OSW6ed5bdf09c8c544d87724a93c6c46c8e' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWda44ec852ac052fb86c4179f4fbf21c2' does not exist.
+  work_item.run()
+Page loaded. Page with title 'Item:OSWda44ec852ac052fb86c4179f4fbf21c2' does not exist.
+C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSW2075e5df2e0b597f99d5bd8e188cb14c' does not exist.
+  work_item.run()
+ 97%|█████████▋| 29/30 [00:04<00:00,  7.36it/s]C:\ProgramData\miniforge3\Lib\concurrent\futures\thread.py:92: RuntimeWarning: WARNING: Page with title 'Item:OSWbeec27d45f6458378ff0434634133a08' does not exist.
+Page loaded. Page with title 'Item:OSW2075e5df2e0b597f99d5bd8e188cb14c' does not exist.
+Page loaded. Page with title 'Item:OSWbeec27d45f6458378ff0434634133a08' does not exist.
+  work_item.run()
+100%|██████████| 30/30 [00:04<00:00,  6.02it/s]
+
+Process finished with exit code 0
+
+
+
+########
+NOTES
+########
+
+What are the Item titles?
+
+Are we uploading to the local (offline) OSL? -> pages are never uploaded to a remote OSL --> Pages are only created in
+the workspace of Python
+
+Should we then create the entity.py from that local osw pages?
+
+why are we missing some quantities / units
+
+
+
+
+how to handle multi-prefixed units e.g. milli mol per cubic deci meter
+how to handle hour / minute / second OR pascal / bar OR gramm / kg / tonne
+
+in QUDT: scalingOf verknüpft ampere hour mit ampere s? --> Kann logik verwendet werden?
+
+
+Überlegungen
+* Sind in den Units z.B. Hour und Ampere-Hour enthalten?
+Falls ja:
+* Sind diese auch noch in den Pages enthalten?
+Falls ja:
+* Warum sind diese nicht im entity model?
+
+Hilfe:
+Json ausgeben lassen
+Pages inspizieren / im pickle speichern und anschauen
+
+
+Consider:
+  self.split_prefixed_applicable_units(
+  prefixed unit = with some prefix or with a prefix at the start?!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\Users\gold\github\osw-package-maintenance\.venv\Scripts\python.exe "C:/Program Files/JetBrains/PyCharm 2025.2 stable/plugins/python-ce/helpers/pydev/pydevconsole.py" --mode=client --host=127.0.0.1 --port=65101
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['C:\\Users\\gold\\github\\osw-package-maintenance', 'C:\\Users\\gold\\github\\osw-package-maintenance\\tools\\quantities-units\\src'])
+PyDev console: using IPython 9.4.0
+Python 3.12.7 | packaged by conda-forge | (main, Oct  4 2024, 15:47:54) [MSC v.1941 64 bit (AMD64)] on win32
+In [2]: runfile('C:\\Users\\gold\\github\\osw-package-maintenance\\scripts\\world.opensemantic.characteristics.quantitative.py', wdir='C:\\Users\\gold\\github\\osw-package-maintenance\\scripts')
+C:\Users\gold\github\osw-package-maintenance\tools\quantities-units\src\quantities_units\utils\ontology.py:1098: SyntaxWarning: invalid escape sequence '\c'
+  "http://qudt.org/vocab/unit/GM-PER-DEG_C": {"code": "d.Cel-1", "pint": "gram per delta_degC", "name": "", "description": "$\textit{Gram Degree Celsius}$ is a C.G.S System unit for 'Mass Temperature' expressed as $g \cdot degC$."},
+C:\Users\gold\github\osw-package-maintenance\tools\quantities-units\src\quantities_units\utils\ontology.py:1110: SyntaxWarning: invalid escape sequence '\#'
+  "http://qudt.org/vocab/unit/NUM": {"code": "1", "pint": "", "name": "", "description": "Number is a unit for  'Dimensionless' expressed as (\#$."},
+Executing SPARQL query C:\Users\gold\github\osw-package-maintenance\ontology\qudt\sparql\units.sparql
+on endpoint https://qudt.org/qudt-all ...
+Executing SPARQL query C:\Users\gold\github\osw-package-maintenance\ontology\qudt\sparql\quantitykind.sparql
+on endpoint https://qudt.org/qudt-all ...
+Transforming ontology data to OSW UnitPrefix objects...
+...successfully transformed 24 OSW UnitPrefix objects.
+Transforming ontology data to OSW QuantityUnit objects...
+...successfully transformed 381 QuantityUnit objects.
+No description found for 71 units: ['M-PER-K', 'M2-HZ3', 'MIN_Angle', 'N-M2', 'N-M-PER-M-RAD', 'M3-PER-HA', 'A-PER-M2-K2', 'M2-PER-HZ', 'SEC-PER-M', 'RAD-M2-PER-MOL', 'PER-PA-SEC', 'K-DAY', 'W-M2-PER-SR', 'W-PER-M2-M-SR', 'PA-M', 'V-PER-K', 'PER-M-SR', 'T-SEC', 'DEG_C-PER-M', 'M2-PER-V-SEC', 'MOL-PER-M2-SEC-SR', 'WB-M', 'MOL-PER-M2-SEC-M-SR', 'V2-PER-K2', 'W-PER-M2-M', 'M2-HZ4', 'T-M', 'M2-PER-SR-J', 'M2-PER-SEC2', 'K2', 'M2-PER-J', 'M2-PER-HZ2', 'N-PER-M3', 'J-PER-M', 'K-M', 'M6', 'M2-PER-SR', 'PA-PER-K', 'PPT_VOL', 'M2-PER-GM', 'M4-PER-SEC', 'PER-SR', 'K-M-PER-SEC', 'BQ-PER-M2', 'M2-HZ', 'SEC-PER-RAD-M3', 'RAD-PER-M', 'OHM-M', 'M2-PER-K', 'M2-SEC-PER-RAD', 'M-PER-FARAD', 'K-PA-PER-SEC', 'PA-M-PER-SEC', 'M2-HZ2', 'M3-PER-C', 'J-M2', 'MOL-PER-M2-SEC-M', 'PER-M-SEC', 'PA2-PER-SEC2', 'CD-PER-LM', 'W-PER-M-K', 'DEG_C2-PER-SEC', 'S-M2-PER-MOL', 'W-SEC-PER-M2', 'M3-PER-K', 'OHM-M2-PER-M', 'M5', 'PER-SEC2', 'V-M', 'K-SEC', 'PA-M-PER-SEC2']
+Transforming ontology data to OSW ComposedQuantityUnitWithUnitPrefix objects...
+...successfully transformed 44 ComposedQuantityUnitWithUnitPrefix objects.
+No description found for 6 units: ['KiloGM-PER-M2-SEC2', 'J-PER-KiloGM-K-PA', 'J-PER-KiloGM-K-M3', 'RAD-M2-PER-KiloGM', 'J-M2-PER-KiloGM', 'NanoGM-PER-M2-PA-SEC']
+Transforming ontology data to OSW QuantityKind and Characteristic objects...
+...transformed 344 OSW QuantityKind objects.
+...transformed 835 OSW Characteristic/QuantityUnit objects.
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: Acidity: pH. Conversion factor:0.0It will be used as main unit for this characteristic
+WARNING:root:No main unit found for characteristic, set first unit as main unit: FractionalAmountOfSubstance
+Error parsing unit 'PPB'
+'PPB' is not defined in the unit registry
+WARNING:root:No main unit found for characteristic, set first unit as main unit: AreaTime
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: Basicity: pH. Conversion factor:0.0It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: ConductivityVariance: μS²/cm². Conversion factor:1e-08It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: Emissivity: %. Conversion factor:0.01It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: InverseEnergy: /(kVA·h). Conversion factor:2.7777777777777776e-07It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: ReciprocalMass: /g. Conversion factor:1000.0It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: LengthEnergy: MeV·fm. Conversion factor:1.602176634e-28It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: LengthTemperatureTime: cm·s·°C. Conversion factor:0.01It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: LinearCompressibility: μm/N. Conversion factor:1e-06It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: LuminousExposure: lx·h. Conversion factor:3600.0It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: MassAbsorptionCoefficient: m²/g. Conversion factor:1000.0It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: MassAttenuationCoefficient: m²/g. Conversion factor:1000.0It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: MassConcentrationRateOfChange: μg/(L·d). Conversion factor:1.1574074074074074e-11It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: MassEnergyTransferCoefficient: m²/g. Conversion factor:1000.0It will be used as main unit for this characteristic
+WARNING:root:No main unit found for characteristic, set first unit as main unit: MassPerAreaTime
+WARNING:root:No main unit found for characteristic, set first unit as main unit: MassSpecificBiogeochemicalRate
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundExposureLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundPowerLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundPressureLevel
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SoundReductionIndex
+WARNING:root:Conversion factor for unit: dB was 0
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SpecificEntropy
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SpecificHeatCapacityAtConstantPressure
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SpecificHeatCapacityAtConstantVolume
+WARNING:root:No main unit found for characteristic, set first unit as main unit: SpecificHeatCapacityAtSaturation
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: SpecificSurfaceArea: m²/g. Conversion factor:1000.0It will be used as main unit for this characteristic
+WARNING:root:There is only one unit and this unit has a conversion factor != 1.0 for characteristic: VentilationRatePerFloorArea: L/(s·m²). Conversion factor:0.001It will be used as main unit for this characteristic
+WARNING:root:No main unit found for characteristic, set first unit as main unit: VolumetricFlux
+Entities to be uploaded have been sorted according to their type.
+If you would like to overwrite existing entities or properties, pass a StoreEntityParam to store_entity() with attribute 'overwrite' or 'overwrite_per_class' set to, e.g., True.
+Performing parallel execution of handle_upload_object_ (344 tasks).
+100%|██████████| 344/344 [00:00<00:00, 52480.29it/s]
+WARNING:mwclient.client:Connection error. Retrying in a moment.
+Entities to be uploaded have been sorted according to their type.
+If you would like to overwrite existing entities or properties, pass a StoreEntityParam to store_entity() with attribute 'overwrite' or 'overwrite_per_class' set to, e.g., True.
+Performing parallel execution of handle_upload_object_ (491 tasks).
+100%|██████████| 491/491 [00:01<00:00, 484.38it/s]
+Entities to be uploaded have been sorted according to their type.
+If you would like to overwrite existing entities or properties, pass a StoreEntityParam to store_entity() with attribute 'overwrite' or 'overwrite_per_class' set to, e.g., True.
+Performing parallel execution of handle_upload_object_ (809 tasks).
+100%|██████████| 809/809 [00:01<00:00, 634.93it/s]
+WARNING:mwclient.client:Subscribe to the mediawiki-api-announce mailing list at <https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/> for notice of API deprecations and breaking changes.
+WARNING:mwclient.client:Main-account login via "action=login" is deprecated and may stop working without warning. To continue login with "action=login", see [[Special:BotPasswords]]. To safely continue using main-account login, see "action=clientlogin".
